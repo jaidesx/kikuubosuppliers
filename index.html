@@ -1,0 +1,740 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="image/icon.png" type="image/x-icon" />
+    <title>Kikuubo Suppliers</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="modern-header.css" />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    />
+  </head>
+
+  <body>
+    <section id="header">
+      <a href="#">
+        <img src="image/logo.png" class="logo" alt="" />
+      </a>
+
+      <div>
+        <ul id="navbar">
+          <li>
+            <a class="active" href="index.html">HOME</a>
+          </li>
+          <li>
+            <a href="shop.html">SHOP</a>
+          </li>
+          <li>
+            <a href="product.html">PRODUCTS</a>
+          </li>
+          <li>
+            <a href="about.html">ABOUT</a>
+          </li>
+          <li>
+            <a href="contact.html">CONTACT</a>
+          </li>
+          <li id="lg-bag">
+            <a href="cart.html"
+              ><i class="far fa-shopping-cart cart"></i
+              ><span class="cart-count">0</span></a
+            >
+          </li>
+
+          <li>
+            <button id="theme-toggle" class="theme-toggle">
+              <i class="fas fa-moon"></i>
+            </button>
+          </li>
+          <a href="#" id="close"><i class="far fa-times"></i></a>
+        </ul>
+      </div>
+      <div id="mobile">
+        <a href="cart.html">
+          <i class="far fa-shopping-bag"> </i>
+        </a>
+        <i id="bar" class="fas fa-outdent"> </i>
+      </div>
+    </section>
+
+    <section id="hero">
+      <h4>Trusted Retail Store</h4>
+
+      <h2 id="hero-text">Quality Products</h2>
+
+      <h1>For Everyday Needs</h1>
+
+      <p>
+        Groceries, household items & essentials at fair prices — available
+        daily.
+      </p>
+
+      <div class="hero-controls">
+        <span class="dot active" data-index="0"></span>
+        <span class="dot" data-index="1"></span>
+        <span class="dot" data-index="2"></span>
+      </div>
+
+      <a href="#products">
+        <button>Browse Products</button>
+      </a>
+    </section>
+
+    <section id="feature" class="section-p1">
+      <div class="fe-box">
+        <img src="image/f1.png" alt="" width="100px" />
+        <h6>Free Shipping</h6>
+      </div>
+      <div class="fe-box">
+        <img src="image/f2.png" alt="" width="100px" />
+        <h6>Online Order</h6>
+      </div>
+      <div class="fe-box">
+        <img src="image/f3.png" alt="" width="100px" />
+        <h6>Save Money</h6>
+      </div>
+      <div class="fe-box">
+        <img src="image/f4.png" alt="" width="100px" />
+        <h6>Promotions</h6>
+      </div>
+      <div class="fe-box">
+        <img src="image/f5.png" alt="" width="100px" />
+        <h6>Happy Sell</h6>
+      </div>
+      <div class="fe-box">
+        <img src="image/f6.png" alt="" width="100px" />
+        <h6>E24/7 Support</h6>
+      </div>
+    </section>
+
+    <section id="product1" class="section-p1">
+      <h2>Features Products</h2>
+      <p>Summer collection New Morden Design.</p>
+      <div class="pro-container">
+        <div class="pro" onclick="viewProduct(1)">
+          <img src="image/Products/f1.jpg" alt="" />
+          <div class="des">
+            <span> Snacks </span>
+            <h5>Pringles</h5>
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <h4>UGX 9,500</h4>
+          </div>
+          <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+        </div>
+
+        <div class="pro" onclick="viewProduct(2)">
+          <img src="image/Products/f2.jpg" alt="" />
+          <div class="des">
+            <span> Kellogg's </span>
+            <h5>Corn Flakes </h5>
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <h4>UGX 78</h4>
+          </div>
+          <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+        </div>
+
+        <div class="pro" onclick="viewProduct(3)">
+          <img src="image/Products/f3.jpg" alt="" />
+          <div class="des">
+            <span> Tea Bags </span>
+            <h5>Uganda Tea Bags</h5>
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <h4>UGX 7,000</h4>
+          </div>
+          <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+        </div>
+
+        <div class="pro" onclick="viewProduct(4)">
+          <img src="image/Products/f4.jpg" alt="" />
+          <div class="des">
+            <span> Cappuccino </span>
+            <h5>Good Day</h5>
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <h4>UGX 32,000</h4>
+          </div>
+          <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+        </div>
+
+        <div class="pro" onclick="viewProduct(5)">
+          <img src="image/Products/f5.jpg" alt="" />
+          <div class="des">
+            <span> Gold Valley </span>
+            <h5>BBQ Sauce</h5>
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <h4>UGX 15,000</h4>
+          </div>
+          <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+        </div>
+
+        <div class="pro" onclick="viewProduct(6)">
+          <img src="image/Products/f6.jpg" alt="" />
+          <div class="des">
+            <span> Oils </span>
+            <h5>Sunseed Oil</h5>
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <h4>UGX 11,000</h4>
+          </div>
+          <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+        </div>
+
+        <div class="pro" onclick="viewProduct(7)">
+          <img src="image/Products/f7.jpg" alt="" />
+          <div class="des">
+            <span> Coffee </span>
+            <h5>Nescafe </h5>
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <h4>UGX 15,000</h4>
+          </div>
+          <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+        </div>
+
+        <div class="pro" onclick="viewProduct(8)">
+          <img src="image/Products/f8.jpg" alt="" />
+          <div class="des">
+            <span> Kakira </span>
+            <h5>Sugar</h5>
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <h4>UGX 180,000</h4>
+          </div>
+          <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+        </div>
+      </div>
+    </section>
+
+    <section id="banner" class=".section-m1">
+      <button class="normal">Explore More</button>
+    </section>
+
+    <section id="product1" class="section-p1">
+      <h2>New Arrivals</h2>
+      <p>Summer collection New Morden Design.</p>
+      <div class="pro-container">
+        <div class="pro" onclick="viewProduct(9)">
+          <img src="image/Products/n1.jpg" alt="" />
+          <div class="des">
+            <span> Toilet Balls </span>
+            <h5>Climax</h5>
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <h4>UGX 2,500</h4>
+          </div>
+          <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+        </div>
+
+        <div class="pro" onclick="viewProduct(10)">
+          <img src="image/Products/n2.jpg" alt="" />
+          <div class="des">
+            <span> Safa </span>
+            <h5>Tomato Paste </h5>
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <h4>UGX 5,000</h4>
+          </div>
+          <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+        </div>
+
+        <div class="pro" onclick="viewProduct(11)">
+          <img src="image/Products/n3.jpg" alt="" />
+          <div class="des">
+            <span> American Garden </span>
+            <h5>Mayonnaise Lite</h5>
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <h4>UGX 105,000</h4>
+          </div>
+          <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+        </div>
+
+        <div class="pro" onclick="viewProduct(410)">
+          <img src="image/Products/f9.jpg" alt="" />
+          <div class="des">
+            <span> American Garden </span>
+            <h5>  Ketchup</h5>
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <h4>UGX 78</h4>
+          </div>
+          <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+        </div>
+
+        <div class="pro" onclick="viewProduct(13)">
+          <img src="image/Products/n5.jpg" alt="" />
+          <div class="des">
+            <span> Jik Bleach </span>
+            <h5>Jik Big </h5>
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <h4>UGX 35,000</h4>
+          </div>
+          <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+        </div>
+
+        <div class="pro" onclick="viewProduct(14)">
+          <img src="image/Products/n6.jpg" alt="" />
+          <div class="des">
+            <span> Insect Killer </span>
+            <h5>Kingtox </h5>
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <h4>UGX 9,000</h4>
+          </div>
+          <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+        </div>
+
+        <div class="pro" onclick="viewProduct(15)">
+          <img src="image/Products/n7.jpg" alt="" />
+          <div class="des">
+            <span> Dettol </span>
+            <h5>Liquid </h5>
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <h4>UGX 78</h4>
+          </div>
+          <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+        </div>
+
+        <div class="pro" onclick="viewProduct(16)">
+          <img src="image/Products/n8.jpg" alt="" />
+          <div class="des">
+            <span> Prestige </span>
+            <h5>Magarine </h5>
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <h4>UGX 12,500</h4>
+          </div>
+          <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+        </div>
+      </div>
+    </section>
+
+    <section id="sm-banner" class="section-p1">
+      <div class="banner-box">
+        <button class="white">Learn More</button>
+      </div>
+
+      <div class="banner-box banner-box2">
+        <button class="white">Collection</button>
+      </div>
+    </section>
+
+    <section id="banner3">
+      <div class="banner-box"></div>
+
+      <div class="banner-box banner-box2"></div>
+
+      <div class="banner-box banner-box3"></div>
+    </section>
+
+    <section id="newsletter" class="section-p1">
+      <div class="newstext">
+        <h4>
+          Sign Up For Newsletters
+          <p>
+            Get E-Mail updates about our latest shop and
+            <span>special offers</span>.
+          </p>
+        </h4>
+      </div>
+      <form
+        action="https://formsubmit.co/wholesalesuppliers63@gmail.com"
+        method="POST"
+        class="form"
+      >
+        <input
+          type="hidden"
+          name="_subject"
+          value="Newsletter Subscription - Kikuubo Suppliers"
+        />
+        <input
+          type="hidden"
+          name="_next"
+          value="http://localhost:5500/index.html"
+        />
+        <input
+          type="email"
+          name="email"
+          placeholder="Your Email Address"
+          required
+        />
+        <button type="submit" class="normal">Sign Up</button>
+      </form>
+    </section>
+
+    <footer class="section-p1">
+      <div class="col">
+        <img class="logo" src="image/logo.png" alt="" />
+        <h4>Contact</h4>
+        <div>
+          <li>
+            <i class="fal fa-map"> </i>
+            <p>Kikuubo, Kampala, Uganda</p>
+          </li>
+          <li>
+            <i class="fal fa-envelope"> </i>
+            <p>wholesalesuppliers63@gmail.com</p>
+          </li>
+          <li>
+            <i class="fal fa-phone-alt"> </i>
+            <p>+256 756 158 466</p>
+          </li>
+          <li>
+            <i class="fal fa-clock"> </i>
+            <p>Monday to Saturday: 8:00am to 18:00pm</p>
+          </li>
+        </div>
+        <div class="follow">
+          <h4>Follow us</h4>
+          <div class="social-icons">
+            <a
+              href="https://www.facebook.com/Kikkuubo.Online.Business.Enterprise/"
+              class="social-btn facebook"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+            >
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a
+              href="https://twitter.com"
+              class="social-btn twitter"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Twitter"
+            >
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a
+              href="https://www.instagram.com/kikuubo.supplier.onlinedeli?igsh=MWM4cHgxN3AwM2JsMw==/"
+              class="social-btn instagram"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+            >
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a
+              href="https://youtube.com"
+              class="social-btn youtube"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="YouTube"
+            >
+              <i class="fab fa-youtube"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <h4>About</h4>
+        <a href="#">About us</a>
+        <a href="#">Delivery Information</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms & conditions</a>
+        <a href="#">Contact us</a>
+      </div>
+      <div class="col">
+        <h4>My Account</h4>
+        <a href="#">Account</a>
+        <a href="#">Sign In</a>
+        <a href="#">View Cart</a>
+        <a href="#">My Wishlist</a>
+        <a href="#">Track My order</a>
+        <a href="#">Help</a>
+      </div>
+      <div class="col install">
+        <h4>Install App</h4>
+        <p>From App Store or Google Play</p>
+        <div class="row">
+          <img src="image/pay/app.jpg" alt="" />
+          <img src="image/pay/play.jpg" alt="" />
+        </div>
+        <p>Secure Payment Gateways</p>
+        <img src="image/pay/pay.png" alt="" /><div style="display: flex; gap: 10px; margin-top: 10px;"><img src="image/Products/Mtn.webp" alt="MTN MoMo" style="height: 30px; border-radius: 4px;" /><img src="image/Products/airtel.webp" alt="Airtel Money" style="height: 30px; border-radius: 4px;" /></div>
+      </div>
+
+      <div class="copyright">
+        <p>Copyright © 2025 <img src="image/icon.png" style="width: 16px; height: 16px; vertical-align: middle; padding-bottom: 2px;"> Kikuubo Suppliers. All Rights Reserved.</p>
+      </div>
+    </footer>
+
+    <script>
+      const texts = [
+        "Quality Products",
+        "Affordable Prices",
+        "Daily Essentials",
+      ];
+
+      const heroText = document.getElementById("hero-text");
+      const dots = document.querySelectorAll(".dot");
+
+      let current = 0;
+      let interval;
+
+      function showText(index) {
+        heroText.style.opacity = 0;
+        heroText.style.transform = "translateY(10px)";
+
+        setTimeout(() => {
+          heroText.textContent = texts[index];
+          heroText.style.opacity = 1;
+          heroText.style.transform = "translateY(0)";
+        }, 300);
+
+        dots.forEach((dot) => dot.classList.remove("active"));
+        dots[index].classList.add("active");
+
+        current = index;
+      }
+
+      function startAutoPlay() {
+        interval = setInterval(() => {
+          const next = (current + 1) % texts.length;
+          showText(next);
+        }, 3000);
+      }
+
+      function stopAutoPlay() {
+        clearInterval(interval);
+      }
+
+      dots.forEach((dot) => {
+        dot.addEventListener("click", () => {
+          stopAutoPlay();
+          showText(Number(dot.dataset.index));
+          startAutoPlay();
+        });
+      });
+
+      heroText.addEventListener("mouseenter", stopAutoPlay);
+      heroText.addEventListener("mouseleave", startAutoPlay);
+
+      startAutoPlay();
+    </script>
+
+    <!-- WhatsApp Chat Widget -->
+    <div class="whatsapp-chat-widget" id="whatsapp-chat-widget">
+      <div class="chat-header" id="chat-header">
+        <span><img src="image/icon.png" class="brand-icon" style="width: 20px; height: 20px; margin-right: 8px; vertical-align: middle;"> Kikuubo Suppliers</span>
+        <button class="close-chat" id="close-chat">&times;</button>
+      </div>
+      <div class="chat-body" id="chat-body">
+        <div class="welcome-message">
+          <p>Hello! 👋</p>
+          <p>Welcome to Kikuubo Suppliers. How can we help you today?</p>
+          <p class="business-hours">Business Hours: Mon-Sat, 8:00am - 6:00pm</p>
+        </div>
+      </div>
+      <div class="chat-footer">
+        <a
+          href="#"
+          class="whatsapp-link"
+          id="start-whatsapp-chat"
+        >
+          <i class="fab fa-whatsapp"></i> Start Chat
+        </a>
+        <p class="whatsapp-fallback">
+    If chat doesn’t open, please use WhatsApp on your phone or
+    <a href="tel:+256756158466">call us</a>.
+  </p>
+      </div>
+    </div>
+
+    <!-- Floating WhatsApp Button -->
+    <button class="floating-whatsapp" id="floating-whatsapp">
+      <i class="fab fa-whatsapp"></i>
+    </button>
+
+    <script src="products_array.js"></script>
+    <script src="script.js"></script>
+    <script>
+      // Chat widget functionality
+      const floatingWhatsapp = document.getElementById("floating-whatsapp");
+      const chatWidget = document.getElementById("whatsapp-chat-widget");
+      const closeChat = document.getElementById("close-chat");
+      const chatHeader = document.getElementById("chat-header");
+
+      floatingWhatsapp.addEventListener("click", () => {
+        chatWidget.classList.toggle("active");
+        floatingWhatsapp.classList.toggle("hidden");
+      });
+
+      closeChat.addEventListener("click", () => {
+        chatWidget.classList.remove("active");
+        floatingWhatsapp.classList.remove("hidden");
+      });
+
+      // Drag functionality for chat widget
+      let isDragging = false;
+      let currentX;
+      let currentY;
+      let initialX;
+      let initialY;
+      let xOffset = 0;
+      let yOffset = 0;
+
+      chatHeader.addEventListener("mousedown", dragStart);
+      document.addEventListener("mouseup", dragEnd);
+      document.addEventListener("mousemove", drag);
+
+      function dragStart(e) {
+        initialX = e.clientX - xOffset;
+        initialY = e.clientY - yOffset;
+
+        if (e.target === chatHeader || chatHeader.contains(e.target)) {
+          isDragging = true;
+        }
+      }
+
+      function dragEnd(e) {
+        initialX = currentX;
+        initialY = currentY;
+        isDragging = false;
+      }
+
+      function drag(e) {
+        if (isDragging) {
+          e.preventDefault();
+          currentX = e.clientX - initialX;
+          currentY = e.clientY - initialY;
+
+          xOffset = currentX;
+          yOffset = currentY;
+
+          chatWidget.style.transform = `translate3d(${currentX}px, ${currentY}px, 0)`;
+        }
+      }
+
+      // Reset position on page load
+      chatWidget.style.transform = "translate3d(0, 0, 0)";
+
+      document.getElementById("start-whatsapp-chat").addEventListener("click", function (e) {
+    e.preventDefault();
+
+    const phone = "256756158466";
+    const message = "Hello, I am contacting you from Kikuubo Suppliers website.";
+    const encodedMessage = encodeURIComponent(message);
+
+    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+    const mobileLink = `https://wa.me/${phone}?text=${encodedMessage}`;
+    const desktopLink = `https://web.whatsapp.com/send?phone=${phone}&text=${encodedMessage}`;
+
+    window.open(isMobile ? mobileLink : desktopLink, "_blank");
+  });
+    </script>
+
+    <script src="cart.js"></script>
+    <!-- Command Palette Overlay -->
+    <div id="command-palette">
+      <div class="palette-card">
+        <div class="palette-search">
+          <i class="fas fa-search"></i>
+          <input
+            type="text"
+            id="palette-input"
+            placeholder="Type to search products..."
+            autocomplete="off"
+          />
+        </div>
+        <div class="palette-results" id="palette-results">
+          <!-- Results will be injected here -->
+        </div>
+        <div class="palette-footer">
+          <span><kbd>Enter</kbd> to select</span>
+          <span><kbd>↑↓</kbd> to navigate</span>
+          <span><kbd>Esc</kbd> to close</span>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

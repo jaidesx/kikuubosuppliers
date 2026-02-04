@@ -1,0 +1,517 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="image/icon.png" type="image/x-icon" />
+    <title>Cart | Kikuubo Suppliers</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="modern-header.css" />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    />
+    <style>
+      #checkout-section {
+        display: none;
+        padding: 40px 80px;
+        background: #f0f4f7;
+        margin-top: 20px;
+        border-radius: 15px;
+        animation: fadeIn 0.5s ease;
+      }
+
+      .checkout-container {
+        display: flex;
+        justify-content: space-between;
+        gap: 40px;
+        flex-wrap: wrap;
+      }
+
+      .checkout-form {
+        flex: 1;
+        min-width: 300px;
+        background: #fff;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      }
+
+      .checkout-form h3 {
+        margin-bottom: 20px;
+        color: #088178;
+      }
+
+      .checkout-form input,
+      .checkout-form textarea {
+        width: 100%;
+        padding: 12px 15px;
+        margin-bottom: 15px;
+        border: 1px solid #e1e1e1;
+        border-radius: 8px;
+        font-size: 14px;
+      }
+
+      .payment-methods {
+        flex: 1;
+        min-width: 300px;
+        background: #fff;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      }
+
+      .payment-methods h3 {
+        margin-bottom: 20px;
+        color: #088178;
+      }
+
+      .payment-options {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+        margin-bottom: 20px;
+      }
+
+      .payment-option {
+        border: 2px solid #f0f0f0;
+        border-radius: 10px;
+        padding: 15px;
+        text-align: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .payment-option img {
+        width: 60px;
+        height: 60px;
+        object-fit: contain;
+        margin-bottom: 10px;
+      }
+
+      .payment-option p {
+        font-weight: 600;
+        margin: 0;
+        font-size: 14px;
+        color: #222;
+      }
+
+      .payment-option.active {
+        border-color: #088178;
+        background: rgba(8, 129, 120, 0.05);
+      }
+
+      .order-summary {
+        margin-top: 20px;
+        padding-top: 20px;
+        border-top: 1px solid #eee;
+      }
+
+      .summary-row {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+      }
+
+      .summary-row.total {
+        font-weight: 700;
+        font-size: 18px;
+        color: #088178;
+        margin-top: 10px;
+      }
+
+      #confirm-checkout-btn {
+        width: 100%;
+        margin-top: 20px;
+      }
+
+      .processing-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.8);
+        z-index: 10000;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        flex-direction: column;
+      }
+
+      .loader {
+        border: 5px solid #f3f3f3;
+        border-top: 5px solid #088178;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        animation: spin 2s linear infinite;
+        margin-bottom: 20px;
+      }
+
+      @media (max-width: 799px) {
+        #checkout-section {
+          padding: 20px;
+        }
+        .checkout-container {
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <section id="header">
+      <a href="#">
+        <img src="image/logo.png" class="logo" alt="" />
+      </a>
+
+      <div>
+        <ul id="navbar">
+          <li>
+            <a href="index.html">HOME</a>
+          </li>
+          <li>
+            <a href="shop.html">SHOP</a>
+          </li>
+          <li>
+            <a href="product.html">PRODUCTS</a>
+          </li>
+          <li>
+            <a href="about.html">ABOUT</a>
+          </li>
+          <li>
+            <a href="contact.html">CONTACT</a>
+          </li>
+          <li id="lg-bag">
+            <a class="active" href="cart.html">
+              <i class="far fa-shopping-cart cart"></i>
+            </a>
+          </li>
+          <a href="#" id="close"
+            ><i class="far fa-times"></i><span class="cart-count">0</span></a
+          >
+        </ul>
+      </div>
+      <div id="mobile">
+        <a href="cart.html">
+          <i class="far fa-shopping-cart cart"> </i>
+        </a>
+        <i id="bar" class="fas fa-outdent"> </i>
+      </div>
+    </section>
+
+    <section id="page-header" class="about-header">
+      <h2>#Let's_talk</h2>
+
+      <p>LEAVE A MESSAGE. We love to hear from you!</p>
+    </section>
+
+    <section id="cart" class="section-p1">
+      <div
+        id="empty-cart-msg"
+        style="display: none; text-align: center; padding: 50px"
+      >
+        <i
+          class="fas fa-shopping-cart"
+          style="font-size: 60px; color: #ccc"
+        > </i>
+        <h3 style="color: #088178">Your cart is empty</h3>
+        <p style="color: #888">Add items to see them here.</p>
+        <a href="product.html" class="normal" style="display: inline-block; margin-top: 20px; text-decoration: none;">Continue Shopping</a>
+      </div>
+
+      <table width="100%" id="cart-table" style="display: none">
+        <thead>
+          <tr>
+            <td>Remove</td>
+            <td>Image</td>
+            <td>Product</td>
+            <td>Price</td>
+            <td>Quantity</td>
+            <td>Subtotal</td>
+          </tr>
+        </thead>
+        <tbody id="cart-items"></tbody>
+      </table>
+    </section>
+
+    <section id="cart-add" class="section-p1">
+      <div id="coupon">
+        <h3>Apply Coupon</h3>
+        <div>
+          <input type="text" placeholder="Enter Your Coupon" />
+          <button class="normal">Apply</button>
+        </div>
+      </div>
+
+      <div id="subtotal">
+        <h3>Cart Totals</h3>
+        <table>
+          <tr>
+            <td>Cart Subtotal</td>
+            <td id="cart-subtotal">UGX 0.00</td>
+          </tr>
+          <tr>
+            <td>Shipping</td>
+            <td>Free</td>
+          </tr>
+          <tr>
+            <td><strong>Total</strong></td>
+            <td id="cart-total">UGX 0.00</td>
+          </tr>
+        </table>
+        <button class="normal" onclick="showCheckout()">Proceed to Checkout</button>
+      </div>
+    </section>
+
+    <!-- Checkout Section -->
+    <section id="checkout-section" class="section-p1">
+      <div class="checkout-container">
+        <div class="checkout-form">
+          <h3>Delivery Details</h3>
+          <input type="text" id="cust-name" placeholder="Full Name" required />
+          <input type="text" id="cust-phone" placeholder="Phone Number (WhatsApp Preferred)" required />
+          <input type="text" id="cust-location" placeholder="Delivery Location (e.g. Kampala, Najera)" required />
+          <textarea id="cust-notes" placeholder="Additional Notes (Optional)" rows="4"></textarea>
+        </div>
+
+        <div class="payment-methods">
+          <h3>Payment Method</h3>
+          <div class="payment-options">
+            <div class="payment-option active" onclick="selectPayment('mtn', this)">
+              <img src="image/Products/Mtn.webp" alt="MTN MoMo" />
+              <p>MTN MoMo</p>
+            </div>
+            <div class="payment-option" onclick="selectPayment('airtel', this)">
+              <img src="image/Products/airtel.webp" alt="Airtel Money" />
+              <p>Airtel Money</p>
+            </div>
+          </div>
+
+          <div class="order-summary">
+            <div class="summary-row">
+              <span>Items Total</span>
+              <span id="summary-subtotal">UGX 0.00</span>
+            </div>
+            <div class="summary-row">
+              <span>Delivery</span>
+              <span id="summary-delivery">Calculated on WhatsApp</span>
+            </div>
+            <div class="summary-row total">
+              <span>Payable Amount</span>
+              <span id="summary-total">UGX 0.00</span>
+            </div>
+          </div>
+
+          <button class="normal" id="confirm-checkout-btn" onclick="submitOrder()">Confirm & Pay via Mobile Money</button>
+          <button class="normal" style="background: transparent; color: #888; border: 1px solid #ddd; margin-top: 10px;" onclick="hideCheckout()">Back to Cart</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Processing Overlay -->
+    <div class="processing-overlay" id="processing-overlay">
+      <div class="loader"></div>
+      <h3>Processing Your Order...</h3>
+      <p>Initiating Mobile Money payment request</p>
+    </div>
+
+    <footer class="section-p1">
+      <div class="col">
+        <img class="logo" src="image/logo.png" alt="" />
+        <h4>Contact</h4>
+        <div>
+          <li>
+            <i class="fal fa-map"> </i>
+            <p>Kikuubo, Kampala, Uganda</p>
+          </li>
+          <li>
+            <i class="fal fa-envelope"> </i>
+            <p>wholesalesuppliers63@gmail.com</p>
+          </li>
+          <li>
+            <i class="fal fa-phone-alt"> </i>
+            <p>+256 756 158 466</p>
+          </li>
+          <li>
+            <i class="fal fa-clock"> </i>
+            <p>Monday to Saturday: 8:00am to 18:00pm</p>
+          </li>
+        </div>
+        <div class="follow">
+          <h4>Follow us</h4>
+          <div class="social-icons">
+            <a
+              href="https://www.facebook.com/Kikkuubo.Online.Business.Enterprise/"
+              class="social-btn facebook"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+            >
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a
+              href="https://twitter.com"
+              class="social-btn twitter"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Twitter"
+            >
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a
+              href="https://www.instagram.com/kikuubo.supplier.onlinedeli?igsh=MWM4cHgxN3AwM2JsMw==/"
+              class="social-btn instagram"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+            >
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a
+              href="https://youtube.com"
+              class="social-btn youtube"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="YouTube"
+            >
+              <i class="fab fa-youtube"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <h4>About</h4>
+        <a href="#">About us</a>
+        <a href="#">Delivery Information</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms & conditions</a>
+        <a href="#">Contact us</a>
+      </div>
+      <div class="col">
+        <h4>My Account</h4>
+        <a href="#">Account</a>
+        <a href="#">Sign In</a>
+        <a href="#">View Cart</a>
+        <a href="#">My Wishlist</a>
+        <a href="#">Track My order</a>
+        <a href="#">Help</a>
+      </div>
+      <div class="col install">
+        <h4>Install App</h4>
+        <p>From App Store or Google Play</p>
+        <div class="row">
+          <img src="image/pay/app.jpg" alt="" />
+          <img src="image/pay/play.jpg" alt="" />
+        </div>
+        <p>Secure Payment Gateways</p>
+        <img src="image/pay/pay.png" alt="" /><div style="display: flex; gap: 10px; margin-top: 10px;"><img src="image/Products/Mtn.webp" alt="MTN MoMo" style="height: 30px; border-radius: 4px;" /><img src="image/Products/airtel.webp" alt="Airtel Money" style="height: 30px; border-radius: 4px;" /></div>
+      </div>
+
+      <div class="copyright">
+        <p>Copyright © 2025 <img src="image/icon.png" style="width: 16px; height: 16px; vertical-align: middle; padding-bottom: 2px;"> Kikuubo Suppliers. All Rights Reserved.</p>
+      </div>
+    </footer>
+    <script src="cart.js"></script>
+    <script src="script.js"></script>
+    <script>
+      // The 'cart' variable and basic functions are already defined in cart.js
+
+      // Override cart.js updateCartDisplay to call our local updates if needed
+      const originalUpdateDisplay = window.updateCartDisplay;
+      window.updateCartDisplay = function() {
+        if(typeof originalUpdateDisplay === 'function') originalUpdateDisplay();
+        updateCheckoutSummary();
+      };
+
+      function updateCheckoutSummary() {
+        const subtotal = getCartTotal();
+        const summarySubtotal = document.getElementById("summary-subtotal");
+        const summaryTotal = document.getElementById("summary-total");
+
+        if (summarySubtotal) summarySubtotal.textContent = "UGX " + subtotal.toFixed(2);
+        if (summaryTotal) summaryTotal.textContent = "UGX " + subtotal.toFixed(2);
+      }
+
+      let selectedPaymentMethod = 'mtn';
+
+      function showCheckout() {
+        if (cart.length === 0) {
+          alert("Your cart is empty!");
+          return;
+        }
+        document.getElementById("checkout-section").style.display = "block";
+        document.getElementById("cart").style.display = "none";
+        document.getElementById("cart-add").style.display = "none";
+
+        updateCheckoutSummary();
+
+        // Scroll to checkout
+        window.scrollTo({ top: document.getElementById("checkout-section").offsetTop - 100, behavior: 'smooth' });
+      }
+
+      function hideCheckout() {
+        document.getElementById("checkout-section").style.display = "none";
+        document.getElementById("cart").style.display = "block";
+        document.getElementById("cart-add").style.display = "flex";
+      }
+
+      function selectPayment(method, element) {
+        selectedPaymentMethod = method;
+        document.querySelectorAll('.payment-option').forEach(opt => opt.classList.remove('active'));
+        element.classList.add('active');
+
+        const btn = document.getElementById("confirm-checkout-btn");
+        if(method === 'mtn') {
+           btn.innerHTML = "Confirm & Pay via MTN MoMo";
+        } else {
+           btn.innerHTML = "Confirm & Pay via Airtel Money";
+        }
+      }
+
+      function submitOrder() {
+        const name = document.getElementById("cust-name").value;
+        const phone = document.getElementById("cust-phone").value;
+        const location = document.getElementById("cust-location").value;
+        const notes = document.getElementById("cust-notes").value;
+
+        if (!name || !phone || !location) {
+          alert("Please fill in all delivery details.");
+          return;
+        }
+
+        // Show processing
+        const overlay = document.getElementById("processing-overlay");
+        overlay.style.display = "flex";
+
+        setTimeout(() => {
+          overlay.style.display = "none";
+
+          // Generate WhatsApp Message
+          const shopPhone = "256756158466";
+          let orderDetails = cart.map(item => `- ${item.name} (${item.quantity}x) - UGX ${(item.price * item.quantity).toFixed(2)}`).join("%0A");
+          const total = getCartTotal().toFixed(2);
+
+          const message = `*NEW ORDER FROM KIKUUBO SUPPLIERS*%0A%0A` +
+                          `*Customer:* ${name}%0A` +
+                          `*Phone:* ${phone}%0A` +
+                          `*Location:* ${location}%0A` +
+                          `*Payment:* ${selectedPaymentMethod.toUpperCase()}%0A%0A` +
+                          `*Order Items:*%0A${orderDetails}%0A%0A` +
+                          `*Total Amount: UGX ${total}*%0A%0A` +
+                          `*Notes:* ${notes || 'None'}`;
+
+          const whatsappUrl = `https://wa.me/${shopPhone}?text=${message}`;
+
+          // Clear cart
+          window.clearCart();
+
+          // Redirect to WhatsApp
+          window.location.href = whatsappUrl;
+        }, 2000);
+      }
+    </script>
+  </body>
+</html>

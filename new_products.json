@@ -1,0 +1,518 @@
+[
+  {
+    "id": 367,
+    "name": "Packet",
+    "brand": "Kick Snack",
+    "price": 11500,
+    "category": "Biscuits, Chocolate, Lollipops & Snacks",
+    "image": "image/Products/f386.jpg",
+    "images": [
+      "f386"
+    ],
+    "description": "Kick Snack Packet - Quality product from Kikuubo Suppliers."
+  },
+  {
+    "id": 368,
+    "name": "Beef Packet",
+    "brand": "Sunshine Snack",
+    "price": 8500,
+    "category": "Biscuits, Chocolate, Lollipops & Snacks",
+    "image": "image/Products/f387.jpg",
+    "images": [
+      "f387"
+    ],
+    "description": "Sunshine Snack Beef Packet - Quality product from Kikuubo Suppliers."
+  },
+  {
+    "id": 369,
+    "name": "Tomato Packet",
+    "brand": "Sunshine Snack",
+    "price": 8500,
+    "category": "Biscuits, Chocolate, Lollipops & Snacks",
+    "image": "image/Products/f388.jpg",
+    "images": [
+      "f388"
+    ],
+    "description": "Sunshine Snack Tomato Packet - Quality product from Kikuubo Suppliers."
+  },
+  {
+    "id": 370,
+    "name": "Chicken Packet",
+    "brand": "Gorillos Snack",
+    "price": 19500,
+    "category": "Biscuits, Chocolate, Lollipops & Snacks",
+    "image": "image/Products/f389.jpg",
+    "images": [
+      "f389"
+    ],
+    "description": "Gorillos Snack Chicken Packet - Quality product from Kikuubo Suppliers."
+  },
+  {
+    "id": 371,
+    "name": "Beef Packet",
+    "brand": "Gorillos Snack",
+    "price": 19500,
+    "category": "Biscuits, Chocolate, Lollipops & Snacks",
+    "image": "image/Products/f390.jpg",
+    "images": [
+      "f390"
+    ],
+    "description": "Gorillos Snack Beef Packet - Quality product from Kikuubo Suppliers."
+  },
+  {
+    "id": 372,
+    "name": "Digestive",
+    "brand": "Sunveat Biscuits",
+    "price": 15000,
+    "category": "Biscuits, Chocolate, Lollipops & Snacks",
+    "image": "image/Products/f391.jpg",
+    "images": [
+      "f391"
+    ],
+    "description": "Sunveat Biscuits Digestive - Quality product from Kikuubo Suppliers."
+  },
+  {
+    "id": 373,
+    "name": "Assorted",
+    "brand": "Sunveat Biscuits",
+    "price": 15000,
+    "category": "Biscuits, Chocolate, Lollipops & Snacks",
+    "image": "image/Products/f392.jpg",
+    "images": [
+      "f392"
+    ],
+    "description": "Sunveat Biscuits Assorted - Quality product from Kikuubo Suppliers."
+  },
+  {
+    "id": 374,
+    "name": "Baby 2.5ltr",
+    "brand": "SoSoft",
+    "price": 25000,
+    "category": "Cleaning & Household",
+    "image": "image/Products/f393.jpg",
+    "images": [
+      "f393"
+    ],
+    "description": "SoSoft Baby 2.5ltr - Quality product from Kikuubo Suppliers."
+  },
+  {
+    "id": 375,
+    "name": "Fresh 2.5ltr",
+    "brand": "SoSoft",
+    "price": 25000,
+    "category": "Cleaning & Household",
+    "image": "image/Products/f394.jpg",
+    "images": [
+      "f394"
+    ],
+    "description": "SoSoft Fresh 2.5ltr - Quality product from Kikuubo Suppliers."
+  },
+  {
+    "id": 376,
+    "name": "Luxury 2.5ltr",
+    "brand": "SoSoft",
+    "price": 25000,
+    "category": "Cleaning & Household",
+    "image": "image/Products/f395.jpg",
+    "images": [
+      "f395"
+    ],
+    "description": "SoSoft Luxury 2.5ltr - Quality product from Kikuubo Suppliers."
+  },
+  {
+    "id": 377,
+    "name": "Luxury 45",
+    "brand": "Downy",
+    "price": 20000,
+    "category": "Cleaning & Household",
+    "image": "image/Products/f396.jpg",
+    "images": [
+      "f396"
+    ],
+    "description": "Downy Luxury 45 - Quality product from Kikuubo Suppliers."
+  },
+  {
+    "id": 378,
+    "name": "Fresh 45",
+    "brand": "Downy",
+    "price": 20000,
+    "category": "Cleaning & Household",
+    "image": "image/Products/f397.jpg",
+    "images": [
+      "f397"
+    ],
+    "description": "Downy Fresh 45 - Quality product from Kikuubo Suppliers."
+  },
+  {
+    "id": 379,
+    "name": "Luxury 750ml",
+    "brand": "SoSoft",
+    "price": 9000,
+    "category": "Cleaning & Household",
+    "image": "image/Products/f398.jpg",
+    "images": [
+      "f398"
+    ],
+    "description": "SoSoft Luxury 750ml - Quality product from Kikuubo Suppliers."
+  },
+  {
+    "id": 380,
+    "name": "Tender 750ml",
+    "brand": "SoSoft",
+    "price": 9000,
+    "category": "Cleaning & Household",
+    "image": "image/Products/f399.jpg",
+    "images": [
+      "f399"
+    ],
+    "description": "SoSoft Tender 750ml - Quality product from Kikuubo Suppliers."
+  },
+  {
+    "id": 381,
+    "name": "Pure care 750ml",
+    "brand": "SoSoft",
+    "price": 9000,
+    "category": "Cleaning & Household",
+    "image": "image/Products/f400.jpg",
+    "images": [
+      "f400"
+    ],
+    "description": "SoSoft Pure care 750ml - Quality product from Kikuubo Suppliers."
+  },
+  {
+    "id": 382,
+    "name": "Vanilla Essence 750ml",
+    "brand": "SoSoft",
+    "price": 9000,
+    "category": "Cleaning & Household",
+    "image": "image/Products/f401.jpg",
+    "images": [
+      "f401"
+    ],
+    "description": "SoSoft Vanilla Essence 750ml - Quality product from Kikuubo Suppliers."
+  },
+  {
+    "id": 383,
+    "name": "Luxury New 750ml",
+    "brand": "SoSoft",
+    "price": 9000,
+    "category": "Cleaning & Household",
+    "image": "image/Products/f402.jpg",
+    "images": [
+      "f402"
+    ],
+    "description": "SoSoft Luxury New 750ml - Quality product from Kikuubo Suppliers."
+  },
+  {
+    "id": 384,
+    "name": "Set",
+    "brand": "Picfare",
+    "price": 3000,
+    "category": "Stationery",
+    "image": "image/Products/f403.jpg",
+    "images": [
+      "f403"
+    ],
+    "description": "Picfare Set - Quality product from Kikuubo Suppliers."
+  },
+  {
+    "id": 385,
+    "name": "Ballpoint Pens",
+    "brand": "Nataraj",
+    "price": 22000,
+    "category": "Stationery",
+    "image": "image/Products/f404.jpg",
+    "images": [
+      "f404"
+    ],
+    "description": "Nataraj Ballpoint Pens - Quality product from Kikuubo Suppliers."
+  },
+  {
+    "id": 386,
+    "name": "Duplicating Paper",
+    "brand": "Rwenzori",
+    "price": 16000,
+    "category": "Stationery",
+    "image": "image/Products/f405.jpg",
+    "images": [
+      "f405"
+    ],
+    "description": "Rwenzori Duplicating Paper - Quality product from Kikuubo Suppliers."
+  },
+  {
+    "id": 387,
+    "name": "Duplicating Paper",
+    "brand": "Dolphin",
+    "price": 18000,
+    "category": "Stationery",
+    "image": "image/Products/f406.jpg",
+    "images": [
+      "f406"
+    ],
+    "description": "Dolphin Duplicating Paper - Quality product from Kikuubo Suppliers."
+  },
+  {
+    "id": 388,
+    "name": "Duplicating Paper",
+    "brand": "Rotatrim",
+    "price": 18000,
+    "category": "Stationery",
+    "image": "image/Products/f407.jpg",
+    "images": [
+      "f407"
+    ],
+    "description": "Rotatrim Duplicating Paper - Quality product from Kikuubo Suppliers."
+  },
+  {
+    "id": 389,
+    "name": "Pen",
+    "brand": "Bic",
+    "price": 21000,
+    "category": "Stationery",
+    "image": "image/Products/f408.jpg",
+    "images": [
+      "f408"
+    ],
+    "description": "Bic Pen - Quality product from Kikuubo Suppliers."
+  },
+  {
+    "id": 390,
+    "name": "Exercise Books 96pgs",
+    "brand": "Picfare",
+    "price": 9000,
+    "category": "Stationery",
+    "image": "image/Products/f409.jpg",
+    "images": [
+      "f409"
+    ],
+    "description": "Picfare Exercise Books 96pgs - Quality product from Kikuubo Suppliers."
+  },
+  {
+    "id": 391,
+    "name": "Box Files",
+    "brand": "Alba",
+    "price": 6000,
+    "category": "Stationery",
+    "image": "image/Products/f410.jpg",
+    "images": [
+      "f410"
+    ],
+    "description": "Alba Box Files - Quality product from Kikuubo Suppliers."
+  },
+  {
+    "id": 392,
+    "name": "Set",
+    "brand": "Dom",
+    "price": 12000,
+    "category": "Stationery",
+    "image": "image/Products/f411.jpg",
+    "images": [
+      "f411"
+    ],
+    "description": "Dom Set - Quality product from Kikuubo Suppliers."
+  },
+  {
+    "id": 393,
+    "name": "Pencils",
+    "brand": "Nataraj",
+    "price": 5000,
+    "category": "Stationery",
+    "image": "image/Products/f412.jpg",
+    "images": [
+      "f412"
+    ],
+    "description": "Nataraj Pencils - Quality product from Kikuubo Suppliers."
+  },
+  {
+    "id": 394,
+    "name": "A4 200pgs",
+    "brand": "Champion",
+    "price": 32000,
+    "category": "Stationery",
+    "image": "image/Products/f413.jpg",
+    "images": [
+      "f413"
+    ],
+    "description": "Champion A4 200pgs - Quality product from Kikuubo Suppliers."
+  },
+  {
+    "id": 395,
+    "name": "2Q",
+    "brand": "Maniscript",
+    "price": 10000,
+    "category": "Stationery",
+    "image": "image/Products/f414.jpg",
+    "images": [
+      "f414"
+    ],
+    "description": "Maniscript 2Q - Quality product from Kikuubo Suppliers."
+  },
+  {
+    "id": 396,
+    "name": "Broom",
+    "brand": "Soft",
+    "price": 6000,
+    "category": "Cleaning & Household",
+    "image": "image/Products/f415.jpg",
+    "images": [
+      "f415"
+    ],
+    "description": "Soft Broom - Quality product from Kikuubo Suppliers."
+  },
+  {
+    "id": 397,
+    "name": "Brush",
+    "brand": "Toilet",
+    "price": 5500,
+    "category": "Cleaning & Household",
+    "image": "image/Products/f416.jpg",
+    "images": [
+      "f416"
+    ],
+    "description": "Toilet Brush - Quality product from Kikuubo Suppliers."
+  },
+  {
+    "id": 398,
+    "name": "Cobweb Brush",
+    "brand": "Room",
+    "price": 6000,
+    "category": "Cleaning & Household",
+    "image": "image/Products/f417.jpg",
+    "images": [
+      "f417"
+    ],
+    "description": "Room Cobweb Brush - Quality product from Kikuubo Suppliers."
+  },
+  {
+    "id": 399,
+    "name": "Rakes Big",
+    "brand": "Plastic",
+    "price": 12000,
+    "category": "Cleaning & Household",
+    "image": "image/Products/f418.jpg",
+    "images": [
+      "f418"
+    ],
+    "description": "Plastic Rakes Big - Quality product from Kikuubo Suppliers."
+  },
+  {
+    "id": 400,
+    "name": "Moppers Big",
+    "brand": "Plastic",
+    "price": 12500,
+    "category": "Cleaning & Household",
+    "image": "image/Products/f419.jpg",
+    "images": [
+      "f419"
+    ],
+    "description": "Plastic Moppers Big - Quality product from Kikuubo Suppliers."
+  },
+  {
+    "id": 401,
+    "name": "Hand Broom short",
+    "brand": "Plastic",
+    "price": 5000,
+    "category": "Cleaning & Household",
+    "image": "image/Products/f420.jpg",
+    "images": [
+      "f420"
+    ],
+    "description": "Plastic Hand Broom short - Quality product from Kikuubo Suppliers."
+  },
+  {
+    "id": 402,
+    "name": "Hand Broom 2in1",
+    "brand": "Plastic",
+    "price": 13500,
+    "category": "Cleaning & Household",
+    "image": "image/Products/f421.jpg",
+    "images": [
+      "f421"
+    ],
+    "description": "Plastic Hand Broom 2in1 - Quality product from Kikuubo Suppliers."
+  },
+  {
+    "id": 403,
+    "name": "Bushera",
+    "brand": "Numa",
+    "price": 8500,
+    "category": "Cereals & Grains",
+    "image": "image/Products/f422.jpg",
+    "images": [
+      "f422"
+    ],
+    "description": "Numa Bushera - Quality product from Kikuubo Suppliers."
+  },
+  {
+    "id": 404,
+    "name": "Rice 5kg",
+    "brand": "Red Cock",
+    "price": 55000,
+    "category": "Cereals & Grains",
+    "image": "image/Products/f423.jpg",
+    "images": [
+      "f423"
+    ],
+    "description": "Red Cock Rice 5kg - Quality product from Kikuubo Suppliers."
+  },
+  {
+    "id": 405,
+    "name": "Strawberry Juice",
+    "brand": "Sun-Sip",
+    "price": 20000,
+    "category": "Beverages",
+    "image": "image/Products/f424.jpg",
+    "images": [
+      "f424"
+    ],
+    "description": "Sun-Sip Strawberry Juice - Quality product from Kikuubo Suppliers."
+  },
+  {
+    "id": 406,
+    "name": "Coconut Juice",
+    "brand": "Sun-Sip",
+    "price": 20000,
+    "category": "Beverages",
+    "image": "image/Products/f425.jpg",
+    "images": [
+      "f425"
+    ],
+    "description": "Sun-Sip Coconut Juice - Quality product from Kikuubo Suppliers."
+  },
+  {
+    "id": 407,
+    "name": "Apple Juice",
+    "brand": "Sun-Sip",
+    "price": 20000,
+    "category": "Beverages",
+    "image": "image/Products/f426.jpg",
+    "images": [
+      "f426"
+    ],
+    "description": "Sun-Sip Apple Juice - Quality product from Kikuubo Suppliers."
+  },
+  {
+    "id": 408,
+    "name": "Oaribix 500g",
+    "brand": "Weetabix",
+    "price": 12000,
+    "category": "Cereals & Grains",
+    "image": "image/Products/f427.jpg",
+    "images": [
+      "f427"
+    ],
+    "description": "Weetabix Oaribix 500g - Quality product from Kikuubo Suppliers."
+  },
+  {
+    "id": 409,
+    "name": "Oaribix 1kg",
+    "brand": "Weetabix",
+    "price": 20000,
+    "category": "Cereals & Grains",
+    "image": "image/Products/f428.jpg",
+    "images": [
+      "f428"
+    ],
+    "description": "Weetabix Oaribix 1kg - Quality product from Kikuubo Suppliers."
+  }
+]
