@@ -427,4 +427,5 @@ const products = [
   {"id": 426, "name": "500g", "brand": "Family Tea", "price": 12000, "category": "Breakfast & Dairy", "image": "image/Products/f445.jpg", "images": ["f445"], "description": "Family Tea 500g - Quality product from Kikuubo Suppliers."},
   {"id": 427, "name": "250g", "brand": "Family Tea", "price": 7000, "category": "Breakfast & Dairy", "image": "image/Products/f446.jpg", "images": ["f446"], "description": "Family Tea 250g - Quality product from Kikuubo Suppliers."},
   {"id": 428, "name": "Bags", "brand": "Mukwano Tea", "price": 4500, "category": "Breakfast & Dairy", "image": "image/Products/f447.jpg", "images": ["f447"], "description": "Mukwano Tea Bags - Quality product from Kikuubo Suppliers."},
+  {"id": 429, "name": "Ketchup", "brand": "American Garden", "price": 35000, "category": "Cooking Essentials", "image": "image/Products/f9.jpg", "images": ["f9"], "description": "American Garden Ketchup - Quality product from Kikuubo Suppliers."},
 ];
