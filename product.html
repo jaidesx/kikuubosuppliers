@@ -11,6 +11,61 @@
       rel="stylesheet"
       href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
     />
+  <style>
+    /* ===== Back-to-Top Button ===== */
+    #back-to-top {
+      position: fixed;
+      bottom: 36px;
+      right: 36px;
+      z-index: 9999;
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #088178 0%, #05a591 100%);
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      box-shadow: 0 6px 20px rgba(8, 129, 120, 0.45);
+      opacity: 0;
+      transform: translateY(20px);
+      pointer-events: none;
+      transition: opacity 0.35s ease, transform 0.35s ease, background 0.2s ease, box-shadow 0.2s ease;
+    }
+    #back-to-top.visible {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+    #back-to-top:hover {
+      background: linear-gradient(135deg, #05a591 0%, #088178 100%);
+      box-shadow: 0 8px 28px rgba(8, 129, 120, 0.6);
+      transform: translateY(-3px);
+    }
+    #back-to-top:active {
+      transform: translateY(0);
+    }
+    /* pulse ring */
+    #back-to-top::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      border: 2px solid rgba(8, 129, 120, 0.5);
+      animation: btt-pulse 2s ease-out infinite;
+      opacity: 0;
+    }
+    @keyframes btt-pulse {
+      0%   { transform: scale(1);   opacity: 0.7; }
+      100% { transform: scale(1.7); opacity: 0; }
+    }
+    @media (max-width: 600px) {
+      #back-to-top { bottom: 20px; right: 20px; width: 44px; height: 44px; font-size: 17px; }
+    }
+  </style>
   </head>
   <body>
     <section id="header">
@@ -7594,6 +7649,231 @@
           </div>
           <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
         </div>
+        <div class="pro" data-category="Cleaning & Household" onclick="viewProduct(459)">
+          <img src="image/Products/f479.jpg" alt="Tea" />
+          <div class="des">
+            <span>Drum <span>
+            <h5>  1crtn(12pcs) </h5>
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <h4>UGX 220,000 </h4>
+          </div>
+          <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+        </div>
+        <div class="pro" data-category="Cleaning & Household" onclick="viewProduct(460)">
+          <img src="image/Products/f480.jpg" alt="Tea" />
+          <div class="des">
+            <span>Air GEO Basket <span>
+            <h5>  1pc </h5>
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <h4>UGX 12,000 </h4>
+          </div>
+          <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+        </div>
+        <div class="pro" data-category="Cleaning & Household" onclick="viewProduct(461)">
+          <img src="image/Products/f481.jpg" alt="Tea" />
+          <div class="des">
+            <span>Groove Mug <span>
+            <h5>  1Crtn(5Dozens) </h5>
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <h4>UGX 85,000 </h4>
+          </div>
+          <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+        </div>
+         <div class="pro" data-category="Cleaning & Household" onclick="viewProduct(462)">
+          <img src="image/Products/f482.jpg" alt="Tea" />
+          <div class="des">
+            <span>Homeware Mug <span>
+            <h5>  1Crtn(5Dozens) </h5>
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <h4>UGX 85,000 </h4>
+          </div>
+          <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+        </div>
+        <div class="pro" data-category="Cleaning & Household" onclick="viewProduct(463)">
+          <img src="image/Products/f483.jpg" alt="Tea" />
+          <div class="des">
+            <span>Homeware Mug <span>
+            <h5>  1Crtn(5Dozens) </h5>
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <h4>UGX 85,000 </h4>
+          </div>
+          <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+        </div>
+        <div class="pro" data-category="Cleaning & Household" onclick="viewProduct(464)">
+          <img src="image/Products/f484.jpg" alt="Tea" />
+          <div class="des">
+            <span>Soap Dish <span>
+            <h5>  1Crtn(5Dozens) </h5>
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <h4>UGX 85,000 </h4>
+          </div>
+          <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+        </div>
+        <div class="pro" data-category="Cleaning & Household" onclick="viewProduct(465)">
+          <img src="image/Products/f485.jpg" alt="Tea" />
+          <div class="des">
+            <span>Stripe Bucket NO.5 <span>
+            <h5>  1Crtn(60pcs) </h5>
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <h4>UGX 165,000 </h4>
+          </div>
+          <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+        </div>
+        <div class="pro" data-category="Cleaning & Household" onclick="viewProduct(466)">
+          <img src="image/Products/f486.jpg" alt="Tea" />
+          <div class="des">
+            <span>Stripe Bucket NO.10 <span>
+            <h5>  1Crtn(40pcs) </h5>
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <h4>UGX 160,000 </h4>
+          </div>
+          <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+        </div>
+        <div class="pro" data-category="Cleaning & Household" onclick="viewProduct(467)">
+          <img src="image/Products/f487.jpg" alt="Tea" />
+          <div class="des">
+            <span>Basin <span>
+            <h5>  1pcs </h5>
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <h4>UGX 30,000 </h4>
+          </div>
+          <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+        </div>
+        <div class="pro" data-category="Cleaning & Household" onclick="viewProduct(468)">
+          <img src="image/Products/f488.jpg" alt="Tea" />
+          <div class="des">
+            <span>Tall Laundry Basket NO.2 <span>
+            <h5>  1pc </h5>
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <h4>UGX 12,000 </h4>
+          </div>
+          <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+        </div>
+        <div class="pro" data-category="Cleaning & Household" onclick="viewProduct(469)">
+          <img src="image/Products/f489.jpg" alt="Tea" />
+          <div class="des">
+            <span>Zen Mug <span>
+            <h5>  1Crtn(5Dozens) </h5>
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <h4>UGX 90,000 </h4>
+          </div>
+          <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+        </div>
+        <div class="pro" data-category="Cleaning & Household" onclick="viewProduct(470)">
+          <img src="image/Products/f490.jpg" alt="Tea" />
+          <div class="des">
+            <span>Basin NO.45 <span>
+            <h5>  1Crtn(72pcs) </h5>
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <h4>UGX 260,000 </h4>
+          </div>
+          <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+        </div>
+        <div class="pro" data-category="Cleaning & Household" onclick="viewProduct(471)">
+          <img src="image/Products/f491.jpg" alt="Tea" />
+          <div class="des">
+            <span>Funnel NO.4 <span>
+            <h5>  1Crtn(60pcs) </h5>
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <h4>UGX 250,000 </h4>
+          </div>
+          <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+        </div>
+        <div class="pro" data-category="Cleaning & Household" onclick="viewProduct(472)">
+          <img src="image/Products/f492.jpg" alt="Tea" />
+          <div class="des">
+            <span>Funnel NO.3 <span>
+            <h5>  1Crtn(60pcs) </h5>
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <h4>UGX 100,000 </h4>
+          </div>
+          <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+        </div>
+
       </div>
     </section>
 
@@ -7829,5 +8109,32 @@
         </div>
       </div>
     </div>
+  <!-- Back-to-Top Button -->
+  <button id="back-to-top" aria-label="Back to top" title="Back to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <script>
+    (function () {
+      const btn = document.getElementById('back-to-top');
+      const SHOW_THRESHOLD = 0.75; // show when 75% of page is scrolled
+
+      function onScroll() {
+        const scrolled = window.scrollY + window.innerHeight;
+        const total   = document.documentElement.scrollHeight;
+        if (scrolled / total >= SHOW_THRESHOLD) {
+          btn.classList.add('visible');
+        } else {
+          btn.classList.remove('visible');
+        }
+      }
+
+      window.addEventListener('scroll', onScroll, { passive: true });
+
+      btn.addEventListener('click', function () {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    })();
+  </script>
   </body>
 </html>
