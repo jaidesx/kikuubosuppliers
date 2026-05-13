@@ -1,5 +1,23 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap");
 
+/* Skip-to-content link */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 16px;
+  z-index: 9999;
+  padding: 10px 20px;
+  background: #088178;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 0 0 8px 8px;
+  text-decoration: none;
+  transition: top 0.2s;
+}
+.skip-link:focus {
+  top: 0;
+}
+
 /* Modern Typography System */
 :root {
   --font-primary:
@@ -1057,7 +1075,7 @@ button.white:hover {
   color: #088178;
 }
 #hero button {
-  background-image: url(image/button.png);
+  background-image: url(image/button.webp);
   background-color: transparent;
   border: 0;
   padding: 14px 80px 14px 65px;
@@ -1689,7 +1707,7 @@ button.white:hover {
 }
 
 #banner {
-  background-image: url(image/banner/b2.jpg);
+  background-image: url(image/banner/b2.webp);
   width: 100%;
   height: 40vh;
   background-size: cover;
@@ -1724,7 +1742,7 @@ button.white:hover {
   flex-wrap: wrap;
 }
 #sm-banner .banner-box {
-  background-image: url(image/banner/b17.jpg);
+  background-image: url(image/banner/b17.webp);
   min-width: 48%;
   height: 50vh;
   background-size: cover;
@@ -1737,7 +1755,7 @@ button.white:hover {
   padding: 30px;
 }
 #sm-banner .banner-box2 {
-  background-image: url(image/banner/b10.jpg);
+  background-image: url(image/banner/b10.webp);
 }
 #sm-banner h4 {
   color: #fff;
@@ -1761,7 +1779,7 @@ button.white:hover {
 }
 
 #banner3 .banner-box {
-  background-image: url(image/banner/b7.jpg);
+  background-image: url(image/banner/b7.webp);
   min-width: 32%;
   height: 30vh;
   background-size: cover;
@@ -1791,10 +1809,10 @@ button.white:hover {
   padding: 0 80px;
 }
 #banner3 .banner-box2 {
-  background-image: url(image/banner/b4.jpg);
+  background-image: url(image/banner/b4.webp);
 }
 #banner3 .banner-box3 {
-  background-image: url(image/banner/b18.jpg);
+  background-image: url(image/banner/b18.webp);
 }
 
 /* Bento Grid Layout */
@@ -1921,7 +1939,7 @@ button.white:hover {
   justify-content: space-between;
   flex-wrap: wrap;
   align-items: center;
-  background-image: url(image/banner/b14.png);
+  background-image: url(image/banner/b14.webp);
   background-repeat: no-repeat;
   background-position: 20% 30%;
   background-color: #041e42;
@@ -2205,7 +2223,7 @@ footer .copyright {
 
 /*----------------------------- Shop Page -------------------------------*/
 #page-header {
-  background-image: url(image/banner/b1.jpg);
+  background-image: url(image/banner/b1.webp);
   width: 100%;
   height: 40vh;
   background-size: cover;
@@ -2218,7 +2236,7 @@ footer .copyright {
 
 /*----------------------------- Shop Page -------------------------------*/
 #page-header1 {
-  background-image: url(image/banner/b16.jpg);
+  background-image: url(image/banner/b16.webp);
   width: 100%;
   height: 40vh;
   background-size: cover;
@@ -2313,7 +2331,7 @@ footer .copyright {
 
 /*--------------------------------------Blog Page----------------------------*/
 #page-header.blog-header {
-  background-image: url(image/banner/b19.jpg);
+  background-image: url(image/banner/b19.webp);
 }
 #blog {
   padding: 90px 150px 0 150px;
@@ -2374,7 +2392,7 @@ footer .copyright {
 
 /*------------------------About Us Page--------------------------*/
 #page-header.about-header {
-  background-image: url(image/about/banner.png);
+  background-image: url(image/about/banner.webp);
   position: relative;
   overflow: hidden;
 }

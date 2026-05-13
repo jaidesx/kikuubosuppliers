@@ -164,8 +164,12 @@ document.addEventListener("DOMContentLoaded", function() {
         price = parseFloat(priceText) || 0;
       }
 
+      const onclickAttr = productCard.getAttribute("onclick") || "";
+      const idMatch = onclickAttr.match(/viewProduct\((\d+)\)/);
+      const productId = idMatch ? parseInt(idMatch[1]) : Date.now();
+
       const product = {
-        id: Date.now(),
+        id: productId,
         name: nameEl ? nameEl.textContent : "Unknown Product",
         price: price,
         image: img ? img.src : "",

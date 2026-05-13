@@ -1,0 +1,20 @@
+{
+  "name": "Kikuubo Suppliers",
+  "short_name": "Kikuubo",
+  "description": "Quality groceries, household items and daily essentials at fair prices in Kampala, Uganda.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#088178",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "image/icon.png",
+      "sizes": "any",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["shopping", "food"],
+  "lang": "en"
+}

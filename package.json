@@ -1,0 +1,14 @@
+{
+  "name": "kikuubo-suppliers",
+  "version": "1.0.0",
+  "description": "Kikuubo Suppliers e-commerce website",
+  "scripts": {
+    "test": "jest --forceExit",
+    "test:watch": "jest --watch --forceExit",
+    "test:coverage": "jest --coverage --forceExit"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0"
+  }
+}

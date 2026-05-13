@@ -11,7 +11,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="image/icon.png" type="image/x-icon" />
+    <link rel="manifest" href="manifest.json" />
+    <meta name="description" content="View product details and add to cart at Kikuubo Suppliers — quality groceries and essentials in Kampala, Uganda." />
+    <meta property="og:type" content="product" />
+    <meta property="og:site_name" content="Kikuubo Suppliers" />
+    <meta property="og:title" content="Product Details — Kikuubo Suppliers" />
+    <meta property="og:description" content="Quality groceries and daily essentials at fair prices. Shop at Kikuubo Suppliers, Kampala." />
+    <meta property="og:image" content="https://kikuubosuppliersug.com/image/logo.png" />
+    <meta property="og:url" content="https://kikuubosuppliersug.com/sproduct.html" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Product Details — Kikuubo Suppliers" />
+    <meta name="twitter:description" content="Quality groceries and daily essentials at fair prices. Shop at Kikuubo Suppliers, Kampala." />
+    <meta name="twitter:image" content="https://kikuubosuppliersug.com/image/logo.png" />
     <title>Product | Kikuubo Suppliers</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://pro.fontawesome.com" />
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="modern-header.css" />
     <link
@@ -34,9 +49,10 @@
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NRZW5WX8"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
+    <a class="skip-link" href="#main-content">Skip to main content</a>
     <section id="header">
-      <a href="#">
-        <img src="image/logo.png" class="logo" alt="" />
+      <a href="index.html">
+        <img src="image/logo.webp" class="logo" alt="Kikuubo Suppliers" />
       </a>
 
       <div>
@@ -63,7 +79,7 @@
             >
           </li>
 
-          <a href="#" id="close"><i class="far fa-times"></i></a>
+          <li><a href="#" id="close"><i class="far fa-times"></i></a></li>
         </ul>
       </div>
       <div id="mobile">
@@ -74,13 +90,14 @@
       </div>
     </section>
 
+    <main id="main-content">
     <section id="prodetails">
       <div class="single-pro-image">
-        <img src="image/Products/f1.jpg" width="100%" id="MainImg" alt="" />
+        <img src="image/Products/f1.webp" width="100%" id="MainImg" alt="" />
         <div class="small-img-group">
           <div class="small-img-col">
             <img
-              src="image/Products/f1.jpg"
+              src="image/Products/f1.webp"
               width="100%"
               class="small-img"
               alt=""
@@ -88,7 +105,7 @@
           </div>
           <div class="small-img-col">
             <img
-              src="image/Products/f2.jpg"
+              src="image/Products/f2.webp"
               width="100%"
               class="small-img"
               alt=""
@@ -96,7 +113,7 @@
           </div>
           <div class="small-img-col">
             <img
-              src="image/Products/f3.jpg"
+              src="image/Products/f3.webp"
               width="100%"
               class="small-img"
               alt=""
@@ -104,7 +121,7 @@
           </div>
           <div class="small-img-col">
             <img
-              src="image/Products/f4.jpg"
+              src="image/Products/f4.webp"
               width="100%"
               class="small-img"
               alt=""
@@ -115,8 +132,8 @@
 
       <div class="single-prodetails">
         <h6 id="product-category">Your Choice</h6>
-        <h4 id="product-name">Cartoon Astronaut T-Shirts</h4>
-        <h2 id="product-price">UGX 139.00</h2>
+        <h4 id="product-name">Loading product…</h4>
+        <h2 id="product-price"></h2>
         <div class="product-actions">
           <input type="number" id="quantity" value="1" />
           <button class="normal" id="add-to-cart-btn">Add To Cart</button>
@@ -145,13 +162,11 @@
 
     <section id="newsletter" class="section-p1">
       <div class="newstext">
-        <h4>
-          Sign Up For Newsletters
-          <p>
-            Get E-Mail updates about our latest shop and
-            <span>special offers</span>.
-          </p>
-        </h4>
+        <h4>Sign Up For Newsletters</h4>
+        <p>
+          Get E-Mail updates about our latest shop and
+          <span>special offers</span>.
+        </p>
       </div>
       <form
         action="https://formsubmit.co/wholesalesuppliers63@gmail.com"
@@ -166,7 +181,7 @@
         <input
           type="hidden"
           name="_next"
-          value="http://localhost:5500/sproduct.html"
+          value="sproduct.html"
         />
         <input
           type="email"
@@ -180,9 +195,9 @@
 
     <footer class="section-p1">
       <div class="col">
-        <img class="logo" src="image/logo.png" alt="" />
+        <img class="logo" src="image/logo.webp" alt="" />
         <h4>Contact</h4>
-        <div>
+        <ul>
           <li>
             <i class="fal fa-map"> </i>
             <p>Kikuubo, Kampala, Uganda</p>
@@ -199,7 +214,7 @@
             <i class="fal fa-clock"> </i>
             <p>Monday to Saturday: 8:00am to 18:00pm</p>
           </li>
-        </div>
+        </ul>
         <div class="follow">
           <h4>Follow us</h4>
           <div class="social-icons">
@@ -244,37 +259,39 @@
       </div>
       <div class="col">
         <h4>About</h4>
-        <a href="#">About us</a>
-        <a href="#">Delivery Information</a>
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms & conditions</a>
-        <a href="#">Contact us</a>
+        <a href="about.html">About us</a>
+        <a href="contact.html">Delivery Information</a>
+        <a href="contact.html">Privacy Policy</a>
+        <a href="contact.html">Terms & conditions</a>
+        <a href="contact.html">Contact us</a>
       </div>
       <div class="col">
         <h4>My Account</h4>
-        <a href="#">Account</a>
-        <a href="#">Sign In</a>
-        <a href="#">View Cart</a>
-        <a href="#">My Wishlist</a>
-        <a href="#">Track My order</a>
-        <a href="#">Help</a>
+        <a href="contact.html">Account</a>
+        <a href="contact.html">Sign In</a>
+        <a href="cart.html">View Cart</a>
+        <a href="cart.html">My Wishlist</a>
+        <a href="contact.html">Track My order</a>
+        <a href="contact.html">Help</a>
       </div>
       <div class="col install">
         <h4>Install App</h4>
         <p>From App Store or Google Play</p>
         <div class="row">
-          <img src="image/pay/app.jpg" alt="" />
-          <img src="image/pay/play.jpg" alt="" />
+          <img src="image/pay/app.webp" alt="" />
+          <img src="image/pay/play.webp" alt="" />
         </div>
         <p>Secure Payment Gateways</p>
-        <img src="image/pay/pay.png" alt="" /><div style="display: flex; gap: 10px; margin-top: 10px;"><img src="image/Products/Mtn.webp" alt="MTN MoMo" style="height: 30px; border-radius: 4px;" /><img src="image/Products/airtel.webp" alt="Airtel Money" style="height: 30px; border-radius: 4px;" /></div>
+        <img src="image/pay/pay.webp" alt="" /><div style="display: flex; gap: 10px; margin-top: 10px;"><img src="image/Products/Mtn.webp" alt="MTN MoMo" style="height: 30px; border-radius: 4px;" /><img src="image/Products/airtel.webp" alt="Airtel Money" style="height: 30px; border-radius: 4px;" /></div>
       </div>
 
       <div class="copyright">
-        <p>Copyright © 2025 <img src="image/icon.png" style="width: 16px; height: 16px; vertical-align: middle; padding-bottom: 2px;"> Kikuubo Suppliers. All Rights Reserved.</p>
+        <p>Copyright © 2025 <img src="image/icon.webp" style="width: 16px; height: 16px; vertical-align: middle; padding-bottom: 2px;"> Kikuubo Suppliers. All Rights Reserved.</p>
       </div>
     </footer>
+    </main>
 
+    <script id="product-jsonld" type="application/ld+json"></script>
     <script src="products_array.js"></script>
     <script src="script.js"></script>
     <script src="cart.js"></script>
@@ -330,7 +347,7 @@
         const smallImgs = document.querySelectorAll(".small-img");
         product.images.forEach((imgName, index) => {
           if (smallImgs[index]) {
-            smallImgs[index].src = `image/Products/${imgName}.jpg`;
+            smallImgs[index].src = `image/Products/${imgName}.webp`;
           }
         });
 
@@ -346,6 +363,26 @@
 
         // Update page title
         document.title = `${product.name} | Kikuubo Suppliers`;
+
+        // Inject JSON-LD structured data for search engines
+        const jsonld = document.getElementById("product-jsonld");
+        if (jsonld) {
+          jsonld.textContent = JSON.stringify({
+            "@context": "https://schema.org/",
+            "@type": "Product",
+            "name": product.name,
+            "image": `https://kikuubosuppliersug.com/${product.image}`,
+            "description": product.description,
+            "brand": { "@type": "Brand", "name": product.brand || "Kikuubo Suppliers" },
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "UGX",
+              "price": product.price,
+              "availability": "https://schema.org/InStock",
+              "seller": { "@type": "Organization", "name": "Kikuubo Suppliers" }
+            }
+          });
+        }
       }
 
       // Load featured products (random 4)

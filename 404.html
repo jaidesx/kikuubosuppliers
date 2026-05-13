@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="image/icon.png" type="image/x-icon" />
+    <meta name="robots" content="noindex" />
+    <title>Page Not Found — Kikuubo Suppliers</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="manifest" href="manifest.json" />
+    <style>
+      #not-found {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 60vh;
+        text-align: center;
+        padding: 40px 20px;
+      }
+      #not-found h1 {
+        font-size: 6rem;
+        color: #088178;
+        margin: 0;
+        line-height: 1;
+      }
+      #not-found h2 {
+        font-size: 1.8rem;
+        margin: 16px 0 8px;
+      }
+      #not-found p {
+        color: #888;
+        margin-bottom: 32px;
+        max-width: 420px;
+      }
+      #not-found .btn-group {
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <section id="header">
+      <a href="index.html">
+        <img src="image/logo.webp" class="logo" alt="Kikuubo Suppliers" />
+      </a>
+      <div>
+        <ul id="navbar">
+          <li><a href="index.html">HOME</a></li>
+          <li><a href="shop.html">SHOP</a></li>
+          <li><a href="product.html">PRODUCTS</a></li>
+          <li><a href="about.html">ABOUT</a></li>
+          <li><a href="contact.html">CONTACT</a></li>
+          <li id="lg-bag">
+            <a href="cart.html"><i class="far fa-shopping-cart cart"></i><span class="cart-count">0</span></a>
+          </li>
+          <li><a href="#" id="close"><i class="far fa-times"></i></a></li>
+        </ul>
+      </div>
+      <div id="mobile">
+        <a href="cart.html"><i class="far fa-shopping-bag"></i></a>
+        <i id="bar" class="fas fa-outdent"></i>
+      </div>
+    </section>
+
+    <main id="main-content">
+      <section id="not-found">
+        <h1>404</h1>
+        <h2>Page Not Found</h2>
+        <p>The page you're looking for doesn't exist or may have been moved.</p>
+        <div class="btn-group">
+          <a href="index.html"><button class="normal">Go Home</button></a>
+          <a href="shop.html"><button>Browse Products</button></a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="section-p1">
+      <div class="copyright">
+        <p>Copyright &copy; 2025 Kikuubo Suppliers. All Rights Reserved.</p>
+      </div>
+    </footer>
+
+    <script src="cart.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
