@@ -2,7 +2,6 @@
 <html lang="en">
   <head>
       <!-- Google Tag Manager -->
-    <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
@@ -53,7 +52,7 @@
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
     <a class="skip-link" href="#main-content">Skip to main content</a>
-    <section id="header">
+    <header id="header">
       <a href="index.html">
         <img src="image/logo.webp" class="logo" alt="Kikuubo Suppliers" />
       </a>
@@ -92,11 +91,11 @@
       </div>
       <div id="mobile">
         <a href="cart.html">
-          <i class="far fa-shopping-bag"> </i>
+          <i class="far fa-shopping-cart cart"> </i><span class="cart-count">0</span>
         </a>
         <i id="bar" class="fas fa-outdent"> </i>
       </div>
-    </section>
+    </header>
 
     <main id="main-content">
     <section id="hero">
@@ -167,7 +166,7 @@
             </div>
             <h4>UGX 9,500</h4>
           </div>
-          <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+          <a href="javascript:void(0)" onclick="event.stopPropagation(); addToCart({id:1, name:'Pringles', price:9500, image:'image/Products/f1.webp', brand:'Snacks'})"><i class="fal fa-shopping-cart cart"></i></a>
         </div>
 
         <div class="pro" onclick="viewProduct(2)">
@@ -184,7 +183,7 @@
             </div>
             <h4>UGX 35,000</h4>
           </div>
-          <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+          <a href="javascript:void(0)" onclick="event.stopPropagation(); addToCart({id:2, name:&quot;Kellogg&#39;s Corn Flakes&quot;, price:35000, image:'image/Products/f2.webp', brand:&quot;Kellogg&#39;s&quot;})"><i class="fal fa-shopping-cart cart"></i></a>
         </div>
 
         <div class="pro" onclick="viewProduct(3)">
@@ -201,7 +200,7 @@
             </div>
             <h4>UGX 25,000</h4>
           </div>
-          <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+          <a href="javascript:void(0)" onclick="event.stopPropagation(); addToCart({id:3, name:'Nescafe Sacket Classic', price:25000, image:'image/Products/f3.webp', brand:'Nescafe'})"><i class="fal fa-shopping-cart cart"></i></a>
         </div>
 
         <div class="pro" onclick="viewProduct(4)">
@@ -218,7 +217,7 @@
             </div>
             <h4>UGX 32,000</h4>
           </div>
-          <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+          <a href="javascript:void(0)" onclick="event.stopPropagation(); addToCart({id:4, name:'Good Day Cappuccino', price:32000, image:'image/Products/f4.webp', brand:'Cappuccino'})"><i class="fal fa-shopping-cart cart"></i></a>
         </div>
 
         <div class="pro" onclick="viewProduct(5)">
@@ -235,7 +234,7 @@
             </div>
             <h4>UGX 15,000</h4>
           </div>
-          <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+          <a href="javascript:void(0)" onclick="event.stopPropagation(); addToCart({id:5, name:'Gold Valley BBQ Sauce', price:15000, image:'image/Products/f5.webp', brand:'Gold Valley'})"><i class="fal fa-shopping-cart cart"></i></a>
         </div>
 
         <div class="pro" onclick="viewProduct(6)">
@@ -252,7 +251,7 @@
             </div>
             <h4>UGX 11,000</h4>
           </div>
-          <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+          <a href="javascript:void(0)" onclick="event.stopPropagation(); addToCart({id:6, name:'Sunseed Oil', price:11000, image:'image/Products/f6.webp', brand:'Oils'})"><i class="fal fa-shopping-cart cart"></i></a>
         </div>
 
         <div class="pro" onclick="viewProduct(7)">
@@ -269,7 +268,7 @@
             </div>
             <h4>UGX 15,000</h4>
           </div>
-          <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+          <a href="javascript:void(0)" onclick="event.stopPropagation(); addToCart({id:7, name:'Nescafe Coffee', price:15000, image:'image/Products/f7.webp', brand:'Coffee'})"><i class="fal fa-shopping-cart cart"></i></a>
         </div>
 
         <div class="pro" onclick="viewProduct(8)">
@@ -286,13 +285,13 @@
             </div>
             <h4>UGX 160,000</h4>
           </div>
-          <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+          <a href="javascript:void(0)" onclick="event.stopPropagation(); addToCart({id:8, name:'Kakira Sugar', price:160000, image:'image/Products/f8.webp', brand:'Kakira'})"><i class="fal fa-shopping-cart cart"></i></a>
         </div>
       </div>
     </section>
 
-    <section id="banner" class=".section-m1">
-      <button class="normal">Explore More</button>
+    <section id="banner" class="section-m1">
+      <a href="product.html"><button class="normal">Explore More</button></a>
     </section>
 
     <section id="product2" class="section-p1">
@@ -313,7 +312,7 @@
             </div>
             <h4>UGX 2,500</h4>
           </div>
-          <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+          <a href="javascript:void(0)" onclick="event.stopPropagation(); addToCart({id:9, name:'Climax Toilet Balls', price:2500, image:'image/Products/n1.webp', brand:'Toilet Balls'})"><i class="fal fa-shopping-cart cart"></i></a>
         </div>
 
         <div class="pro" onclick="viewProduct(10)">
@@ -330,7 +329,7 @@
             </div>
             <h4>UGX 5,000</h4>
           </div>
-          <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+          <a href="javascript:void(0)" onclick="event.stopPropagation(); addToCart({id:10, name:'Safa Tomato Paste', price:5000, image:'image/Products/n2.webp', brand:'Safa'})"><i class="fal fa-shopping-cart cart"></i></a>
         </div>
 
         <div class="pro" onclick="viewProduct(11)">
@@ -347,14 +346,14 @@
             </div>
             <h4>UGX 105,000</h4>
           </div>
-          <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+          <a href="javascript:void(0)" onclick="event.stopPropagation(); addToCart({id:11, name:'American Garden Mayonnaise Lite', price:105000, image:'image/Products/n3.webp', brand:'American Garden'})"><i class="fal fa-shopping-cart cart"></i></a>
         </div>
 
         <div class="pro" onclick="viewProduct(429)">
           <img src="image/Products/f9.webp" alt="American Garden Ketchup" loading="lazy" />
           <div class="des">
             <span> American Garden </span>
-            <h5>  Ketchup</h5>
+            <h5>Ketchup</h5>
             <div class="star">
               <i class="fas fa-star"></i>
               <i class="fas fa-star"></i>
@@ -364,7 +363,7 @@
             </div>
             <h4>UGX 35,000</h4>
           </div>
-          <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+          <a href="javascript:void(0)" onclick="event.stopPropagation(); addToCart({id:429, name:'American Garden Ketchup', price:35000, image:'image/Products/f9.webp', brand:'American Garden'})"><i class="fal fa-shopping-cart cart"></i></a>
         </div>
 
         <div class="pro" onclick="viewProduct(13)">
@@ -381,7 +380,7 @@
             </div>
             <h4>UGX 35,000</h4>
           </div>
-          <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+          <a href="javascript:void(0)" onclick="event.stopPropagation(); addToCart({id:13, name:'Jik Big Bleach', price:35000, image:'image/Products/n5.webp', brand:'Jik Bleach'})"><i class="fal fa-shopping-cart cart"></i></a>
         </div>
 
         <div class="pro" onclick="viewProduct(14)">
@@ -398,7 +397,7 @@
             </div>
             <h4>UGX 9,000</h4>
           </div>
-          <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+          <a href="javascript:void(0)" onclick="event.stopPropagation(); addToCart({id:14, name:'Kingtox Insect Killer', price:9000, image:'image/Products/n6.webp', brand:'Insect Killer'})"><i class="fal fa-shopping-cart cart"></i></a>
         </div>
 
         <div class="pro" onclick="viewProduct(15)">
@@ -413,16 +412,16 @@
               <i class="fas fa-star"></i>
               <i class="fas fa-star"></i>
             </div>
-            <h4>UGX 7000-50,000</h4>
+            <h4>UGX 7,000 – 50,000</h4>
           </div>
-          <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+          <a href="javascript:void(0)" onclick="event.stopPropagation(); addToCart({id:15, name:'Dettol Liquid', price:7000, image:'image/Products/n7.webp', brand:'Dettol'})"><i class="fal fa-shopping-cart cart"></i></a>
         </div>
 
         <div class="pro" onclick="viewProduct(16)">
           <img src="image/Products/n8.webp" alt="Prestige Margarine" loading="lazy" />
           <div class="des">
             <span> Prestige </span>
-            <h5>Magarine </h5>
+            <h5>Margarine</h5>
             <div class="star">
               <i class="fas fa-star"></i>
               <i class="fas fa-star"></i>
@@ -432,18 +431,18 @@
             </div>
             <h4>UGX 12,500</h4>
           </div>
-          <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+          <a href="javascript:void(0)" onclick="event.stopPropagation(); addToCart({id:16, name:'Prestige Margarine', price:12500, image:'image/Products/n8.webp', brand:'Prestige'})"><i class="fal fa-shopping-cart cart"></i></a>
         </div>
       </div>
     </section>
 
     <section id="sm-banner" class="section-p1">
       <div class="banner-box">
-        <button class="white">Learn More</button>
+        <a href="about.html"><button class="white">Learn More</button></a>
       </div>
 
       <div class="banner-box banner-box2">
-        <button class="white">Collection</button>
+        <a href="product.html"><button class="white">Collection</button></a>
       </div>
     </section>
 
@@ -490,7 +489,7 @@
 
     <footer class="section-p1">
       <div class="col">
-        <img class="logo" src="image/logo.webp" alt="" />
+        <img class="logo" src="image/logo.webp" alt="Kikuubo Suppliers" />
         <h4>Contact</h4>
         <ul>
           <li>
@@ -581,7 +580,7 @@
       </div>
 
       <div class="copyright">
-        <p>Copyright © 2025 <img src="image/icon.webp" style="width: 16px; height: 16px; vertical-align: middle; padding-bottom: 2px;"> Kikuubo Suppliers. All Rights Reserved.</p>
+        <p>Copyright © 2026 <img src="image/icon.webp" style="width: 16px; height: 16px; vertical-align: middle; padding-bottom: 2px;" alt=""> Kikuubo Suppliers. All Rights Reserved.</p>
       </div>
     </footer>
     </main>

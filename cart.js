@@ -160,7 +160,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
       let price = 0;
       if (priceEl) {
-        const priceText = priceEl.textContent.replace("UGX", "").trim();
+        const priceText = priceEl.textContent.replace("UGX", "").replace(/,/g, "").split("-")[0].trim();
         price = parseFloat(priceText) || 0;
       }
 
