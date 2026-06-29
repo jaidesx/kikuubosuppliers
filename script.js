@@ -22,17 +22,21 @@ body.setAttribute("data-theme", currentTheme);
 
 updateThemeIcon();
 
-themeToggle.addEventListener("click", () => {
-  const currentTheme = body.getAttribute("data-theme");
-  const newTheme = currentTheme === "light" ? "dark" : "light";
+if (themeToggle) {
+  themeToggle.addEventListener("click", () => {
+    const currentTheme = body.getAttribute("data-theme");
+    const newTheme = currentTheme === "light" ? "dark" : "light";
 
-  body.setAttribute("data-theme", newTheme);
-  localStorage.setItem("theme", newTheme);
-  updateThemeIcon();
-});
+    body.setAttribute("data-theme", newTheme);
+    localStorage.setItem("theme", newTheme);
+    updateThemeIcon();
+  });
+}
 
 function updateThemeIcon() {
+  if (!themeToggle) return;
   const icon = themeToggle.querySelector("i");
+  if (!icon) return;
   const currentTheme = body.getAttribute("data-theme");
 
   if (currentTheme === "dark") {
@@ -157,7 +161,7 @@ let selectedIndex = -1;
 let filteredProducts = [];
 
 function togglePalette(show) {
-  if (!palette) return;
+  if (!palette || !paletteInput || !paletteResults) return;
   if (show) {
     palette.classList.add("active");
     paletteInput.focus();
@@ -177,6 +181,7 @@ function displayTrending() {
 }
 
 function renderResults(items, title) {
+  if (!paletteResults) return;
   filteredProducts = items;
   paletteResults.innerHTML = `
     <div class="palette-section-title">${title}</div>
@@ -220,6 +225,7 @@ if (paletteInput) {
 
   paletteInput.addEventListener("keydown", (e) => {
     const items = paletteResults.querySelectorAll(".palette-item");
+    if (!items.length && ["ArrowDown", "ArrowUp", "Enter"].includes(e.key)) return;
     if (e.key === "ArrowDown") {
       e.preventDefault();
       selectedIndex = (selectedIndex + 1) % items.length;
@@ -249,6 +255,7 @@ function updateSelection(items) {
 
 window.addEventListener("keydown", (e) => {
   if ((e.metaKey || e.ctrlKey) && e.key === "k") {
+    if (!palette) return;
     e.preventDefault();
     const isActive = palette.classList.contains("active");
     togglePalette(!isActive);

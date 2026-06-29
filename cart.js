@@ -4,6 +4,18 @@
 
 let cart = [];
 
+function formatCurrency(amount) {
+  return "UGX " + Number(amount || 0).toLocaleString("en-UG", {
+    maximumFractionDigits: 0
+  });
+}
+
+function escapeHtml(value) {
+  const div = document.createElement("div");
+  div.textContent = value == null ? "" : String(value);
+  return div.innerHTML;
+}
+
 // Load cart from localStorage on page load
 document.addEventListener("DOMContentLoaded", function() {
   loadCart();
@@ -20,7 +32,21 @@ function saveCart() {
 function loadCart() {
   const savedCart = localStorage.getItem("kikuuboCart");
   if (savedCart) {
-    cart = JSON.parse(savedCart);
+    try {
+      cart = JSON.parse(savedCart).map(function(item) {
+        return {
+          id: item.id,
+          name: item.name || "Unknown Product",
+          price: Number(item.price) || 0,
+          image: item.image || "",
+          brand: item.brand || "",
+          quantity: Math.max(parseInt(item.quantity, 10) || 1, 1)
+        };
+      });
+    } catch (error) {
+      cart = [];
+      saveCart();
+    }
   }
 }
 
@@ -59,9 +85,14 @@ function removeFromCart(productId) {
 function updateQuantity(productId, newQuantity) {
   const item = cart.find(function(item) { return item.id === productId; });
   if (item) {
-    item.quantity = parseInt(newQuantity);
+    item.quantity = parseInt(newQuantity, 10);
     if (item.quantity <= 0) {
       removeFromCart(productId);
+    } else if (Number.isNaN(item.quantity)) {
+      item.quantity = 1;
+      saveCart();
+      updateCartDisplay();
+      updateCartCount();
     } else {
       saveCart();
       updateCartDisplay();
@@ -87,7 +118,7 @@ function updateCartCount() {
   cartCountElements.forEach(function(el) {
     if (el) {
       el.textContent = count;
-      el.style.display = count > 0 ? "inline" : "none";
+      el.style.display = count > 0 ? "inline-flex" : "none";
     }
   });
 }
@@ -105,8 +136,8 @@ function updateCartDisplay() {
   if (cart.length === 0) {
     if (emptyCartMessage) emptyCartMessage.style.display = "block";
     if (cartTable) cartTable.style.display = "none";
-    if (cartSubtotalEl) cartSubtotalEl.textContent = "UGX 0.00";
-    if (cartTotalEl) cartTotalEl.textContent = "UGX 0.00";
+    if (cartSubtotalEl) cartSubtotalEl.textContent = formatCurrency(0);
+    if (cartTotalEl) cartTotalEl.textContent = formatCurrency(0);
     return;
   }
 
@@ -116,19 +147,19 @@ function updateCartDisplay() {
   var html = "";
   cart.forEach(function(item) {
     html += '<tr data-id="' + item.id + '">';
-    html += '<td><a href="#" onclick="removeFromCart(' + item.id + '); return false;"><i class="far fa-times-circle"></i></a></td>';
-    html += '<td><img src="' + item.image + '" alt="' + item.name + '" style="width:70px;" /></td>';
-    html += '<td>' + (item.brand ? "<span>" + item.brand + "</span><br>" : "") + item.name + '</td>';
-    html += '<td>UGX ' + item.price.toFixed(2) + '</td>';
+    html += '<td><button class="cart-remove-btn" type="button" onclick="removeFromCart(' + item.id + ')" aria-label="Remove ' + escapeHtml(item.name) + '"><i class="far fa-times-circle"></i></button></td>';
+    html += '<td><img src="' + escapeHtml(item.image) + '" alt="' + escapeHtml(item.name) + '" /></td>';
+    html += '<td class="cart-product-name">' + (item.brand ? "<span>" + escapeHtml(item.brand) + "</span><br>" : "") + escapeHtml(item.name) + '</td>';
+    html += '<td>' + formatCurrency(item.price) + '</td>';
     html += '<td><input type="number" value="' + item.quantity + '" min="1" onchange="updateQuantity(' + item.id + ', this.value)" onkeyup="updateQuantity(' + item.id + ', this.value)" /></td>';
-    html += '<td>UGX ' + (item.price * item.quantity).toFixed(2) + '</td>';
+    html += '<td>' + formatCurrency(item.price * item.quantity) + '</td>';
     html += '</tr>';
   });
   cartTableBody.innerHTML = html;
 
   const subtotal = getCartTotal();
-  if (cartSubtotalEl) cartSubtotalEl.textContent = "UGX " + subtotal.toFixed(2);
-  if (cartTotalEl) cartTotalEl.textContent = "UGX " + subtotal.toFixed(2);
+  if (cartSubtotalEl) cartSubtotalEl.textContent = formatCurrency(subtotal);
+  if (cartTotalEl) cartTotalEl.textContent = formatCurrency(subtotal);
 }
 
 // Show notification
@@ -192,3 +223,4 @@ window.getCartTotal = getCartTotal;
 window.getCartItemCount = getCartItemCount;
 window.updateCartCount = updateCartCount;
 window.updateCartDisplay = updateCartDisplay;
+window.formatCurrency = formatCurrency;

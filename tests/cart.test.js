@@ -397,13 +397,13 @@ describe("updateCartDisplay", () => {
     win.addToCart({ id: 1, name: "Item", price: 9500, image: "", brand: "" });
     win.updateCartDisplay();
 
-    expect(win.document.querySelector("#cart-subtotal").textContent).toBe("UGX 9500.00");
+    expect(win.document.querySelector("#cart-subtotal").textContent).toBe("UGX 9,500");
   });
 
   test("displays UGX 0.00 for subtotal when cart is empty", () => {
     const win = createWindow();
     win.updateCartDisplay();
-    expect(win.document.querySelector("#cart-subtotal").textContent).toBe("UGX 0.00");
+    expect(win.document.querySelector("#cart-subtotal").textContent).toBe("UGX 0");
   });
 
   test("displays the correct total for multiple items with quantities", () => {
@@ -412,7 +412,7 @@ describe("updateCartDisplay", () => {
     win.addToCart({ id: 2, name: "B", price: 5000, image: "", brand: "", quantity: 3 });
     win.updateCartDisplay();
     // 10000*2 + 5000*3 = 20000 + 15000 = 35000
-    expect(win.document.querySelector("#cart-total").textContent).toBe("UGX 35000.00");
+    expect(win.document.querySelector("#cart-total").textContent).toBe("UGX 35,000");
   });
 
   test("renders product name in the row", () => {

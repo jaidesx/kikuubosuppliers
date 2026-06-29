@@ -128,6 +128,7 @@
   border-radius: 12px;
   transition: all 0.3s ease;
   color: #333;
+  position: relative;
 }
 
 #lg-bag a:hover {
@@ -157,6 +158,26 @@
   border-radius: 10px;
   transition: all 0.3s ease;
   color: #333;
+  position: relative;
+}
+
+.cart-count {
+  position: absolute;
+  top: -7px;
+  right: -7px;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 6px;
+  border-radius: 999px;
+  background: #ffb020;
+  color: #17211f;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 800;
+  line-height: 20px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.18);
 }
 
 #mobile a:hover {

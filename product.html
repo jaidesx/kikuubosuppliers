@@ -140,7 +140,7 @@
       </div>
       <div id="mobile">
         <a href="cart.html">
-          <i class="far fa-shopping-cart cart"></i>
+          <i class="far fa-shopping-cart cart"></i><span class="cart-count">0</span>
         </a>
         <i id="bar" class="fas fa-outdent"></i>
       </div>
@@ -195,8 +195,9 @@
             placeholder="Search products..."
             onkeyup="filterProducts()"
           />
-          <button class="normal"><i class="fas fa-search"></i></button>
+          <button class="normal" type="button" aria-label="Search products"><i class="fas fa-search"></i></button>
         </div>
+        <p class="product-count" id="product-count" aria-live="polite"></p>
       </div>
     </section>
 
@@ -8085,26 +8086,37 @@
 
       function filterProducts() {
         const category = document.getElementById("category-select").value;
-        const searchTerm = document.getElementById("search-input").value.toLowerCase();
+        const searchTerm = document.getElementById("search-input").value.trim().toLowerCase();
         const products = document.querySelectorAll(".pro");
         const container = document.getElementById("products-container");
+        const count = document.getElementById("product-count");
 
         let hasVisible = false;
+        let visibleCount = 0;
         products.forEach((product) => {
+          const productCategory = (product.getAttribute("data-category") || "").trim();
+          const productName = product.querySelector("h5")?.textContent || "";
+          const productBrand = product.querySelector(".des span")?.textContent || "";
           const matchesCategory =
-            category === "all" || product.getAttribute("data-category") === category;
+            category === "all" || productCategory === category;
           const matchesSearch =
-            product.querySelector("h5").textContent.toLowerCase().includes(searchTerm) ||
-            product.querySelector("span").textContent.toLowerCase().includes(searchTerm);
+            productName.toLowerCase().includes(searchTerm) ||
+            productBrand.toLowerCase().includes(searchTerm) ||
+            productCategory.toLowerCase().includes(searchTerm);
 
           if (matchesCategory && matchesSearch) {
-            product.style.display = "block";
+            product.style.display = "";
             product.style.animation = "fadeIn 0.5s ease";
             hasVisible = true;
+            visibleCount += 1;
           } else {
             product.style.display = "none";
           }
         });
+
+        if (count) {
+          count.textContent = visibleCount + " product" + (visibleCount === 1 ? "" : "s") + " shown";
+        }
 
         let noResults = document.getElementById("no-results-msg");
         if (!hasVisible) {

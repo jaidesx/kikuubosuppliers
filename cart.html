@@ -213,12 +213,10 @@
           </li>
           <li id="lg-bag">
             <a class="active" href="cart.html">
-              <i class="far fa-shopping-cart cart"></i>
+              <i class="far fa-shopping-cart cart"></i><span class="cart-count">0</span>
             </a>
           </li>
-          <li><a href="#" id="close"
-            ><i class="far fa-times"></i><span class="cart-count">0</span></a
-          ></li>
+          <li><a href="#" id="close"><i class="far fa-times"></i></a></li>
         </ul>
       </div>
       <div id="mobile">
@@ -459,9 +457,10 @@
         const subtotal = getCartTotal();
         const summarySubtotal = document.getElementById("summary-subtotal");
         const summaryTotal = document.getElementById("summary-total");
+        const formattedSubtotal = typeof formatCurrency === "function" ? formatCurrency(subtotal) : "UGX " + subtotal.toLocaleString();
 
-        if (summarySubtotal) summarySubtotal.textContent = "UGX " + subtotal.toFixed(2);
-        if (summaryTotal) summaryTotal.textContent = "UGX " + subtotal.toFixed(2);
+        if (summarySubtotal) summarySubtotal.textContent = formattedSubtotal;
+        if (summaryTotal) summaryTotal.textContent = formattedSubtotal;
       }
 
       let selectedPaymentMethod = 'mtn';
