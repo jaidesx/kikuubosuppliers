@@ -29,12 +29,14 @@ function isStandaloneApp() {
 
 function createInstallUi() {
   const navbarButton = createInstallAppButton();
+  const mobileButton = createMobileInstallButton();
   const banner = createInstallBanner();
 
   return {
     navbarButton,
+    mobileButton,
     banner,
-    buttons: [navbarButton, banner ? banner.querySelector(".pwa-install-button") : null].filter(Boolean),
+    buttons: [navbarButton, mobileButton, banner ? banner.querySelector(".pwa-install-button") : null].filter(Boolean),
     bannerText: banner ? banner.querySelector(".pwa-install-copy") : null,
     bannerFallback: banner ? banner.querySelector(".pwa-install-fallback") : null,
     dismissButton: banner ? banner.querySelector(".pwa-install-dismiss") : null,
@@ -66,6 +68,32 @@ function createInstallAppButton() {
     navbar.insertBefore(item, closeLink.parentElement);
   } else {
     navbar.appendChild(item);
+  }
+
+  return button;
+}
+
+function createMobileInstallButton() {
+  const mobileControls = document.getElementById("mobile");
+  const mobileMenuButton = document.getElementById("bar");
+
+  if (!mobileControls || document.getElementById("mobile-install-button")) {
+    return document.getElementById("mobile-install-button");
+  }
+
+  const button = document.createElement("button");
+  button.id = "mobile-install-button";
+  button.className = "mobile-install-button pwa-install-button";
+  button.type = "button";
+  button.hidden = true;
+  button.setAttribute("aria-label", "Install Kikuubo Suppliers");
+  button.setAttribute("title", "Install App");
+  button.innerHTML = '<i class="fas fa-download" aria-hidden="true"></i>';
+
+  if (mobileMenuButton) {
+    mobileControls.insertBefore(button, mobileMenuButton);
+  } else {
+    mobileControls.appendChild(button);
   }
 
   return button;
@@ -132,6 +160,7 @@ function setInstallBannerDismissed() {
 
 function showInstallUi(options = {}) {
   const fallback = options.fallback === true;
+  const forceBanner = options.forceBanner === true;
 
   if (isStandaloneApp()) {
     hideInstallUi();
@@ -142,7 +171,12 @@ function showInstallUi(options = {}) {
     installUi.navbarButton.hidden = false;
   }
 
-  if (installUi.banner && isMobileInstallSurface() && !isInstallBannerDismissed()) {
+  if (installUi.mobileButton && isMobileInstallSurface()) {
+    installUi.mobileButton.hidden = false;
+    installUi.mobileButton.classList.toggle("pwa-install-unavailable", fallback);
+  }
+
+  if (installUi.banner && isMobileInstallSurface() && (forceBanner || !isInstallBannerDismissed())) {
     installUi.banner.hidden = false;
     installUi.banner.classList.toggle("fallback", fallback);
 
@@ -154,9 +188,10 @@ function showInstallUi(options = {}) {
       installUi.bannerFallback.hidden = !fallback;
     }
 
-    installUi.buttons.forEach((button) => {
-      button.hidden = fallback;
-    });
+    const bannerButton = installUi.banner.querySelector(".pwa-install-button");
+    if (bannerButton) {
+      bannerButton.hidden = fallback;
+    }
   }
 }
 
@@ -172,6 +207,7 @@ function hideInstallUi() {
 
 async function installApp() {
   if (!deferredInstallPrompt) {
+    showInstallUi({ fallback: true, forceBanner: true });
     return;
   }
 

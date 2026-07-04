@@ -202,6 +202,14 @@
   position: relative;
 }
 
+.mobile-install-button {
+  display: none;
+}
+
+.mobile-install-button[hidden] {
+  display: none;
+}
+
 .cart-count {
   position: absolute;
   top: -7px;
@@ -386,10 +394,40 @@
     display: flex;
   }
 
+  .mobile-install-button:not([hidden]) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: 0;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #088178, #066b64);
+    color: #fff;
+    cursor: pointer;
+    font-size: 18px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .mobile-install-button:not([hidden]):hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(8, 129, 120, 0.35);
+  }
+
+  .mobile-install-button.pwa-install-unavailable:not([hidden]) {
+    background: linear-gradient(135deg, #5f716f, #43514f);
+  }
+
   #mobile i {
     color: #1a1a1a;
     padding-left: 15px;
     font-size: 22px;
+  }
+
+  #mobile .mobile-install-button i {
+    color: #fff;
+    padding-left: 0;
+    font-size: 18px;
   }
 
   #close {
@@ -443,7 +481,8 @@
   }
 
   #mobile a,
-  #mobile #bar {
+  #mobile #bar,
+  .mobile-install-button:not([hidden]) {
     width: 36px;
     height: 36px;
     font-size: 18px;
