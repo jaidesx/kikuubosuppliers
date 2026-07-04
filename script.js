@@ -14,8 +14,10 @@ if (close) {
   });
 }
 
-const installAppButton = createInstallAppButton();
+const installUi = createInstallUi();
 let deferredInstallPrompt = null;
+let installFallbackTimer = null;
+const installBannerDismissedKey = "kikuuboInstallBannerDismissed";
 
 function isStandaloneApp() {
   return (
@@ -23,6 +25,20 @@ function isStandaloneApp() {
       window.matchMedia("(display-mode: standalone)").matches) ||
     window.navigator.standalone === true
   );
+}
+
+function createInstallUi() {
+  const navbarButton = createInstallAppButton();
+  const banner = createInstallBanner();
+
+  return {
+    navbarButton,
+    banner,
+    buttons: [navbarButton, banner ? banner.querySelector(".pwa-install-button") : null].filter(Boolean),
+    bannerText: banner ? banner.querySelector(".pwa-install-copy") : null,
+    bannerFallback: banner ? banner.querySelector(".pwa-install-fallback") : null,
+    dismissButton: banner ? banner.querySelector(".pwa-install-dismiss") : null,
+  };
 }
 
 function createInstallAppButton() {
@@ -38,7 +54,7 @@ function createInstallAppButton() {
 
   const button = document.createElement("button");
   button.id = "install-app-button";
-  button.className = "install-app-button";
+  button.className = "install-app-button pwa-install-button";
   button.type = "button";
   button.hidden = true;
   button.setAttribute("aria-label", "Install Kikuubo Suppliers app");
@@ -55,16 +71,114 @@ function createInstallAppButton() {
   return button;
 }
 
-function showInstallButton() {
-  if (installAppButton && !isStandaloneApp()) {
-    installAppButton.hidden = false;
+function createInstallBanner() {
+  if (document.getElementById("pwa-install-banner")) {
+    return document.getElementById("pwa-install-banner");
+  }
+
+  const banner = document.createElement("section");
+  banner.id = "pwa-install-banner";
+  banner.className = "pwa-install-banner";
+  banner.hidden = true;
+  banner.setAttribute("aria-label", "Install Kikuubo Suppliers app");
+  banner.innerHTML = `
+    <div class="pwa-install-copy">
+      <strong>Install Kikuubo Suppliers</strong>
+      <span>Access the shop quickly from your phone.</span>
+    </div>
+    <p class="pwa-install-fallback" hidden>To install this app, open the Chrome menu, select Add to home screen, then Install.</p>
+    <div class="pwa-install-actions">
+      <button class="pwa-install-button install-app-button" type="button">
+        <i class="fas fa-download" aria-hidden="true"></i><span>Install App</span>
+      </button>
+      <button class="pwa-install-dismiss" type="button" aria-label="Dismiss install app prompt">
+        <i class="fas fa-times" aria-hidden="true"></i>
+      </button>
+    </div>
+  `;
+
+  const header = document.getElementById("header");
+  if (header && header.parentNode) {
+    header.parentNode.insertBefore(banner, header.nextSibling);
+  } else {
+    document.body.insertBefore(banner, document.body.firstChild);
+  }
+
+  return banner;
+}
+
+function isMobileInstallSurface() {
+  return (
+    typeof window.matchMedia !== "function" ||
+    window.matchMedia("(max-width: 799px)").matches
+  );
+}
+
+function isInstallBannerDismissed() {
+  try {
+    return sessionStorage.getItem(installBannerDismissedKey) === "true";
+  } catch (error) {
+    return false;
   }
 }
 
-function hideInstallButton() {
-  if (installAppButton) {
-    installAppButton.hidden = true;
+function setInstallBannerDismissed() {
+  try {
+    sessionStorage.setItem(installBannerDismissedKey, "true");
+  } catch (error) {
+    // Ignore storage errors; dismissal is a convenience only.
   }
+}
+
+function showInstallUi(options = {}) {
+  const fallback = options.fallback === true;
+
+  if (isStandaloneApp()) {
+    hideInstallUi();
+    return;
+  }
+
+  if (installUi.navbarButton && !fallback) {
+    installUi.navbarButton.hidden = false;
+  }
+
+  if (installUi.banner && isMobileInstallSurface() && !isInstallBannerDismissed()) {
+    installUi.banner.hidden = false;
+    installUi.banner.classList.toggle("fallback", fallback);
+
+    if (installUi.bannerText) {
+      installUi.bannerText.hidden = fallback;
+    }
+
+    if (installUi.bannerFallback) {
+      installUi.bannerFallback.hidden = !fallback;
+    }
+
+    installUi.buttons.forEach((button) => {
+      button.hidden = fallback;
+    });
+  }
+}
+
+function hideInstallUi() {
+  if (installUi.banner) {
+    installUi.banner.hidden = true;
+  }
+
+  installUi.buttons.forEach((button) => {
+    button.hidden = true;
+  });
+}
+
+async function installApp() {
+  if (!deferredInstallPrompt) {
+    return;
+  }
+
+  deferredInstallPrompt.prompt();
+  await deferredInstallPrompt.userChoice;
+  deferredInstallPrompt = null;
+  hideInstallUi();
 }
 
 if ("serviceWorker" in navigator) {
@@ -76,31 +190,40 @@ if ("serviceWorker" in navigator) {
 }
 
 if (isStandaloneApp()) {
-  hideInstallButton();
+  hideInstallUi();
+} else if (isMobileInstallSurface()) {
+  installFallbackTimer = window.setTimeout(() => {
+    if (!deferredInstallPrompt) {
+      showInstallUi({ fallback: true });
+    }
+  }, 3500);
 }
 
 window.addEventListener("beforeinstallprompt", (event) => {
   event.preventDefault();
   deferredInstallPrompt = event;
-  showInstallButton();
+  if (installFallbackTimer) {
+    window.clearTimeout(installFallbackTimer);
+    installFallbackTimer = null;
+  }
+  showInstallUi();
 });
 
 window.addEventListener("appinstalled", () => {
   deferredInstallPrompt = null;
-  hideInstallButton();
+  hideInstallUi();
 });
 
-if (installAppButton) {
-  installAppButton.addEventListener("click", async () => {
-    if (!deferredInstallPrompt) {
-      hideInstallButton();
-      return;
-    }
+installUi.buttons.forEach((button) => {
+  button.addEventListener("click", installApp);
+});
 
-    deferredInstallPrompt.prompt();
-    await deferredInstallPrompt.userChoice;
-    deferredInstallPrompt = null;
-    hideInstallButton();
+if (installUi.dismissButton) {
+  installUi.dismissButton.addEventListener("click", () => {
+    setInstallBannerDismissed();
+    if (installUi.banner) {
+      installUi.banner.hidden = true;
+    }
   });
 }
 
