@@ -14,6 +14,96 @@ if (close) {
   });
 }
 
+const installAppButton = createInstallAppButton();
+let deferredInstallPrompt = null;
+
+function isStandaloneApp() {
+  return (
+    (typeof window.matchMedia === "function" &&
+      window.matchMedia("(display-mode: standalone)").matches) ||
+    window.navigator.standalone === true
+  );
+}
+
+function createInstallAppButton() {
+  const navbar = document.getElementById("navbar");
+  const closeLink = document.getElementById("close");
+
+  if (!navbar || document.getElementById("install-app-button")) {
+    return document.getElementById("install-app-button");
+  }
+
+  const item = document.createElement("li");
+  item.className = "install-app-item";
+
+  const button = document.createElement("button");
+  button.id = "install-app-button";
+  button.className = "install-app-button";
+  button.type = "button";
+  button.hidden = true;
+  button.setAttribute("aria-label", "Install Kikuubo Suppliers app");
+  button.innerHTML = '<i class="fas fa-download" aria-hidden="true"></i><span>Install App</span>';
+
+  item.appendChild(button);
+
+  if (closeLink && closeLink.parentElement && closeLink.parentElement.parentElement === navbar) {
+    navbar.insertBefore(item, closeLink.parentElement);
+  } else {
+    navbar.appendChild(item);
+  }
+
+  return button;
+}
+
+function showInstallButton() {
+  if (installAppButton && !isStandaloneApp()) {
+    installAppButton.hidden = false;
+  }
+}
+
+function hideInstallButton() {
+  if (installAppButton) {
+    installAppButton.hidden = true;
+  }
+}
+
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("/service-worker.js", { scope: "/" }).catch((error) => {
+      console.warn("Service worker registration failed:", error);
+    });
+  });
+}
+
+if (isStandaloneApp()) {
+  hideInstallButton();
+}
+
+window.addEventListener("beforeinstallprompt", (event) => {
+  event.preventDefault();
+  deferredInstallPrompt = event;
+  showInstallButton();
+});
+
+window.addEventListener("appinstalled", () => {
+  deferredInstallPrompt = null;
+  hideInstallButton();
+});
+
+if (installAppButton) {
+  installAppButton.addEventListener("click", async () => {
+    if (!deferredInstallPrompt) {
+      hideInstallButton();
+      return;
+    }
+
+    deferredInstallPrompt.prompt();
+    await deferredInstallPrompt.userChoice;
+    deferredInstallPrompt = null;
+    hideInstallButton();
+  });
+}
+
 const themeToggle = document.getElementById("theme-toggle");
 const body = document.body;
 

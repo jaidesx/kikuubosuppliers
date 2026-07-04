@@ -3544,6 +3544,14 @@ footer .copyright {
 /*Start Media Query*/
 
 @media (max-width: 799px) {
+  #header,
+  main,
+  #main-content,
+  #hero {
+    width: 100%;
+    max-width: 100%;
+  }
+
   .section-p1 {
     padding: 40px 40px;
   }
@@ -3577,16 +3585,23 @@ footer .copyright {
     justify-content: flex-start;
     position: fixed;
     top: 0;
-    right: -300px;
+    right: 0;
     height: 100vh;
     width: 300px;
+    max-width: 100%;
     background-color: #e3e6f3;
     box-shadow: 0 40px 60px rgba(0, 0, 0, 0.1);
     padding: 80px 0 0 10px;
-    transition: 0.3s;
+    clip-path: inset(0 0 0 100%);
+    pointer-events: none;
+    visibility: hidden;
+    transition: clip-path 0.3s ease, visibility 0.3s ease;
   }
   #navbar.active {
-    right: 0px;
+    right: 0;
+    clip-path: inset(0);
+    pointer-events: auto;
+    visibility: visible;
   }
   #navbar li {
     margin-bottom: 25px;
@@ -3613,8 +3628,10 @@ footer .copyright {
   }
   #hero {
     height: 70vh;
-    background-position: top 30% right 30%;
-    padding: 0 80px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 0 32px;
   }
   #feature {
     justify-content: center;

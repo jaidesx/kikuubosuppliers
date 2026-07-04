@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#088178" />
+    <meta name="robots" content="noindex" />
+    <link rel="icon" href="image/icon.png" type="image/png" />
+    <link rel="manifest" href="manifest.json" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="modern-header.css" />
+    <title>Offline | Kikuubo Suppliers</title>
+    <style>
+      body {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 24px;
+        background: #f6fbfa;
+      }
+
+      .offline-panel {
+        width: min(100%, 440px);
+        text-align: center;
+        background: #fff;
+        border: 1px solid rgba(8, 129, 120, 0.16);
+        border-radius: 8px;
+        padding: 32px 24px;
+        box-shadow: 0 18px 45px rgba(8, 129, 120, 0.12);
+      }
+
+      .offline-panel img {
+        width: 132px;
+        height: auto;
+        margin-bottom: 22px;
+      }
+
+      .offline-panel h1 {
+        color: #088178;
+        font-size: 2rem;
+        margin-bottom: 12px;
+      }
+
+      .offline-panel p {
+        color: #465b52;
+        margin-bottom: 24px;
+      }
+
+      .offline-panel button {
+        border: 0;
+        border-radius: 6px;
+        background: #088178;
+        color: #fff;
+        cursor: pointer;
+        font-weight: 700;
+        padding: 12px 22px;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="offline-panel" aria-labelledby="offline-title">
+      <img src="image/logo.webp" alt="Kikuubo Suppliers" />
+      <h1 id="offline-title">You are offline</h1>
+      <p>You are currently offline. Please check your internet connection and try again.</p>
+      <button type="button" onclick="window.location.reload()">Retry</button>
+    </main>
+  </body>
+</html>
