@@ -443,7 +443,7 @@ function renderResults(items, title) {
           <div class="palette-item-name">${item.name}</div>
           <div class="palette-item-category">${item.category}</div>
         </div>
-        <div class="palette-item-price">UGX ${item.price.toLocaleString()}</div>
+        <div class="palette-item-price">${typeof getOrderProduct === "function" && getOrderProduct(item.id)?.quoteOnly ? "Price on quotation" : "UGX " + item.price.toLocaleString()}</div>
       </div>
     `
       )
@@ -545,6 +545,7 @@ rippleStyle.textContent = `
 document.head.appendChild(rippleStyle);
 // Product utility functions
 function getProductById(id) {
+  if (typeof getOrderProduct === "function") return getOrderProduct(id);
   if (typeof products === "undefined") return null;
   return products.find((p) => p.id === parseInt(id));
 }

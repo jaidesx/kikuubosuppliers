@@ -27,6 +27,13 @@ const CART_PAGE_HTML = `<!DOCTYPE html><html><head></head><body>
 
 function injectScript(win, code) {
   const script = win.document.createElement("script");
+  if (code === CART_JS) {
+    win.products = [];
+    injectScript(win, fs.readFileSync(path.resolve(__dirname, '../ordering.js'), 'utf8'));
+    // Cart unit tests use synthetic catalogue fixtures. Real catalogue policy
+    // and rejection of supplied prices are covered by ordering.test.js.
+    win.quotationReasons = {};
+  }
   script.textContent = code;
   win.document.head.appendChild(script);
 }
@@ -43,6 +50,14 @@ function createWindow(html = CART_PAGE_HTML) {
   return win;
 }
 
+// Seed catalogue fixtures independently of the cart's incoming price handling.
+function addFixture(win, product) {
+  if (!win.products.some(p => p.id === product.id)) {
+    win.products.push({ ...product, brand: product.brand || '', image: product.image || '' });
+  }
+  return win.addToCart(product);
+}
+
 // ---------------------------------------------------------------------------
 // addToCart
 // ---------------------------------------------------------------------------
@@ -53,52 +68,52 @@ describe("addToCart", () => {
   });
 
   test("adds a new item to an empty cart", () => {
-    win.addToCart({ id: 1, name: "Pringles", price: 9500, image: "img.jpg", brand: "Snacks" });
+    addFixture(win, { id: 1, name: "Pringles", price: 9500, image: "img.jpg", brand: "Snacks" });
     expect(win.getCartItemCount()).toBe(1);
     expect(win.getCartTotal()).toBe(9500);
   });
 
   test("increments quantity when the same product is added twice", () => {
     const product = { id: 1, name: "Pringles", price: 9500, image: "img.jpg", brand: "Snacks" };
-    win.addToCart(product);
-    win.addToCart(product);
+    addFixture(win, product);
+    addFixture(win, product);
     expect(win.getCartItemCount()).toBe(2);
     expect(win.getCartTotal()).toBe(19000);
   });
 
   test("defaults quantity to 1 when not specified", () => {
-    win.addToCart({ id: 2, name: "Sugar", price: 160000, image: "img.jpg", brand: "Kakira" });
+    addFixture(win, { id: 2, name: "Sugar", price: 160000, image: "img.jpg", brand: "Kakira" });
     expect(win.getCartItemCount()).toBe(1);
   });
 
   test("respects an explicit quantity parameter", () => {
-    win.addToCart({ id: 3, name: "Oil", price: 11000, image: "img.jpg", brand: "Oils", quantity: 3 });
+    addFixture(win, { id: 3, name: "Oil", price: 11000, image: "img.jpg", brand: "Oils", quantity: 3 });
     expect(win.getCartItemCount()).toBe(3);
     expect(win.getCartTotal()).toBe(33000);
   });
 
   test("accumulates quantities correctly when the same product is added with a quantity > 1", () => {
-    win.addToCart({ id: 1, name: "Item", price: 5000, image: "", brand: "", quantity: 2 });
-    win.addToCart({ id: 1, name: "Item", price: 5000, image: "", brand: "", quantity: 3 });
+    addFixture(win, { id: 1, name: "Item", price: 5000, image: "", brand: "", quantity: 2 });
+    addFixture(win, { id: 1, name: "Item", price: 5000, image: "", brand: "", quantity: 3 });
     expect(win.getCartItemCount()).toBe(5);
   });
 
   test("keeps different products as separate entries", () => {
-    win.addToCart({ id: 1, name: "Pringles", price: 9500, image: "", brand: "Snacks" });
-    win.addToCart({ id: 2, name: "Sugar", price: 160000, image: "", brand: "Kakira" });
+    addFixture(win, { id: 1, name: "Pringles", price: 9500, image: "", brand: "Snacks" });
+    addFixture(win, { id: 2, name: "Sugar", price: 160000, image: "", brand: "Kakira" });
     expect(win.getCartItemCount()).toBe(2);
     expect(win.getCartTotal()).toBe(169500);
   });
 
   test("defaults brand to empty string when not provided", () => {
     expect(() =>
-      win.addToCart({ id: 1, name: "Test", price: 1000, image: "" })
+      addFixture(win, { id: 1, name: "Test", price: 1000, image: "" })
     ).not.toThrow();
     expect(win.getCartItemCount()).toBe(1);
   });
 
   test("saves the cart to localStorage after adding an item", () => {
-    win.addToCart({ id: 1, name: "Pringles", price: 9500, image: "", brand: "Snacks" });
+    addFixture(win, { id: 1, name: "Pringles", price: 9500, image: "", brand: "Snacks" });
     const saved = JSON.parse(win.localStorage.getItem("kikuuboCart"));
     expect(saved).toHaveLength(1);
     expect(saved[0].name).toBe("Pringles");
@@ -116,22 +131,22 @@ describe("removeFromCart", () => {
   });
 
   test("removes an existing item by id", () => {
-    win.addToCart({ id: 1, name: "Pringles", price: 9500, image: "", brand: "Snacks" });
+    addFixture(win, { id: 1, name: "Pringles", price: 9500, image: "", brand: "Snacks" });
     win.removeFromCart(1);
     expect(win.getCartItemCount()).toBe(0);
     expect(win.getCartTotal()).toBe(0);
   });
 
   test("does not affect other items when one is removed", () => {
-    win.addToCart({ id: 1, name: "Pringles", price: 9500, image: "", brand: "Snacks" });
-    win.addToCart({ id: 2, name: "Sugar", price: 160000, image: "", brand: "Kakira" });
+    addFixture(win, { id: 1, name: "Pringles", price: 9500, image: "", brand: "Snacks" });
+    addFixture(win, { id: 2, name: "Sugar", price: 160000, image: "", brand: "Kakira" });
     win.removeFromCart(1);
     expect(win.getCartItemCount()).toBe(1);
     expect(win.getCartTotal()).toBe(160000);
   });
 
   test("does nothing when the id does not exist in the cart", () => {
-    win.addToCart({ id: 1, name: "Pringles", price: 9500, image: "", brand: "Snacks" });
+    addFixture(win, { id: 1, name: "Pringles", price: 9500, image: "", brand: "Snacks" });
     win.removeFromCart(999);
     expect(win.getCartItemCount()).toBe(1);
   });
@@ -142,7 +157,7 @@ describe("removeFromCart", () => {
   });
 
   test("updates localStorage after removal", () => {
-    win.addToCart({ id: 1, name: "Pringles", price: 9500, image: "", brand: "Snacks" });
+    addFixture(win, { id: 1, name: "Pringles", price: 9500, image: "", brand: "Snacks" });
     win.removeFromCart(1);
     const saved = JSON.parse(win.localStorage.getItem("kikuuboCart"));
     expect(saved).toHaveLength(0);
@@ -156,7 +171,7 @@ describe("updateQuantity", () => {
   let win;
   beforeEach(() => {
     win = createWindow();
-    win.addToCart({ id: 1, name: "Pringles", price: 9500, image: "", brand: "Snacks" });
+    addFixture(win, { id: 1, name: "Pringles", price: 9500, image: "", brand: "Snacks" });
   });
 
   test("updates an item's quantity to a new value", () => {
@@ -165,14 +180,14 @@ describe("updateQuantity", () => {
     expect(win.getCartTotal()).toBe(47500);
   });
 
-  test("removes the item when quantity is set to 0", () => {
+  test("rejects zero without removing the item", () => {
     win.updateQuantity(1, 0);
-    expect(win.getCartItemCount()).toBe(0);
+    expect(win.getCartItemCount()).toBe(1);
   });
 
-  test("removes the item when quantity is set to a negative number", () => {
+  test("rejects negative quantities without removing the item", () => {
     win.updateQuantity(1, -1);
-    expect(win.getCartItemCount()).toBe(0);
+    expect(win.getCartItemCount()).toBe(1);
   });
 
   test("does nothing for a non-existent product id", () => {
@@ -206,24 +221,24 @@ describe("getCartTotal", () => {
   });
 
   test("returns the price of a single item", () => {
-    win.addToCart({ id: 1, name: "Item", price: 9500, image: "", brand: "" });
+    addFixture(win, { id: 1, name: "Item", price: 9500, image: "", brand: "" });
     expect(win.getCartTotal()).toBe(9500);
   });
 
   test("sums prices across multiple different items", () => {
-    win.addToCart({ id: 1, name: "A", price: 10000, image: "", brand: "" });
-    win.addToCart({ id: 2, name: "B", price: 20000, image: "", brand: "" });
+    addFixture(win, { id: 1, name: "A", price: 10000, image: "", brand: "" });
+    addFixture(win, { id: 2, name: "B", price: 20000, image: "", brand: "" });
     expect(win.getCartTotal()).toBe(30000);
   });
 
   test("accounts for item quantity in the total", () => {
-    win.addToCart({ id: 1, name: "Item", price: 5000, image: "", brand: "", quantity: 4 });
+    addFixture(win, { id: 1, name: "Item", price: 5000, image: "", brand: "", quantity: 4 });
     expect(win.getCartTotal()).toBe(20000);
   });
 
   test("calculates a mixed cart total correctly", () => {
-    win.addToCart({ id: 1, name: "A", price: 10000, image: "", brand: "", quantity: 2 });
-    win.addToCart({ id: 2, name: "B", price: 3000, image: "", brand: "", quantity: 5 });
+    addFixture(win, { id: 1, name: "A", price: 10000, image: "", brand: "", quantity: 2 });
+    addFixture(win, { id: 2, name: "B", price: 3000, image: "", brand: "", quantity: 5 });
     // 10000*2 + 3000*5 = 20000 + 15000 = 35000
     expect(win.getCartTotal()).toBe(35000);
   });
@@ -243,19 +258,19 @@ describe("getCartItemCount", () => {
   });
 
   test("returns 1 for a single item added with default quantity", () => {
-    win.addToCart({ id: 1, name: "Item", price: 5000, image: "", brand: "" });
+    addFixture(win, { id: 1, name: "Item", price: 5000, image: "", brand: "" });
     expect(win.getCartItemCount()).toBe(1);
   });
 
   test("sums quantities across all cart entries", () => {
-    win.addToCart({ id: 1, name: "A", price: 1000, image: "", brand: "", quantity: 2 });
-    win.addToCart({ id: 2, name: "B", price: 2000, image: "", brand: "", quantity: 3 });
+    addFixture(win, { id: 1, name: "A", price: 1000, image: "", brand: "", quantity: 2 });
+    addFixture(win, { id: 2, name: "B", price: 2000, image: "", brand: "", quantity: 3 });
     expect(win.getCartItemCount()).toBe(5);
   });
 
   test("decreases after an item is removed", () => {
-    win.addToCart({ id: 1, name: "A", price: 1000, image: "", brand: "" });
-    win.addToCart({ id: 2, name: "B", price: 2000, image: "", brand: "" });
+    addFixture(win, { id: 1, name: "A", price: 1000, image: "", brand: "" });
+    addFixture(win, { id: 2, name: "B", price: 2000, image: "", brand: "" });
     win.removeFromCart(1);
     expect(win.getCartItemCount()).toBe(1);
   });
@@ -267,11 +282,12 @@ describe("getCartItemCount", () => {
 describe("saveCart / loadCart", () => {
   test("loadCart restores a previously saved cart from localStorage", () => {
     const win1 = createWindow();
-    win1.addToCart({ id: 1, name: "Pringles", price: 9500, image: "img.jpg", brand: "Snacks" });
+    addFixture(win1, { id: 1, name: "Pringles", price: 9500, image: "img.jpg", brand: "Snacks" });
     const serialised = win1.localStorage.getItem("kikuuboCart");
 
     const win2 = createWindow();
     win2.localStorage.setItem("kikuuboCart", serialised);
+    win2.products = [...win1.products];
     win2.loadCart();
 
     expect(win2.getCartItemCount()).toBe(1);
@@ -287,8 +303,8 @@ describe("saveCart / loadCart", () => {
 
   test("saveCart serialises the full cart to localStorage", () => {
     const win = createWindow();
-    win.addToCart({ id: 1, name: "Pringles", price: 9500, image: "", brand: "Snacks" });
-    win.addToCart({ id: 2, name: "Sugar", price: 160000, image: "", brand: "Kakira" });
+    addFixture(win, { id: 1, name: "Pringles", price: 9500, image: "", brand: "Snacks" });
+    addFixture(win, { id: 2, name: "Sugar", price: 160000, image: "", brand: "Kakira" });
     win.saveCart();
 
     const saved = JSON.parse(win.localStorage.getItem("kikuuboCart"));
@@ -304,8 +320,8 @@ describe("clearCart", () => {
   let win;
   beforeEach(() => {
     win = createWindow();
-    win.addToCart({ id: 1, name: "A", price: 1000, image: "", brand: "" });
-    win.addToCart({ id: 2, name: "B", price: 2000, image: "", brand: "" });
+    addFixture(win, { id: 1, name: "A", price: 1000, image: "", brand: "" });
+    addFixture(win, { id: 2, name: "B", price: 2000, image: "", brand: "" });
   });
 
   test("empties the cart completely", () => {
@@ -333,14 +349,14 @@ describe("updateCartCount", () => {
 
   test("shows the badge when the cart has items", () => {
     const win = createWindow();
-    win.addToCart({ id: 1, name: "Item", price: 5000, image: "", brand: "" });
+    addFixture(win, { id: 1, name: "Item", price: 5000, image: "", brand: "" });
     win.updateCartCount();
     expect(win.document.querySelector(".cart-count").style.display).not.toBe("none");
   });
 
   test("sets badge text to the total item count", () => {
     const win = createWindow();
-    win.addToCart({ id: 1, name: "A", price: 1000, image: "", brand: "", quantity: 3 });
+    addFixture(win, { id: 1, name: "A", price: 1000, image: "", brand: "", quantity: 3 });
     win.updateCartCount();
     expect(win.document.querySelector(".cart-count").textContent).toBe("3");
   });
@@ -354,7 +370,7 @@ describe("updateCartCount", () => {
     win.localStorage.clear();
     injectScript(win, CART_JS);
     win.loadCart();
-    win.addToCart({ id: 1, name: "Item", price: 5000, image: "", brand: "" });
+    addFixture(win, { id: 1, name: "Item", price: 5000, image: "", brand: "" });
     win.updateCartCount();
 
     const badges = win.document.querySelectorAll(".cart-count");
@@ -376,7 +392,7 @@ describe("updateCartDisplay", () => {
 
   test("hides empty-cart message and shows table when cart has items", () => {
     const win = createWindow();
-    win.addToCart({ id: 1, name: "Item", price: 5000, image: "", brand: "" });
+    addFixture(win, { id: 1, name: "Item", price: 5000, image: "", brand: "" });
     win.updateCartDisplay();
 
     expect(win.document.querySelector("#cart-table").style.display).toBe("table");
@@ -385,8 +401,8 @@ describe("updateCartDisplay", () => {
 
   test("renders the correct number of rows in the cart table", () => {
     const win = createWindow();
-    win.addToCart({ id: 1, name: "A", price: 1000, image: "", brand: "" });
-    win.addToCart({ id: 2, name: "B", price: 2000, image: "", brand: "" });
+    addFixture(win, { id: 1, name: "A", price: 1000, image: "", brand: "" });
+    addFixture(win, { id: 2, name: "B", price: 2000, image: "", brand: "" });
     win.updateCartDisplay();
 
     expect(win.document.querySelectorAll("#cart-items tr")).toHaveLength(2);
@@ -394,7 +410,7 @@ describe("updateCartDisplay", () => {
 
   test("displays the correct subtotal for the cart", () => {
     const win = createWindow();
-    win.addToCart({ id: 1, name: "Item", price: 9500, image: "", brand: "" });
+    addFixture(win, { id: 1, name: "Item", price: 9500, image: "", brand: "" });
     win.updateCartDisplay();
 
     expect(win.document.querySelector("#cart-subtotal").textContent).toBe("UGX 9,500");
@@ -408,8 +424,8 @@ describe("updateCartDisplay", () => {
 
   test("displays the correct total for multiple items with quantities", () => {
     const win = createWindow();
-    win.addToCart({ id: 1, name: "A", price: 10000, image: "", brand: "", quantity: 2 });
-    win.addToCart({ id: 2, name: "B", price: 5000, image: "", brand: "", quantity: 3 });
+    addFixture(win, { id: 1, name: "A", price: 10000, image: "", brand: "", quantity: 2 });
+    addFixture(win, { id: 2, name: "B", price: 5000, image: "", brand: "", quantity: 3 });
     win.updateCartDisplay();
     // 10000*2 + 5000*3 = 20000 + 15000 = 35000
     expect(win.document.querySelector("#cart-total").textContent).toBe("UGX 35,000");
@@ -417,21 +433,21 @@ describe("updateCartDisplay", () => {
 
   test("renders product name in the row", () => {
     const win = createWindow();
-    win.addToCart({ id: 1, name: "Pringles", price: 9500, image: "", brand: "Snacks" });
+    addFixture(win, { id: 1, name: "Pringles", price: 9500, image: "", brand: "Snacks" });
     win.updateCartDisplay();
     expect(win.document.querySelector("#cart-items").innerHTML).toContain("Pringles");
   });
 
   test("renders brand in the row when brand is provided", () => {
     const win = createWindow();
-    win.addToCart({ id: 1, name: "Pringles", price: 9500, image: "", brand: "Snacks" });
+    addFixture(win, { id: 1, name: "Pringles", price: 9500, image: "", brand: "Snacks" });
     win.updateCartDisplay();
     expect(win.document.querySelector("#cart-items").innerHTML).toContain("Snacks");
   });
 
   test("does not render brand markup when brand is empty", () => {
     const win = createWindow();
-    win.addToCart({ id: 1, name: "Generic", price: 5000, image: "", brand: "" });
+    addFixture(win, { id: 1, name: "Generic", price: 5000, image: "", brand: "" });
     win.updateCartDisplay();
     const rowHtml = win.document.querySelector("#cart-items").innerHTML;
     // The brand <span> should not appear
