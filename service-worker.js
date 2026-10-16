@@ -1,14 +1,17 @@
 const CACHE_PREFIX = "kikuubo-suppliers";
-const STATIC_CACHE = `${CACHE_PREFIX}-static-v1`;
+const STATIC_CACHE = `${CACHE_PREFIX}-static-v3-manual-momo`;
 const OFFLINE_URL = "/offline.html";
 
 const PRECACHE_URLS = [
   OFFLINE_URL,
   "/manifest.json",
   "/style.css",
-  "/modern-header.css",
-  "/script.js",
-  "/cart.js",
+  "/modern-header.css?v=manual-momo-v3",
+  "/script.js?v=manual-momo-v3",
+  "/cart.js?v=manual-momo-v3",
+  "/products_array.js?v=manual-momo-v3",
+  "/ordering.js?v=manual-momo-v3",
+  "/checkout.js?v=manual-momo-v3",
   "/image/logo.webp",
   "/image/logo.png",
   "/image/icon.png",

@@ -430,7 +430,11 @@
     font-size: 18px;
   }
 
-  #close {
+  #navbar #close {
+    width: 44px;
+    height: 44px;
+    padding: 10px;
+    box-sizing: border-box;
     display: initial;
     position: absolute;
     top: 30px;

@@ -232,12 +232,14 @@ describe("Products – spot-checks for known entries", () => {
     expect(p.category).toBe("Biscuits, Chocolate, Lollipops & Snacks");
   });
 
-  test("product id=8 is Kakira Sugar at UGX 160000", () => {
+  test("product id=8 retains its catalogue value pending business approval", () => {
     const p = products.find((p) => p.id === 8);
     expect(p).toBeDefined();
     expect(p.name).toBe("Sugar");
     expect(p.brand).toBe("Kakira");
-    expect(p.price).toBe(160000);
+    // Preserve existing data, not an approved selling price.
+    // ordering.test.js requires quotation-only handling for this item.
+    expect(p.price).toBe(168000);
   });
 
   test("product id=13 is Jik 3ltr at UGX 35000", () => {

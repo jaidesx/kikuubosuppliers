@@ -34,7 +34,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preconnect" href="https://pro.fontawesome.com" />
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="modern-header.css" />
+    <link rel="stylesheet" href="modern-header.css?v=manual-momo-v3" />
     <link
       rel="stylesheet"
       href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
@@ -141,7 +141,7 @@
         <h4 id="product-name">Loading product…</h4>
         <h2 id="product-price"></h2>
         <div class="product-actions">
-          <input type="number" id="quantity" value="1" />
+          <input type="number" id="quantity" value="1" min="1" max="9999" step="1" aria-label="Quantity" />
           <button class="normal" id="add-to-cart-btn">Add To Cart</button>
           <button class="compare-btn" id="compare-btn">
             <i class="fas fa-balance-scale"></i> Compare
@@ -298,10 +298,12 @@
     </main>
 
     <script id="product-jsonld" type="application/ld+json"></script>
-    <script src="products_array.js"></script>
-    <script src="script.js"></script>
-    <script src="cart.js"></script>
+    <script src="products_array.js?v=manual-momo-v3"></script>
+    <script src="ordering.js?v=manual-momo-v3"></script>
+    <script src="script.js?v=manual-momo-v3"></script>
+    <script src="cart.js?v=manual-momo-v3"></script>
     <script>
+      let displayedProduct = null;
       // Load product on page load
       document.addEventListener("DOMContentLoaded", function () {
         // Get product ID from localStorage or URL parameter
@@ -313,31 +315,11 @@
           productId = urlParams.get("id");
         }
 
-        if (productId) {
-          const product = getProductById(productId);
-          if (product) {
-            displayProduct(product);
-          } else {
-            // Product not found, load default product (ID 1)
-            console.warn(
-              "Product with ID " +
-                productId +
-                " not found, loading default product",
-            );
-            const defaultProduct = getProductById(1);
-            if (defaultProduct) {
-              localStorage.setItem("selectedProductId", "1");
-              displayProduct(defaultProduct);
-            }
-          }
-        } else {
-          // No product ID, load default product (ID 1)
-          console.log("No product selected, loading default product");
-          const defaultProduct = getProductById(1);
-          if (defaultProduct) {
-            localStorage.setItem("selectedProductId", "1");
-            displayProduct(defaultProduct);
-          }
+        const product = getProductById(productId || 1);
+        if (product) displayProduct(product);
+        else {
+          document.getElementById("product-name").textContent = "Product unavailable — please choose a product from the catalogue.";
+          document.getElementById("add-to-cart-btn").disabled = true;
         }
 
         // Load featured products
@@ -346,6 +328,7 @@
 
       // Display product details
       function displayProduct(product) {
+        displayedProduct = product;
         // Update main image
         document.getElementById("MainImg").src = product.image;
 
@@ -363,7 +346,7 @@
         }`;
         document.getElementById("product-name").textContent = product.name;
         document.getElementById("product-price").textContent =
-          `UGX ${product.price}.00`;
+          product.quoteOnly ? "Price on quotation — confirm pack and price with the supplier" : formatCurrency(product.price);
         document.getElementById("product-description").textContent =
           product.description;
 
@@ -372,7 +355,7 @@
 
         // Inject JSON-LD structured data for search engines
         const jsonld = document.getElementById("product-jsonld");
-        if (jsonld) {
+        if (jsonld && !product.quoteOnly) {
           jsonld.textContent = JSON.stringify({
             "@context": "https://schema.org/",
             "@type": "Product",
@@ -412,7 +395,7 @@
               <i class="fas fa-star"></i>
               <i class="fas fa-star"></i>
             </div>
-                <h4>UGX ${p.price}</h4>
+                <h4>${p.quoteOnly ? "Price on quotation" : formatCurrency(p.price)}</h4>
               </div>
               <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
             </div>
@@ -445,8 +428,7 @@
           var quantity = document.getElementById("quantity")
             ? document.getElementById("quantity").value
             : 1;
-          var productId = localStorage.getItem("selectedProductId");
-          var product = getProductById(productId);
+          var product = displayedProduct;
 
           if (product) {
             // Use the addToCart function from cart.js
@@ -456,7 +438,7 @@
               price: product.price,
               image: product.image,
               brand: product.brand || "",
-              quantity: parseInt(quantity),
+              quantity: quantity,
             });
           }
         };
@@ -466,8 +448,7 @@
       var compareBtn = document.getElementById("compare-btn");
       if (compareBtn) {
         compareBtn.onclick = function () {
-          var productId = localStorage.getItem("selectedProductId");
-          var product = getProductById(productId);
+          var product = displayedProduct;
 
           if (product) {
             // Get existing compare list or create empty array

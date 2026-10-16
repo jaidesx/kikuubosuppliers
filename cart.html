@@ -18,14 +18,14 @@
     <meta name="apple-mobile-web-app-title" content="Kikuubo" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     <link rel="apple-touch-icon" href="image/app-icon-192.png" />
-    <meta name="description" content="Your shopping cart at Kikuubo Suppliers. Review your items and checkout via Mobile Money." />
+    <meta name="description" content="Your shopping cart at Kikuubo Suppliers. Review your items and request a supplier quotation through WhatsApp." />
     <meta name="robots" content="noindex" />
     <title>Cart | Kikuubo Suppliers</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preconnect" href="https://pro.fontawesome.com" />
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="modern-header.css" />
+    <link rel="stylesheet" href="modern-header.css?v=manual-momo-v3" />
     <link
       rel="stylesheet"
       href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
@@ -49,7 +49,8 @@
 
       .checkout-form {
         flex: 1;
-        min-width: 300px;
+        min-width: 0;
+        width: 100%;
         background: #fff;
         padding: 30px;
         border-radius: 12px;
@@ -73,7 +74,8 @@
 
       .payment-methods {
         flex: 1;
-        min-width: 300px;
+        min-width: 0;
+        width: 100%;
         background: #fff;
         padding: 30px;
         border-radius: 12px;
@@ -144,30 +146,9 @@
         margin-top: 20px;
       }
 
-      .processing-overlay {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0,0,0,0.8);
-        z-index: 10000;
-        justify-content: center;
-        align-items: center;
-        color: #fff;
-        flex-direction: column;
-      }
 
-      .loader {
-        border: 5px solid #f3f3f3;
-        border-top: 5px solid #088178;
-        border-radius: 50%;
-        width: 50px;
-        height: 50px;
-        animation: spin 2s linear infinite;
-        margin-bottom: 20px;
-      }
+
+
 
       @media (max-width: 799px) {
         #checkout-section {
@@ -176,6 +157,20 @@
         .checkout-container {
           flex-direction: column;
         }
+      }
+      #checkout-section { overflow-wrap: anywhere; }
+      #order-handoff { margin-top: 24px; }
+      #order-handoff[hidden] { display: none; }
+      #order-message { width: 100%; max-width: 100%; box-sizing: border-box; }
+      #whatsapp-order-link { display: inline-block; padding: 14px; color: #066b64; text-decoration: underline; }
+      #checkout-error { color: #a01818; }
+      .summary-row { gap: 12px; flex-wrap: wrap; }
+      .payment-option { cursor: pointer; }
+      @media (max-width: 480px) {
+        #checkout-section { padding: 12px; }
+        .checkout-form, .payment-methods { padding: 16px; box-sizing: border-box; }
+        #cart table { min-width: 700px; }
+        .checkout-container { gap: 16px; }
       }
     </style>
     <!-- Google tag (gtag.js) -->
@@ -282,7 +277,7 @@
         <h3>Cart Totals</h3>
         <table>
           <tr>
-            <td>Cart Subtotal</td>
+            <td>Estimated items subtotal</td>
             <td id="cart-subtotal">UGX 0.00</td>
           </tr>
           <tr>
@@ -290,7 +285,7 @@
             <td>At A Cost</td>
           </tr>
           <tr>
-            <td><strong>Total</strong></td>
+            <td><strong>Estimate excluding delivery</strong></td>
             <td id="cart-total">UGX 0.00</td>
           </tr>
         </table>
@@ -300,31 +295,27 @@
 
     <!-- Checkout Section -->
     <section id="checkout-section" class="section-p1">
-      <div class="checkout-container">
+      <form id="checkout-form" class="checkout-container" novalidate>
         <div class="checkout-form">
           <h3>Delivery Details</h3>
-          <input type="text" id="cust-name" placeholder="Full Name" required />
-          <input type="text" id="cust-phone" placeholder="Phone Number (WhatsApp Preferred)" required />
-          <input type="text" id="cust-location" placeholder="Delivery Location (e.g. Kampala, Najera)" required />
-          <textarea id="cust-notes" placeholder="Additional Notes (Optional)" rows="4"></textarea>
+          <label for="cust-name">Full name</label><input type="text" id="cust-name" autocomplete="name" maxlength="100" required />
+          <label for="cust-phone">Ugandan mobile number (WhatsApp preferred)</label><input type="tel" id="cust-phone" autocomplete="tel" maxlength="24" required />
+          <label for="cust-location">Delivery location and directions</label><input type="text" id="cust-location" placeholder="e.g. Kampala, Najera" maxlength="300" required />
+          <label for="cust-notes">Additional notes (optional)</label><textarea id="cust-notes" maxlength="1000" rows="4"></textarea>
         </div>
 
         <div class="payment-methods">
-          <h3>Payment Method</h3>
+          <h3>Preferred payment method</h3>
           <div class="payment-options">
-            <div class="payment-option active" onclick="selectPayment('mtn', this)">
-              <img src="image/Products/Mtn.webp" alt="MTN MoMo" />
-              <p>MTN MoMo</p>
-            </div>
-            <div class="payment-option" onclick="selectPayment('airtel', this)">
-              <img src="image/Products/airtel.webp" alt="Airtel Money" />
-              <p>Airtel Money</p>
-            </div>
+            <label class="payment-option active"><input type="radio" name="payment" value="mtn" checked onchange="selectPayment(this.value)" /> MTN MoMo</label>
+            <label class="payment-option"><input type="radio" name="payment" value="airtel" onchange="selectPayment(this.value)" /> Airtel Money</label>
           </div>
 
+          <p id="payment-instructions" role="status"></p>
+          <p>MTN: 0770975409 · Airtel: 0756158466. Registered recipient for both: Ssewanyana Arthur. Submit your WhatsApp request first and wait for the supplier to confirm availability, delivery charges and the final total before paying. Verify the recipient name before authorizing payment, then await manual confirmation from the supplier.</p>
           <div class="order-summary">
             <div class="summary-row">
-              <span>Items Total</span>
+              <span>Estimated items subtotal</span>
               <span id="summary-subtotal">UGX 0.00</span>
             </div>
             <div class="summary-row">
@@ -332,23 +323,27 @@
               <span id="summary-delivery">Calculated on WhatsApp</span>
             </div>
             <div class="summary-row total">
-              <span>Payable Amount</span>
+              <span>Estimate (not payable yet)</span>
               <span id="summary-total">UGX 0.00</span>
             </div>
           </div>
 
-          <button class="normal" id="confirm-checkout-btn" onclick="submitOrder()">Confirm & Pay via Mobile Money</button>
-          <button class="normal" style="background: transparent; color: #888; border: 1px solid #ddd; margin-top: 10px;" onclick="hideCheckout()">Back to Cart</button>
+          <p id="checkout-error" role="alert" tabindex="-1"></p>
+          <button class="normal" id="confirm-checkout-btn" type="submit">Prepare WhatsApp order request</button>
+          <button type="button" class="normal" style="background: transparent; color: #888; border: 1px solid #ddd; margin-top: 10px;" onclick="hideCheckout()">Back to Cart</button>
         </div>
+      </form>
+      <div id="order-handoff" hidden>
+        <h3>Review your request</h3>
+        <p id="handoff-help"></p>
+        <label for="order-message">WhatsApp message</label>
+        <textarea id="order-message" rows="12" readonly></textarea>
+        <button type="button" id="copy-order-btn" class="normal">Copy request</button>
+        <a id="whatsapp-order-link" target="_blank" rel="noopener noreferrer">Open WhatsApp</a>
+        <p id="copy-status" role="status"></p>
+        <p>If WhatsApp is unavailable, call 0756158466. This website does not process payments.</p>
       </div>
     </section>
-
-    <!-- Processing Overlay -->
-    <div class="processing-overlay" id="processing-overlay">
-      <div class="loader"></div>
-      <h3>Processing Your Order...</h3>
-      <p>Initiating Mobile Money payment request</p>
-    </div>
 
     <footer class="section-p1">
       <div class="col">
@@ -447,105 +442,10 @@
       </div>
     </footer>
     </main>
-    <script src="cart.js"></script>
-    <script src="script.js"></script>
-    <script>
-      // The 'cart' variable and basic functions are already defined in cart.js
-
-      // Override cart.js updateCartDisplay to call our local updates if needed
-      const originalUpdateDisplay = window.updateCartDisplay;
-      window.updateCartDisplay = function() {
-        if(typeof originalUpdateDisplay === 'function') originalUpdateDisplay();
-        updateCheckoutSummary();
-      };
-
-      function updateCheckoutSummary() {
-        const subtotal = getCartTotal();
-        const summarySubtotal = document.getElementById("summary-subtotal");
-        const summaryTotal = document.getElementById("summary-total");
-        const formattedSubtotal = typeof formatCurrency === "function" ? formatCurrency(subtotal) : "UGX " + subtotal.toLocaleString();
-
-        if (summarySubtotal) summarySubtotal.textContent = formattedSubtotal;
-        if (summaryTotal) summaryTotal.textContent = formattedSubtotal;
-      }
-
-      let selectedPaymentMethod = 'mtn';
-
-      function showCheckout() {
-        if (cart.length === 0) {
-          alert("Your cart is empty!");
-          return;
-        }
-        document.getElementById("checkout-section").style.display = "block";
-        document.getElementById("cart").style.display = "none";
-        document.getElementById("cart-add").style.display = "none";
-
-        updateCheckoutSummary();
-
-        // Scroll to checkout
-        window.scrollTo({ top: document.getElementById("checkout-section").offsetTop - 100, behavior: 'smooth' });
-      }
-
-      function hideCheckout() {
-        document.getElementById("checkout-section").style.display = "none";
-        document.getElementById("cart").style.display = "block";
-        document.getElementById("cart-add").style.display = "flex";
-      }
-
-      function selectPayment(method, element) {
-        selectedPaymentMethod = method;
-        document.querySelectorAll('.payment-option').forEach(opt => opt.classList.remove('active'));
-        element.classList.add('active');
-
-        const btn = document.getElementById("confirm-checkout-btn");
-        if(method === 'mtn') {
-           btn.innerHTML = "Confirm & Pay via MTN MoMo";
-        } else {
-           btn.innerHTML = "Confirm & Pay via Airtel Money";
-        }
-      }
-
-      function submitOrder() {
-        const name = document.getElementById("cust-name").value;
-        const phone = document.getElementById("cust-phone").value;
-        const location = document.getElementById("cust-location").value;
-        const notes = document.getElementById("cust-notes").value;
-
-        if (!name || !phone || !location) {
-          alert("Please fill in all delivery details.");
-          return;
-        }
-
-        // Show processing
-        const overlay = document.getElementById("processing-overlay");
-        overlay.style.display = "flex";
-
-        setTimeout(() => {
-          overlay.style.display = "none";
-
-          // Generate WhatsApp Message
-          const shopPhone = "256756158466";
-          let orderDetails = cart.map(item => `- ${item.name} (${item.quantity}x) - UGX ${(item.price * item.quantity).toFixed(2)}`).join("%0A");
-          const total = getCartTotal().toFixed(2);
-
-          const message = `*NEW ORDER FROM KIKUUBO SUPPLIERS*%0A%0A` +
-                          `*Customer:* ${name}%0A` +
-                          `*Phone:* ${phone}%0A` +
-                          `*Location:* ${location}%0A` +
-                          `*Payment:* ${selectedPaymentMethod.toUpperCase()}%0A%0A` +
-                          `*Order Items:*%0A${orderDetails}%0A%0A` +
-                          `*Total Amount: UGX ${total}*%0A%0A` +
-                          `*Notes:* ${notes || 'None'}`;
-
-          const whatsappUrl = `https://wa.me/${shopPhone}?text=${message}`;
-
-          // Clear cart
-          window.clearCart();
-
-          // Redirect to WhatsApp
-          window.location.href = whatsappUrl;
-        }, 2000);
-      }
-    </script>
+    <script src="products_array.js?v=manual-momo-v3"></script>
+    <script src="ordering.js?v=manual-momo-v3"></script>
+    <script src="cart.js?v=manual-momo-v3"></script>
+    <script src="script.js?v=manual-momo-v3"></script>
+    <script src="checkout.js?v=manual-momo-v3"></script>
   </body>
 </html>
