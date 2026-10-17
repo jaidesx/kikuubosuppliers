@@ -298,8 +298,8 @@
     </main>
 
     <script id="product-jsonld" type="application/ld+json"></script>
-    <script src="products_array.js?v=manual-momo-v3"></script>
-    <script src="ordering.js?v=manual-momo-v3"></script>
+    <script src="products_array.js?v=nescafe-fix-20261018"></script>
+    <script src="ordering.js?v=nescafe-fix-20261018"></script>
     <script src="script.js?v=manual-momo-v3"></script>
     <script src="cart.js?v=manual-momo-v3"></script>
     <script>
@@ -336,7 +336,9 @@
         const smallImgs = document.querySelectorAll(".small-img");
         product.images.forEach((imgName, index) => {
           if (smallImgs[index]) {
-            smallImgs[index].src = `image/Products/${imgName}.webp`;
+            smallImgs[index].src = /\.(?:jpe?g|png|webp)$/i.test(imgName)
+              ? `image/Products/${imgName}`
+              : `image/Products/${imgName}.webp`;
           }
         });
 

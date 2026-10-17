@@ -11,7 +11,6 @@ window.orderingConfig = Object.freeze({
 
 // Do not change these prices until the business resolves the source conflicts.
 window.quotationReasons = Object.freeze({
-  3: "Homepage and catalogue prices differ",
   7: "Product card and catalogue prices differ",
   8: "Homepage and catalogue prices differ",
   15: "Size and price range require confirmation",

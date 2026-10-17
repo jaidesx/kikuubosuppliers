@@ -17,11 +17,11 @@
   },
   {
     "id": "3",
-    "name": "Sacket",
+    "name": "Sachet",
     "brand": "Nescafe 60pcs",
-    "price_ugx": null,
-    "quote_only": true,
-    "quote_reason": "Homepage and catalogue prices differ"
+    "price_ugx": 30000,
+    "quote_only": false,
+    "quote_reason": ""
   },
   {
     "id": "4",
@@ -43,7 +43,7 @@
     "id": "6",
     "name": "Sunseed Oil",
     "brand": "Oils",
-    "price_ugx": 11000,
+    "price_ugx": 10500,
     "quote_only": false,
     "quote_reason": ""
   },
@@ -75,7 +75,7 @@
     "id": "10",
     "name": "Tomato Paste",
     "brand": "Safa",
-    "price_ugx": 5000,
+    "price_ugx": 6000,
     "quote_only": false,
     "quote_reason": ""
   },
@@ -155,7 +155,7 @@
     "id": "20",
     "name": "Olive Oil",
     "brand": "Bertini",
-    "price_ugx": 25000,
+    "price_ugx": 28000,
     "quote_only": false,
     "quote_reason": ""
   },
@@ -171,7 +171,7 @@
     "id": "22",
     "name": "Tomato Ketchup",
     "brand": "Gold Valley",
-    "price_ugx": 9000,
+    "price_ugx": 11000,
     "quote_only": false,
     "quote_reason": ""
   },
@@ -179,7 +179,7 @@
     "id": "23",
     "name": "Mortein Doom",
     "brand": "Insect Killer",
-    "price_ugx": 17000,
+    "price_ugx": 20000,
     "quote_only": false,
     "quote_reason": ""
   },
@@ -259,7 +259,7 @@
     "id": "33",
     "name": "50g",
     "brand": "Nescafe",
-    "price_ugx": 11500,
+    "price_ugx": 15000,
     "quote_only": false,
     "quote_reason": ""
   },
@@ -2075,7 +2075,7 @@
     "id": "260",
     "name": "Detergent  500g",
     "brand": "Magic",
-    "price_ugx": 3500,
+    "price_ugx": 4000,
     "quote_only": false,
     "quote_reason": ""
   },
@@ -2083,7 +2083,7 @@
     "id": "261",
     "name": "Detergent  1kg",
     "brand": "Omo",
-    "price_ugx": 12500,
+    "price_ugx": 13000,
     "quote_only": false,
     "quote_reason": ""
   },
@@ -2099,7 +2099,7 @@
     "id": "263",
     "name": "Detergent  1kg",
     "brand": "Magic",
-    "price_ugx": 7000,
+    "price_ugx": 7500,
     "quote_only": false,
     "quote_reason": ""
   },
@@ -2443,7 +2443,7 @@
     "id": "306",
     "name": "200g",
     "brand": "Nescafe",
-    "price_ugx": 38000,
+    "price_ugx": 37000,
     "quote_only": false,
     "quote_reason": ""
   },
@@ -2451,7 +2451,7 @@
     "id": "307",
     "name": "100g",
     "brand": "Nescafe",
-    "price_ugx": 22000,
+    "price_ugx": 30000,
     "quote_only": false,
     "quote_reason": ""
   },
@@ -3603,7 +3603,7 @@
     "id": "451",
     "name": "12pcs",
     "brand": "Jesa  Milk",
-    "price_ugx": 22000,
+    "price_ugx": 30000,
     "quote_only": false,
     "quote_reason": ""
   },
@@ -3611,7 +3611,7 @@
     "id": "452",
     "name": "12pcs",
     "brand": "ClassicMilk",
-    "price_ugx": 22000,
+    "price_ugx": 28000,
     "quote_only": false,
     "quote_reason": ""
   },
@@ -3635,7 +3635,7 @@
     "id": "455",
     "name": "1pkt",
     "brand": "Supreme",
-    "price_ugx": 7000,
+    "price_ugx": 7500,
     "quote_only": false,
     "quote_reason": ""
   },
@@ -3651,7 +3651,7 @@
     "id": "457",
     "name": "2kg",
     "brand": "Azam",
-    "price_ugx": 7000,
+    "price_ugx": 7500,
     "quote_only": false,
     "quote_reason": ""
   },
@@ -3790,5 +3790,53 @@
     "price_ugx": null,
     "quote_only": true,
     "quote_reason": "Product identity, pack and price require confirmation"
+  },
+  {
+    "id": "474",
+    "name": "Hot & Spicy 40g",
+    "brand": "Pringles",
+    "price_ugx": 5000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "475",
+    "name": "Texas BBQ 40g",
+    "brand": "Pringles",
+    "price_ugx": 5000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "476",
+    "name": "Sour Cream & Onion",
+    "brand": "Pringles",
+    "price_ugx": 5000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "477",
+    "name": "Original",
+    "brand": "Pringles",
+    "price_ugx": 5000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "478",
+    "name": "White Detergent 500g",
+    "brand": "Nomi",
+    "price_ugx": 7000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "479",
+    "name": "White Detergent 1kg",
+    "brand": "Nomi",
+    "price_ugx": 12500,
+    "quote_only": false,
+    "quote_reason": ""
   }
 ]
