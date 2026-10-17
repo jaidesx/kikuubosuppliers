@@ -1,0 +1,3794 @@
+[
+  {
+    "id": "1",
+    "name": "Pringles",
+    "brand": "Snacks",
+    "price_ugx": 9500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "2",
+    "name": "Corn Flakes",
+    "brand": "Kellogg's",
+    "price_ugx": 35000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "3",
+    "name": "Sacket",
+    "brand": "Nescafe 60pcs",
+    "price_ugx": null,
+    "quote_only": true,
+    "quote_reason": "Homepage and catalogue prices differ"
+  },
+  {
+    "id": "4",
+    "name": "Good Day",
+    "brand": "Cappuccino",
+    "price_ugx": 32000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "5",
+    "name": "BBQ Sauce",
+    "brand": "Gold Valley",
+    "price_ugx": 15000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "6",
+    "name": "Sunseed Oil",
+    "brand": "Oils",
+    "price_ugx": 11000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "7",
+    "name": "Nescafe",
+    "brand": "Coffee",
+    "price_ugx": null,
+    "quote_only": true,
+    "quote_reason": "Product card and catalogue prices differ"
+  },
+  {
+    "id": "8",
+    "name": "Sugar",
+    "brand": "Kakira",
+    "price_ugx": null,
+    "quote_only": true,
+    "quote_reason": "Homepage and catalogue prices differ"
+  },
+  {
+    "id": "9",
+    "name": "Climax",
+    "brand": "Toilet Balls",
+    "price_ugx": 2500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "10",
+    "name": "Tomato Paste",
+    "brand": "Safa",
+    "price_ugx": 5000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "11",
+    "name": "Mayonnaise Lite",
+    "brand": "American Garden",
+    "price_ugx": 105000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "12",
+    "name": "Oyster Sauce",
+    "brand": "Sauce",
+    "price_ugx": 16000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "13",
+    "name": "Jik 3ltr",
+    "brand": "Jik Bleach",
+    "price_ugx": 35000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "14",
+    "name": "Kingtox",
+    "brand": "Insect Killer",
+    "price_ugx": 9000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "15",
+    "name": "Liquid",
+    "brand": "Dettol",
+    "price_ugx": null,
+    "quote_only": true,
+    "quote_reason": "Size and price range require confirmation"
+  },
+  {
+    "id": "16",
+    "name": "Magarine",
+    "brand": "Prestige",
+    "price_ugx": 12500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "17",
+    "name": "Tomato Ketchup Skt",
+    "brand": "Heinz",
+    "price_ugx": 20000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "18",
+    "name": "Tomato Ketchup",
+    "brand": "Heinz",
+    "price_ugx": 6500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "19",
+    "name": "Sunseed Cooking Oils",
+    "brand": "Oil",
+    "price_ugx": null,
+    "quote_only": true,
+    "quote_reason": "Size and price range require confirmation"
+  },
+  {
+    "id": "20",
+    "name": "Olive Oil",
+    "brand": "Bertini",
+    "price_ugx": 25000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "21",
+    "name": "Aromat",
+    "brand": "Knorr",
+    "price_ugx": 4500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "22",
+    "name": "Tomato Ketchup",
+    "brand": "Gold Valley",
+    "price_ugx": 9000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "23",
+    "name": "Mortein Doom",
+    "brand": "Insect Killer",
+    "price_ugx": 17000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "24",
+    "name": "Insect Killer",
+    "brand": "Kingtox",
+    "price_ugx": 9000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "25",
+    "name": "Fortune Gold",
+    "brand": "Oils",
+    "price_ugx": null,
+    "quote_only": true,
+    "quote_reason": "UGX 149 requires business approval"
+  },
+  {
+    "id": "26",
+    "name": "Roki",
+    "brand": "Oils",
+    "price_ugx": 24000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "27",
+    "name": "Aluminium Foil",
+    "brand": "Foils",
+    "price_ugx": 24000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "28",
+    "name": "Cling Film",
+    "brand": "Golden",
+    "price_ugx": 20000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "29",
+    "name": "Cocoa Powder",
+    "brand": "Cadbury",
+    "price_ugx": 32500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "30",
+    "name": "Drinking Chocolate",
+    "brand": "Cadbury",
+    "price_ugx": 22000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "31",
+    "name": "Nescafe Gold",
+    "brand": "Coffee",
+    "price_ugx": 26000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "32",
+    "name": "Nido",
+    "brand": "Nestle",
+    "price_ugx": 125000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "33",
+    "name": "50g",
+    "brand": "Nescafe",
+    "price_ugx": 11500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "34",
+    "name": "Vinegar",
+    "brand": "Apple Cider",
+    "price_ugx": 40000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "35",
+    "name": "White Oats",
+    "brand": "Quaker",
+    "price_ugx": 10000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "36",
+    "name": "Cling Film",
+    "brand": "Falcon",
+    "price_ugx": 4000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "37",
+    "name": "Premium Jelly",
+    "brand": "Vaseline",
+    "price_ugx": 4500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "38",
+    "name": "2kg",
+    "brand": "Royco",
+    "price_ugx": 33000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "39",
+    "name": "Cocoa Butter",
+    "brand": "Vaseline",
+    "price_ugx": 4500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "40",
+    "name": "Beef Original",
+    "brand": "Royco",
+    "price_ugx": 5000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "41",
+    "name": "Blueseal",
+    "brand": "Vaseline",
+    "price_ugx": 4500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "42",
+    "name": "Beef Masala",
+    "brand": "Tropical Heat",
+    "price_ugx": 4500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "43",
+    "name": "Paprika Spice",
+    "brand": "Tropical Heat",
+    "price_ugx": 6500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "44",
+    "name": "Tomato Paste",
+    "brand": "Red Gold",
+    "price_ugx": 4500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "45",
+    "name": "Beef Flavour",
+    "brand": "Royco Cubes",
+    "price_ugx": 4500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "46",
+    "name": "Real Mayonnaise",
+    "brand": "American Garden",
+    "price_ugx": 20000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "47",
+    "name": "Vinegar",
+    "brand": "American Garden",
+    "price_ugx": 10000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "48",
+    "name": "Chicken Masala",
+    "brand": "Tropical Heat",
+    "price_ugx": 4500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "49",
+    "name": "Scouring Steel",
+    "brand": "Nice",
+    "price_ugx": 500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "50",
+    "name": "Soap (All)",
+    "brand": "Dettol",
+    "price_ugx": 5000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "51",
+    "name": "Dish Wash",
+    "brand": "Morning Fresh",
+    "price_ugx": 7500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "52",
+    "name": "Handwash",
+    "brand": "Hobby",
+    "price_ugx": 6500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "53",
+    "name": "Toilet Balls",
+    "brand": "Odonil",
+    "price_ugx": 5000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "54",
+    "name": "Colors",
+    "brand": "JIK",
+    "price_ugx": 12000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "55",
+    "name": "Toilet Blocks",
+    "brand": "Good Clean",
+    "price_ugx": 6000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "56",
+    "name": "Lemon Fresh",
+    "brand": "JIK",
+    "price_ugx": 9000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "57",
+    "name": "Maximum Cavity",
+    "brand": "Colgate",
+    "price_ugx": 5500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "58",
+    "name": "Toothpaste",
+    "brand": "ABC Dent",
+    "price_ugx": 1500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "59",
+    "name": "Clove",
+    "brand": "Dabur Herbal",
+    "price_ugx": 5000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "60",
+    "name": "Fresh Mint",
+    "brand": "Sensodyne",
+    "price_ugx": 10000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "61",
+    "name": "Toothbrush",
+    "brand": "Double Action Charcoal",
+    "price_ugx": 2500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "62",
+    "name": "Herbal Original",
+    "brand": "Colgate",
+    "price_ugx": 4000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "63",
+    "name": "Charcoal Clean Gel",
+    "brand": "Colgate",
+    "price_ugx": 6500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "64",
+    "name": "Toothbrush",
+    "brand": "Double Action",
+    "price_ugx": 2000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "65",
+    "name": "Tea",
+    "brand": "Garden",
+    "price_ugx": 4500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "66",
+    "name": "Sugar",
+    "brand": "Kinyara",
+    "price_ugx": 4000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "67",
+    "name": "Sugar",
+    "brand": "Kakira",
+    "price_ugx": null,
+    "quote_only": true,
+    "quote_reason": "Product card and catalogue prices differ"
+  },
+  {
+    "id": "68",
+    "name": "Cornflake",
+    "brand": "Weetabix",
+    "price_ugx": 14000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "69",
+    "name": "Grapes",
+    "brand": "Grapes",
+    "price_ugx": 12500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "70",
+    "name": "Apples",
+    "brand": "Red&Green",
+    "price_ugx": 1500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "71",
+    "name": "BBQ Sauce",
+    "brand": "American Garden",
+    "price_ugx": 19000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "72",
+    "name": "Dark & Light",
+    "brand": "Soy Sauce",
+    "price_ugx": 8000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "73",
+    "name": "Instant Noodles",
+    "brand": "Indomine",
+    "price_ugx": 1500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "74",
+    "name": "Rice 5Kg",
+    "brand": "Sana",
+    "price_ugx": 145000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "75",
+    "name": "LG Rice 5Kg",
+    "brand": "Asad",
+    "price_ugx": 50000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "76",
+    "name": "Rice 5Kg",
+    "brand": "Mahmood",
+    "price_ugx": 48000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "77",
+    "name": "Compact",
+    "brand": "Toilet Rolls",
+    "price_ugx": 8500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "78",
+    "name": "Piao Piao",
+    "brand": "Toilet Rolls",
+    "price_ugx": 14000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "79",
+    "name": "Comfort",
+    "brand": "Toilet Rolls",
+    "price_ugx": 8500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "80",
+    "name": "Soft&Clean",
+    "brand": "Toilet Rolls",
+    "price_ugx": 14000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "81",
+    "name": "Disposable Forks",
+    "brand": "Eagle Brand",
+    "price_ugx": 2500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "82",
+    "name": "Silver Plates",
+    "brand": "Eagle Brand",
+    "price_ugx": 2500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "83",
+    "name": "Disposable Glasses",
+    "brand": "Galaxy Pack",
+    "price_ugx": 2000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "84",
+    "name": "Disposable Plates",
+    "brand": "Galaxy Pack",
+    "price_ugx": 5500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "85",
+    "name": "SWT-LG",
+    "brand": "Rice",
+    "price_ugx": 38000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "86",
+    "name": "Macron",
+    "brand": "Santa Lucia",
+    "price_ugx": 4000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "87",
+    "name": "Disposable Plates",
+    "brand": "Galaxy Pack",
+    "price_ugx": 12000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "88",
+    "name": "Cell Tape",
+    "brand": "Tapes",
+    "price_ugx": 6000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "89",
+    "name": "Lato 400g",
+    "brand": "Lato",
+    "price_ugx": 18000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "90",
+    "name": "Cerelac (All)",
+    "brand": "Baby Milk",
+    "price_ugx": null,
+    "quote_only": true,
+    "quote_reason": "Displayed price notation requires confirmation"
+  },
+  {
+    "id": "91",
+    "name": "Aptamil (All)",
+    "brand": "Baby Milk",
+    "price_ugx": 95000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "92",
+    "name": "Nido 400g",
+    "brand": "Nido",
+    "price_ugx": 32000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "93",
+    "name": "Squeezer",
+    "brand": "Brush",
+    "price_ugx": 6500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "94",
+    "name": "Scrubing Brush",
+    "brand": "Brush",
+    "price_ugx": 6000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "95",
+    "name": "Harpic Toilet Cleaner",
+    "brand": "Disinfectant",
+    "price_ugx": 7500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "96",
+    "name": "Vim",
+    "brand": "Disinfectant",
+    "price_ugx": 4000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "97",
+    "name": "Counter Books",
+    "brand": "Books",
+    "price_ugx": 5000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "98",
+    "name": "48pgs Books",
+    "brand": "Books",
+    "price_ugx": 4500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "99",
+    "name": "Reams",
+    "brand": "Papers",
+    "price_ugx": 17000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "100",
+    "name": "Exercise Books",
+    "brand": "Books",
+    "price_ugx": null,
+    "quote_only": true,
+    "quote_reason": "Displayed price notation requires confirmation"
+  },
+  {
+    "id": "101",
+    "name": "Oreo",
+    "brand": "Biscuits",
+    "price_ugx": 4500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "102",
+    "name": "Digestive Biscuits",
+    "brand": "Britania",
+    "price_ugx": 15000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "103",
+    "name": "Choco",
+    "brand": "Mint",
+    "price_ugx": 4500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "104",
+    "name": "Pure Fresh",
+    "brand": "Mentos",
+    "price_ugx": 4500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "105",
+    "name": "Rasa Mint",
+    "brand": "Mentos",
+    "price_ugx": 4500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "106",
+    "name": "Eclairs",
+    "brand": "Sweets",
+    "price_ugx": 9000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "107",
+    "name": "Green",
+    "brand": "P.K",
+    "price_ugx": 11000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "108",
+    "name": "Fruity Flavour",
+    "brand": "Mentos",
+    "price_ugx": null,
+    "quote_only": true,
+    "quote_reason": "UGX 149 requires business approval"
+  },
+  {
+    "id": "109",
+    "name": "All",
+    "brand": "Lollipops",
+    "price_ugx": 19000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "110",
+    "name": "Milk Chocolate",
+    "brand": "Cadbury",
+    "price_ugx": 8000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "111",
+    "name": "All types",
+    "brand": "Cadbury",
+    "price_ugx": 8000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "112",
+    "name": "Biscuits Vanilla",
+    "brand": "Nutro",
+    "price_ugx": 1000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "113",
+    "name": "All Flavours",
+    "brand": "Big Daddy",
+    "price_ugx": 10000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "114",
+    "name": "Digestive",
+    "brand": "Biscuits",
+    "price_ugx": 7500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "115",
+    "name": "Sanitizer",
+    "brand": "Saraya",
+    "price_ugx": 32000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "116",
+    "name": "Hand Sanitizer",
+    "brand": "Sanitas",
+    "price_ugx": 220000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "117",
+    "name": "Cotton",
+    "brand": "Carex",
+    "price_ugx": 10000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "118",
+    "name": "Gloves Black",
+    "brand": "Disposable",
+    "price_ugx": 25000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "119",
+    "name": "Gloves Blue",
+    "brand": "Disposable",
+    "price_ugx": 20000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "120",
+    "name": "Deligent",
+    "brand": "Toothpaste",
+    "price_ugx": 1800,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "121",
+    "name": "Toothbrush",
+    "brand": "Nice",
+    "price_ugx": 5500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "122",
+    "name": "Napkin Green",
+    "brand": "Shuya",
+    "price_ugx": 40000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "123",
+    "name": "Napkin Purple",
+    "brand": "Shuya",
+    "price_ugx": 40000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "124",
+    "name": "Napkin Red",
+    "brand": "Shuya",
+    "price_ugx": 40000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "125",
+    "name": "Sanitary Pads",
+    "brand": "Softcare",
+    "price_ugx": 2000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "126",
+    "name": "Sanitary Pads",
+    "brand": "Always",
+    "price_ugx": 3000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "127",
+    "name": "Cleaning Expert",
+    "brand": "Hancboss",
+    "price_ugx": 10000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "128",
+    "name": "Sensitive Sparkling",
+    "brand": "Dove",
+    "price_ugx": 5500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "129",
+    "name": "Soap Pink",
+    "brand": "Dove",
+    "price_ugx": 5500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "130",
+    "name": "Go Fresh",
+    "brand": "Dove",
+    "price_ugx": 22000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "131",
+    "name": "Deeply Nourishing",
+    "brand": "Dove",
+    "price_ugx": 22000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "132",
+    "name": "Relaxing",
+    "brand": "Dove",
+    "price_ugx": 22000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "133",
+    "name": "Mild&Gentle",
+    "brand": "Cusson Baby Soap",
+    "price_ugx": 4500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "134",
+    "name": "Aloe Vera",
+    "brand": "Ballet",
+    "price_ugx": 5000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "135",
+    "name": "Soft&Smooth",
+    "brand": "Cusson Baby Soap",
+    "price_ugx": 3500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "136",
+    "name": "Original Jelly",
+    "brand": "Ballet",
+    "price_ugx": 5000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "137",
+    "name": "Jelly Soap",
+    "brand": "Ballet",
+    "price_ugx": 5000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "138",
+    "name": "Baby Oil",
+    "brand": "Johnson",
+    "price_ugx": 16000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "139",
+    "name": "New Baby-dry",
+    "brand": "Pampers",
+    "price_ugx": 58000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "140",
+    "name": "Baby Diaper",
+    "brand": "Softcare",
+    "price_ugx": 20000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "141",
+    "name": "Baby Pant",
+    "brand": "Pampers",
+    "price_ugx": 58000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "142",
+    "name": "Pampers",
+    "brand": "Softcare",
+    "price_ugx": 20000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "143",
+    "name": "Baby Wipes",
+    "brand": "Softcare",
+    "price_ugx": 5000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "144",
+    "name": "Apricot Jam",
+    "brand": "Zesta",
+    "price_ugx": 9000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "145",
+    "name": "Baked Beans",
+    "brand": "Mara",
+    "price_ugx": 5500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "146",
+    "name": "Honey",
+    "brand": "Safa",
+    "price_ugx": 11000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "147",
+    "name": "Honey",
+    "brand": "East African",
+    "price_ugx": 8000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "148",
+    "name": "Vanilla",
+    "brand": "Pradip",
+    "price_ugx": 35000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "149",
+    "name": "Vanilla colored",
+    "brand": "Pradip",
+    "price_ugx": 4500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "150",
+    "name": "Vanilla Clear",
+    "brand": "Pradip",
+    "price_ugx": 4500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "151",
+    "name": "Car Tissues",
+    "brand": "Velvex",
+    "price_ugx": 6000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "152",
+    "name": "Vanilla Colored Big",
+    "brand": "Pradip",
+    "price_ugx": 35000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "153",
+    "name": "Baked Beans",
+    "brand": "Heinz",
+    "price_ugx": 7500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "154",
+    "name": "Paper Napkin",
+    "brand": "Compact",
+    "price_ugx": 2000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "155",
+    "name": "Icing Sugar",
+    "brand": "Malika",
+    "price_ugx": 4000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "156",
+    "name": "yeast",
+    "brand": "Saf-instant",
+    "price_ugx": 13500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "157",
+    "name": "Kitchen Towel",
+    "brand": "Velvex",
+    "price_ugx": 9500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "158",
+    "name": "Baking Powder",
+    "brand": "Chapa Mandashi",
+    "price_ugx": 1500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "159",
+    "name": "Corn Flour",
+    "brand": "Marika",
+    "price_ugx": 3000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "160",
+    "name": "Floss Sticks",
+    "brand": "Dental",
+    "price_ugx": 2500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "161",
+    "name": "Yeast Brown",
+    "brand": "Saf-instant",
+    "price_ugx": 12000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "162",
+    "name": "190",
+    "brand": "Toothpicks",
+    "price_ugx": 500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "163",
+    "name": "Rock Boom",
+    "brand": "Energy Drink",
+    "price_ugx": 20000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "164",
+    "name": "Bushera",
+    "brand": "Divine",
+    "price_ugx": 26000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "165",
+    "name": "Mango 250ml",
+    "brand": "Splash",
+    "price_ugx": 42000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "166",
+    "name": "Mango 1ltr",
+    "brand": "Splash",
+    "price_ugx": 85000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "167",
+    "name": "Mango Flavour",
+    "brand": "Oner",
+    "price_ugx": 26000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "168",
+    "name": "Strawberry",
+    "brand": "Pure Heaven",
+    "price_ugx": 20000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "169",
+    "name": "Mango Flavour",
+    "brand": "Minute Maid",
+    "price_ugx": 26000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "170",
+    "name": "All Flavours",
+    "brand": "Sun-Sip",
+    "price_ugx": 20000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "171",
+    "name": "All Flavours",
+    "brand": "Afia",
+    "price_ugx": 33000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "172",
+    "name": "Grapes Flavour",
+    "brand": "Oner",
+    "price_ugx": 26000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "173",
+    "name": "towels small",
+    "brand": "Ordinary",
+    "price_ugx": 8500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "174",
+    "name": "Baby Wipes",
+    "brand": "Softcare",
+    "price_ugx": 5000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "175",
+    "name": "Baby Wipes",
+    "brand": "Creamy",
+    "price_ugx": 4000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "176",
+    "name": "Baby Wipes",
+    "brand": "Sensitive",
+    "price_ugx": 4500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "177",
+    "name": "Biscuits Strawberry",
+    "brand": "Nutro",
+    "price_ugx": 1000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "178",
+    "name": "Milk & Honey",
+    "brand": "Ubisco",
+    "price_ugx": 8000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "179",
+    "name": "Digestive",
+    "brand": "Nutro",
+    "price_ugx": 6000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "180",
+    "name": "AAA",
+    "brand": "Duracell",
+    "price_ugx": 4000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "181",
+    "name": "AAA",
+    "brand": "Tocebal",
+    "price_ugx": 8000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "182",
+    "name": "AA",
+    "brand": "Duracell",
+    "price_ugx": 6000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "183",
+    "name": "AA 6",
+    "brand": "Duracell",
+    "price_ugx": 10000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "184",
+    "name": "Shoe Brush",
+    "brand": "Wooden",
+    "price_ugx": 3500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "185",
+    "name": "Shoe Cream",
+    "brand": "Kiwi",
+    "price_ugx": 5000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "186",
+    "name": "Brush",
+    "brand": "Wooden",
+    "price_ugx": 3500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "187",
+    "name": "Shoe Cream",
+    "brand": "Kangaroo",
+    "price_ugx": 1500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "188",
+    "name": "Shoe Polish 100ml",
+    "brand": "Kiwi",
+    "price_ugx": 7000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "189",
+    "name": "Shoe Polish 200ml",
+    "brand": "Kiwi",
+    "price_ugx": 15000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "190",
+    "name": "Pens",
+    "brand": "Nataraj",
+    "price_ugx": 20000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "191",
+    "name": "Pencils Colored",
+    "brand": "Nataraj",
+    "price_ugx": 8000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "192",
+    "name": "Pens",
+    "brand": "Bic",
+    "price_ugx": 20000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "193",
+    "name": "Sets",
+    "brand": "Picfare",
+    "price_ugx": 3500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "194",
+    "name": "Pens",
+    "brand": "Smile",
+    "price_ugx": 12000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "195",
+    "name": "Colour Pencils",
+    "brand": "Nataraj",
+    "price_ugx": 8000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "196",
+    "name": "Colors Short",
+    "brand": "Nataraj",
+    "price_ugx": 4500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "197",
+    "name": "Slippers",
+    "brand": "Umoja",
+    "price_ugx": 5500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "198",
+    "name": "1",
+    "brand": "Sma Pro",
+    "price_ugx": 90000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "199",
+    "name": "6months",
+    "brand": "Celerac",
+    "price_ugx": 25000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "200",
+    "name": "2",
+    "brand": "Sma Pro",
+    "price_ugx": 47000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "201",
+    "name": "1",
+    "brand": "Sma",
+    "price_ugx": 90000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "202",
+    "name": "2",
+    "brand": "Aptamil",
+    "price_ugx": 95000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "203",
+    "name": "1",
+    "brand": "Aptamil",
+    "price_ugx": 95000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "204",
+    "name": "1",
+    "brand": "Cow&gate",
+    "price_ugx": 35000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "205",
+    "name": "2",
+    "brand": "Nani Optipro",
+    "price_ugx": 46000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "206",
+    "name": "1",
+    "brand": "Nani Optipro",
+    "price_ugx": 50000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "207",
+    "name": "250G",
+    "brand": "Prestige",
+    "price_ugx": 3500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "208",
+    "name": "500G",
+    "brand": "Prestige",
+    "price_ugx": 6500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "209",
+    "name": "1ltr",
+    "brand": "Dettol",
+    "price_ugx": 32000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "210",
+    "name": "50ml",
+    "brand": "Dettol",
+    "price_ugx": 4750,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "211",
+    "name": "500ml",
+    "brand": "Dettol",
+    "price_ugx": 17000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "212",
+    "name": "2ltr",
+    "brand": "Sunseed",
+    "price_ugx": 26000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "213",
+    "name": "5ltr",
+    "brand": "Roki",
+    "price_ugx": 40000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "214",
+    "name": "1ltr",
+    "brand": "Roki",
+    "price_ugx": 10000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "215",
+    "name": "500ml",
+    "brand": "Fortune Button",
+    "price_ugx": 4500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "216",
+    "name": "1ltr",
+    "brand": "Fortune Button",
+    "price_ugx": 8000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "217",
+    "name": "5ltr",
+    "brand": "Sunseed Button",
+    "price_ugx": 45000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "218",
+    "name": "Ginger",
+    "brand": "Ubisco Biscuits",
+    "price_ugx": 15000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "219",
+    "name": "Baby Pants",
+    "brand": "Softcare Gold",
+    "price_ugx": 20000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "220",
+    "name": "Baby Pants",
+    "brand": "Softcare",
+    "price_ugx": 22000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "221",
+    "name": "Baby Diapers",
+    "brand": "Guttie",
+    "price_ugx": 18000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "222",
+    "name": "2.5 Kg",
+    "brand": "Lato",
+    "price_ugx": 85000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "223",
+    "name": "900g",
+    "brand": "Lato",
+    "price_ugx": 45000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "224",
+    "name": "2.5kg",
+    "brand": "Lato",
+    "price_ugx": 85000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "225",
+    "name": "Pilau masala 100g",
+    "brand": "Tropical Heat",
+    "price_ugx": 9000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "226",
+    "name": "Mixed Spice 100g",
+    "brand": "Tropical Heat",
+    "price_ugx": 7500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "227",
+    "name": "Oregano  50g",
+    "brand": "Tropical Heat",
+    "price_ugx": 3500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "228",
+    "name": "Cloves  100g",
+    "brand": "Tropical Heat",
+    "price_ugx": 12500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "229",
+    "name": "Cayenne pepper  100g",
+    "brand": "Tropical Heat",
+    "price_ugx": 6500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "230",
+    "name": "Garam Masala  100g",
+    "brand": "Tropical Heat",
+    "price_ugx": 9000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "231",
+    "name": "Curry Powder  100g",
+    "brand": "Tropical Heat",
+    "price_ugx": 4000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "232",
+    "name": "Garlic Powder  100g",
+    "brand": "Tropical Heat",
+    "price_ugx": 9000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "233",
+    "name": "Meat Tenderizer  100g",
+    "brand": "Tropical Heat",
+    "price_ugx": 6000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "234",
+    "name": "Black Pepper  100g",
+    "brand": "Tropical Heat",
+    "price_ugx": 10000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "235",
+    "name": "White Pepper  100g",
+    "brand": "Tropical Heat",
+    "price_ugx": 16000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "236",
+    "name": "Mayonnaise  Big",
+    "brand": "American Garden",
+    "price_ugx": 27500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "237",
+    "name": "Mustard",
+    "brand": "American Garden",
+    "price_ugx": 15000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "238",
+    "name": "Mayonnaise Small",
+    "brand": "American Garden",
+    "price_ugx": 15000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "239",
+    "name": "Sport Recharge",
+    "brand": "Fa Men",
+    "price_ugx": 5000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "240",
+    "name": "Sport",
+    "brand": "Fa",
+    "price_ugx": 5000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "241",
+    "name": "Caribean",
+    "brand": "Fa",
+    "price_ugx": 5000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "242",
+    "name": "Dry Impact",
+    "brand": "Nivea Men",
+    "price_ugx": 9000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "243",
+    "name": "Pearl& beauty",
+    "brand": "Nivea",
+    "price_ugx": 9000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "244",
+    "name": "Cool Kick",
+    "brand": "Nivea",
+    "price_ugx": 9000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "245",
+    "name": "Black& White",
+    "brand": "Nivea",
+    "price_ugx": 9000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "246",
+    "name": "Fresh Active",
+    "brand": "Nivea Spray",
+    "price_ugx": 14000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "247",
+    "name": "Black& White",
+    "brand": "Nivea Spray",
+    "price_ugx": 14000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "248",
+    "name": "Dry Impact",
+    "brand": "Nivea Spray",
+    "price_ugx": 14000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "249",
+    "name": "go Fresh",
+    "brand": "Dove Rollon",
+    "price_ugx": 17000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "250",
+    "name": "Original",
+    "brand": "Dove Rollon",
+    "price_ugx": 17000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "251",
+    "name": "Men+Care",
+    "brand": "Dove Rollon",
+    "price_ugx": 17000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "252",
+    "name": "Original Big",
+    "brand": "Vaseline",
+    "price_ugx": 10000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "253",
+    "name": "Adult Diapers L",
+    "brand": "Giggles",
+    "price_ugx": 70000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "254",
+    "name": "Adult Diapers M",
+    "brand": "Giggles",
+    "price_ugx": 70000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "255",
+    "name": "Adult Diapers XL",
+    "brand": "Giggles",
+    "price_ugx": 80000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "256",
+    "name": "Strawberry  Jam",
+    "brand": "Zesta",
+    "price_ugx": 9000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "257",
+    "name": "Red Plum  Jam",
+    "brand": "Zesta",
+    "price_ugx": 9000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "258",
+    "name": "Plates  Small",
+    "brand": "Silver",
+    "price_ugx": 2500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "259",
+    "name": "Plates  Medium",
+    "brand": "Silver",
+    "price_ugx": 3000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "260",
+    "name": "Detergent  500g",
+    "brand": "Magic",
+    "price_ugx": 3500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "261",
+    "name": "Detergent  1kg",
+    "brand": "Omo",
+    "price_ugx": 12500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "262",
+    "name": "Detergent  500g",
+    "brand": "Omo",
+    "price_ugx": 6500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "263",
+    "name": "Detergent  1kg",
+    "brand": "Magic",
+    "price_ugx": 7000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "264",
+    "name": "Tissue  Hand",
+    "brand": "Fay",
+    "price_ugx": 9000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "265",
+    "name": "Interleave",
+    "brand": "Fay",
+    "price_ugx": 2500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "266",
+    "name": "Multifold",
+    "brand": "Silkee",
+    "price_ugx": 7500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "267",
+    "name": "Kitchen Towel single",
+    "brand": "Fay",
+    "price_ugx": 6500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "268",
+    "name": "Kitchen Towel double",
+    "brand": "Fay",
+    "price_ugx": 10000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "269",
+    "name": "Roll",
+    "brand": "EuroSilk",
+    "price_ugx": 18500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "270",
+    "name": "Roll",
+    "brand": "Silkee",
+    "price_ugx": 17000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "271",
+    "name": "Cornflake",
+    "brand": "Kwality",
+    "price_ugx": 14000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "272",
+    "name": "Cornflake",
+    "brand": "Kellogg's",
+    "price_ugx": 25000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "273",
+    "name": "Cornflake",
+    "brand": "Kellogg's",
+    "price_ugx": 18000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "274",
+    "name": "100g",
+    "brand": "Garden Tea",
+    "price_ugx": 4500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "275",
+    "name": "50g",
+    "brand": "Garden Tea",
+    "price_ugx": 2500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "276",
+    "name": "50g",
+    "brand": "Garden Tea",
+    "price_ugx": 5500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "277",
+    "name": "500g",
+    "brand": "Garden Tea",
+    "price_ugx": 20000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "278",
+    "name": "Original",
+    "brand": "Weetbix 850G",
+    "price_ugx": 22500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "279",
+    "name": "Original",
+    "brand": "Weetbix 450G",
+    "price_ugx": 13000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "280",
+    "name": "Coconut",
+    "brand": "Lanzo",
+    "price_ugx": 3000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "281",
+    "name": "Blueberry",
+    "brand": "Lanzo",
+    "price_ugx": 3000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "282",
+    "name": "Strawberry",
+    "brand": "Lanzo",
+    "price_ugx": 3000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "283",
+    "name": "Ice Cool",
+    "brand": "Lanzo",
+    "price_ugx": 3000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "284",
+    "name": "Herbal",
+    "brand": "Protex",
+    "price_ugx": 5500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "285",
+    "name": "Anti-Bacteria",
+    "brand": "Lanzo",
+    "price_ugx": 3000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "286",
+    "name": "Deep Clean",
+    "brand": "Protex",
+    "price_ugx": 5500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "287",
+    "name": "Leather Sport",
+    "brand": "Imperial",
+    "price_ugx": 3500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "288",
+    "name": "Leather Classic",
+    "brand": "Imperial",
+    "price_ugx": 3500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "289",
+    "name": "Coconut Milk&Soap",
+    "brand": "Geisha",
+    "price_ugx": 3500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "290",
+    "name": "Traditional Black Soap",
+    "brand": "Geisha",
+    "price_ugx": 5000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "291",
+    "name": "Lemon&Honey Soap",
+    "brand": "Geisha",
+    "price_ugx": 3500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "292",
+    "name": "Aloe&Honey Soap",
+    "brand": "Geisha",
+    "price_ugx": 3500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "293",
+    "name": "Moringa Oil Soap",
+    "brand": "Geisha",
+    "price_ugx": 5000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "294",
+    "name": "Rose & honey Soap",
+    "brand": "Geisha",
+    "price_ugx": 3500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "295",
+    "name": "Strawberry Gel",
+    "brand": "American Crown",
+    "price_ugx": 15000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "296",
+    "name": "Doom 400ml",
+    "brand": "Mortein",
+    "price_ugx": 15000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "297",
+    "name": "Doom 180ml",
+    "brand": "Mortein",
+    "price_ugx": 10000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "298",
+    "name": "Shavers",
+    "brand": "Bic",
+    "price_ugx": 18000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "299",
+    "name": "rolls 80*80",
+    "brand": "Printer",
+    "price_ugx": 5000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "300",
+    "name": "rolls 10pcs",
+    "brand": "Payway Printer",
+    "price_ugx": 15000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "301",
+    "name": "Ginger snaps",
+    "brand": "Manji",
+    "price_ugx": 23000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "302",
+    "name": "Extra Value",
+    "brand": "Kimbo",
+    "price_ugx": 7000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "303",
+    "name": "Value pack 230g",
+    "brand": "Colgate",
+    "price_ugx": 10000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "304",
+    "name": "Herbal 100g",
+    "brand": "Colgate",
+    "price_ugx": 5500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "305",
+    "name": "Blackcurrant 25pcs",
+    "brand": "Ribena",
+    "price_ugx": 60000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "306",
+    "name": "200g",
+    "brand": "Nescafe",
+    "price_ugx": 38000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "307",
+    "name": "100g",
+    "brand": "Nescafe",
+    "price_ugx": 22000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "308",
+    "name": "24pcs",
+    "brand": "Lucazade",
+    "price_ugx": 60000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "309",
+    "name": "Vanilla 24pcs",
+    "brand": "Lato",
+    "price_ugx": 22000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "310",
+    "name": "Chocolate 24pcs",
+    "brand": "Lato",
+    "price_ugx": 22000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "311",
+    "name": "Strawberry 24pcs",
+    "brand": "Lato",
+    "price_ugx": 22000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "312",
+    "name": "Sacket 60pcs",
+    "brand": "Lato",
+    "price_ugx": 24000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "313",
+    "name": "Big 200g",
+    "brand": "Aromat",
+    "price_ugx": 8500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "314",
+    "name": "Noodles 120g",
+    "brand": "Indomie",
+    "price_ugx": 2000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "315",
+    "name": "Spshelie 500g",
+    "brand": "Cowboy",
+    "price_ugx": 7000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "316",
+    "name": "Chicken 500g",
+    "brand": "Royco",
+    "price_ugx": 9500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "317",
+    "name": "Chicken 200g",
+    "brand": "Royco",
+    "price_ugx": 5000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "318",
+    "name": "Beef 500g",
+    "brand": "Royco",
+    "price_ugx": 9500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "319",
+    "name": "5kg",
+    "brand": "Hillal",
+    "price_ugx": 45000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "320",
+    "name": "Special Edition",
+    "brand": "Tropical Air freshener",
+    "price_ugx": 9500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "321",
+    "name": "Sweet Blossom",
+    "brand": "Tropical Air freshener",
+    "price_ugx": 9500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "322",
+    "name": "Ocean Fresh",
+    "brand": "Tropical Air freshener",
+    "price_ugx": 9500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "323",
+    "name": "Strawberry",
+    "brand": "Tropical Air freshener",
+    "price_ugx": 9500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "324",
+    "name": "Nature Fresh",
+    "brand": "Tropical Air freshener",
+    "price_ugx": 9500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "325",
+    "name": "Mountain Lake",
+    "brand": "Tropical Air freshener",
+    "price_ugx": 4500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "326",
+    "name": "Apple&Cinnamo",
+    "brand": "Rosy Air freshener",
+    "price_ugx": 4500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "327",
+    "name": "Bubblicious",
+    "brand": "Rosy Air freshener",
+    "price_ugx": 4500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "328",
+    "name": "Chocolicious",
+    "brand": "Frey Air freshener",
+    "price_ugx": 4500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "329",
+    "name": "Berrylicious",
+    "brand": "Frey Air freshener",
+    "price_ugx": 4500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "330",
+    "name": "Cool Summer",
+    "brand": "Frey Air freshener",
+    "price_ugx": 4500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "331",
+    "name": "Black",
+    "brand": "Elegant Air freshener",
+    "price_ugx": 4500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "332",
+    "name": "Jasmine",
+    "brand": "Elegant Air freshener",
+    "price_ugx": 4500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "333",
+    "name": "Lavender",
+    "brand": "Elegant Air freshener",
+    "price_ugx": 4500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "334",
+    "name": "Lemon",
+    "brand": "Elegant Air freshener",
+    "price_ugx": 4500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "335",
+    "name": "Strawberry",
+    "brand": "Elegant Air freshener",
+    "price_ugx": 4500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "336",
+    "name": "Pack of 10pcs",
+    "brand": "Cocktail Straws",
+    "price_ugx": 5000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "337",
+    "name": "Pack of 100pcs",
+    "brand": "Cocktail Straws twisted",
+    "price_ugx": 4500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "338",
+    "name": "Pack of 10pcs",
+    "brand": "Cocktail Straws",
+    "price_ugx": 9500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "339",
+    "name": "Oil 1ltr",
+    "brand": "Bertin Olive",
+    "price_ugx": 25000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "340",
+    "name": "Oil 500ml",
+    "brand": "Bertin Olive",
+    "price_ugx": 16000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "341",
+    "name": "Oil 250ml",
+    "brand": "Bertin Olive",
+    "price_ugx": 10000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "342",
+    "name": "Ketchup 5ltr",
+    "brand": "American Garden",
+    "price_ugx": 55000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "343",
+    "name": "Ketchup Skt",
+    "brand": "Fresh Bite",
+    "price_ugx": 9000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "344",
+    "name": "Ketchup 5ltrs",
+    "brand": "Fresh Bite",
+    "price_ugx": 28000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "345",
+    "name": "Cranberry 1ltr",
+    "brand": "OceanSpray",
+    "price_ugx": 17000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "346",
+    "name": "Sugar 25kg",
+    "brand": "Kaira Sugar",
+    "price_ugx": 87000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "347",
+    "name": "10bars",
+    "brand": "White Star",
+    "price_ugx": 57000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "348",
+    "name": "10bars",
+    "brand": "Jamaa White",
+    "price_ugx": 55000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "349",
+    "name": "250ml",
+    "brand": "Jik Regular",
+    "price_ugx": 4500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "350",
+    "name": "5ltr",
+    "brand": "Jik Regular",
+    "price_ugx": 45000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "351",
+    "name": "1kg",
+    "brand": "Cashew Nuts",
+    "price_ugx": 48000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "352",
+    "name": "500g",
+    "brand": "Habari Salt",
+    "price_ugx": 800,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "353",
+    "name": "500g",
+    "brand": "Daily Fresh Salt",
+    "price_ugx": 5500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "354",
+    "name": "Corn Flour 400gm",
+    "brand": "Muzuri",
+    "price_ugx": 3000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "355",
+    "name": "Pancake Syrup",
+    "brand": "Gold Valley",
+    "price_ugx": 18000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "356",
+    "name": "Strawberry Syrup",
+    "brand": "Gold Valley",
+    "price_ugx": 13500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "357",
+    "name": "Chocolate Syrup",
+    "brand": "Gold Valley",
+    "price_ugx": 13500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "358",
+    "name": "Caramel Syrup",
+    "brand": "Hershey's",
+    "price_ugx": 15000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "359",
+    "name": "Strawberry Syrup",
+    "brand": "Hershey's",
+    "price_ugx": 15000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "360",
+    "name": "ChocolateSyrup",
+    "brand": "Hershey's",
+    "price_ugx": 15000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "361",
+    "name": "Sweet Chili",
+    "brand": "Tbai",
+    "price_ugx": 13500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "362",
+    "name": "Small 150ml",
+    "brand": "Soy Sauce Light",
+    "price_ugx": 4500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "363",
+    "name": "Big 500ml",
+    "brand": "Soy Sauce Light",
+    "price_ugx": 7500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "364",
+    "name": "Small 150ml",
+    "brand": "Soy Sauce Dark",
+    "price_ugx": 4500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "365",
+    "name": "Fish Masala 100g",
+    "brand": "Tropical Heat",
+    "price_ugx": 4500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "366",
+    "name": "Take away Sachet",
+    "brand": "Kakira Sugar",
+    "price_ugx": null,
+    "quote_only": true,
+    "quote_reason": "Product card and catalogue prices differ"
+  },
+  {
+    "id": "367",
+    "name": "Packet",
+    "brand": "Kick Snack",
+    "price_ugx": 11500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "368",
+    "name": "Beef Packet",
+    "brand": "Sunshine Snack",
+    "price_ugx": 8500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "369",
+    "name": "Tomato Packet",
+    "brand": "Sunshine Snack",
+    "price_ugx": 8500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "370",
+    "name": "Chicken Packet",
+    "brand": "Gorillos Snack",
+    "price_ugx": 19500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "371",
+    "name": "Beef Packet",
+    "brand": "Gorillos Snack",
+    "price_ugx": 19500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "372",
+    "name": "Sunveat Biscuits",
+    "brand": "Sunveat Biscuits",
+    "price_ugx": 15000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "373",
+    "name": "Assorted",
+    "brand": "Sunveat Biscuits",
+    "price_ugx": 15000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "374",
+    "name": "Baby 2.5ltr",
+    "brand": "SoSoft",
+    "price_ugx": 25000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "375",
+    "name": "Fresh 2.5ltr",
+    "brand": "SoSoft",
+    "price_ugx": 25000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "376",
+    "name": "Luxury 2.5ltr",
+    "brand": "SoSoft",
+    "price_ugx": 25000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "377",
+    "name": "Luxury 45",
+    "brand": "Downy",
+    "price_ugx": 20000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "378",
+    "name": "Fresh 45",
+    "brand": "Downy",
+    "price_ugx": 20000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "379",
+    "name": "Luxury 750ml",
+    "brand": "SoSoft",
+    "price_ugx": 9000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "380",
+    "name": "Tender 750ml",
+    "brand": "SoSoft",
+    "price_ugx": 9000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "381",
+    "name": "Pure care 750ml",
+    "brand": "SoSoft",
+    "price_ugx": 9000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "382",
+    "name": "Vanilla Essence 750ml",
+    "brand": "SoSoft",
+    "price_ugx": 9000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "383",
+    "name": "Luxury New 750ml",
+    "brand": "SoSoft",
+    "price_ugx": 9000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "384",
+    "name": "Set",
+    "brand": "Picfare",
+    "price_ugx": 3000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "385",
+    "name": "Ballpoint Pens",
+    "brand": "Nataraj",
+    "price_ugx": 22000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "386",
+    "name": "Duplicating Paper",
+    "brand": "Rwenzori",
+    "price_ugx": 16000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "387",
+    "name": "Duplicating Paper",
+    "brand": "Dolphin",
+    "price_ugx": 18000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "388",
+    "name": "Duplicating Paper",
+    "brand": "Rotatrim",
+    "price_ugx": 18000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "389",
+    "name": "Pen",
+    "brand": "Bic",
+    "price_ugx": 21000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "390",
+    "name": "Exercise Books 96pgs",
+    "brand": "Picfare",
+    "price_ugx": 9000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "391",
+    "name": "Box Files",
+    "brand": "Alba",
+    "price_ugx": 6000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "392",
+    "name": "Set",
+    "brand": "Dom",
+    "price_ugx": 12000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "393",
+    "name": "Pencils",
+    "brand": "Nataraj",
+    "price_ugx": 5000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "394",
+    "name": "A4 200pgs",
+    "brand": "Champion",
+    "price_ugx": null,
+    "quote_only": true,
+    "quote_reason": "Unit / dozen pricing requires confirmation"
+  },
+  {
+    "id": "395",
+    "name": "2Q",
+    "brand": "Maniscript",
+    "price_ugx": 10000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "396",
+    "name": "Broom",
+    "brand": "Soft",
+    "price_ugx": 6000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "397",
+    "name": "Brush",
+    "brand": "Toilet",
+    "price_ugx": 5500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "398",
+    "name": "Cobweb Brush",
+    "brand": "Room",
+    "price_ugx": 6000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "399",
+    "name": "Rakes Big",
+    "brand": "Plastic",
+    "price_ugx": 12000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "400",
+    "name": "Moppers Big",
+    "brand": "Plastic",
+    "price_ugx": 12500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "401",
+    "name": "Hand Broom short",
+    "brand": "Plastic",
+    "price_ugx": 5000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "402",
+    "name": "Hand Broom 2in1",
+    "brand": "Plastic",
+    "price_ugx": 13500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "403",
+    "name": "Bushera",
+    "brand": "Numa",
+    "price_ugx": 8500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "404",
+    "name": "Rice 5kg",
+    "brand": "Red Cock",
+    "price_ugx": 55000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "405",
+    "name": "Strawberry Juice",
+    "brand": "Sun-Sip",
+    "price_ugx": 20000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "406",
+    "name": "Coconut Juice",
+    "brand": "Sun-Sip",
+    "price_ugx": 20000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "407",
+    "name": "Apple Juice",
+    "brand": "Sun-Sip",
+    "price_ugx": 20000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "408",
+    "name": "Oaribix 500g",
+    "brand": "Weetabix",
+    "price_ugx": 12000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "409",
+    "name": "Oaribix 1kg",
+    "brand": "Weetabix",
+    "price_ugx": 20000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "410",
+    "name": "Body Care Pampering Lotion 400ml",
+    "brand": "Dove",
+    "price_ugx": 15000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "411",
+    "name": "Body Care Restoring Ritual Lotion 400ml",
+    "brand": "Dove",
+    "price_ugx": 15000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "412",
+    "name": "Body Care Light Care Lotion 400ml",
+    "brand": "Dove",
+    "price_ugx": 15000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "413",
+    "name": "Body Care Intensive Creamy Lotion 400ml",
+    "brand": "Dove",
+    "price_ugx": 15000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "414",
+    "name": "Revitalizing Lotion 400ml",
+    "brand": "Nivea Men",
+    "price_ugx": 19000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "415",
+    "name": "Cool Kick Lotion 400ml",
+    "brand": "Nivea Men",
+    "price_ugx": 19000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "416",
+    "name": "Ritual Lotion 400ml",
+    "brand": "Nivea Men",
+    "price_ugx": 19000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "417",
+    "name": "Maximum Hydrstion 400ml",
+    "brand": "Nivea Men",
+    "price_ugx": 19000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "418",
+    "name": "Body Spray 150ml",
+    "brand": "Fogg Paradise",
+    "price_ugx": 15000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "419",
+    "name": "Pine Body Spray 150ml",
+    "brand": "Fogg Master",
+    "price_ugx": 15000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "420",
+    "name": "Body Spray 150ml",
+    "brand": "Fogg Nice",
+    "price_ugx": 15000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "421",
+    "name": "Body Spray 150ml",
+    "brand": "Fogg Dynamic",
+    "price_ugx": 15000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "422",
+    "name": "Body Spray 150ml",
+    "brand": "Fogg Napoleon",
+    "price_ugx": 15000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "423",
+    "name": "Body Spray 150ml",
+    "brand": "Fogg Royal",
+    "price_ugx": 15000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "424",
+    "name": "Tea 500g",
+    "brand": "Mukwano Golden Tea",
+    "price_ugx": 10000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "425",
+    "name": "Tea 250g",
+    "brand": "Mukwano Golden Tea",
+    "price_ugx": 5000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "426",
+    "name": "500g",
+    "brand": "Family Tea",
+    "price_ugx": 12000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "427",
+    "name": "250g",
+    "brand": "Family Tea",
+    "price_ugx": 7000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "428",
+    "name": "Bags",
+    "brand": "Mukwano Tea",
+    "price_ugx": 4500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "429",
+    "name": "Glass Cleaner",
+    "brand": "Focus",
+    "price_ugx": null,
+    "quote_only": true,
+    "quote_reason": "Legacy homepage identity conflicts with this catalogue ID"
+  },
+  {
+    "id": "430",
+    "name": "Mats 1pc",
+    "brand": "Urinal",
+    "price_ugx": 6000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "431",
+    "name": "Towels Double Side Dozen",
+    "brand": "Kitchen",
+    "price_ugx": 40000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "432",
+    "name": "Gloves Pkt",
+    "brand": "Plastic",
+    "price_ugx": 2500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "433",
+    "name": "Pickles",
+    "brand": "Dill",
+    "price_ugx": 10000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "434",
+    "name": "Black Olives Pitted",
+    "brand": "Borges",
+    "price_ugx": 10000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "435",
+    "name": "Green Olives Pitted",
+    "brand": "Borges",
+    "price_ugx": 10000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "436",
+    "name": "Crown Air Freshener",
+    "brand": "American",
+    "price_ugx": 5000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "437",
+    "name": "5ltr",
+    "brand": "Dustbin",
+    "price_ugx": 50000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "438",
+    "name": "1ltr",
+    "brand": "Dustbin",
+    "price_ugx": 4000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "439",
+    "name": "240ltr",
+    "brand": "Dustbin",
+    "price_ugx": 260000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "440",
+    "name": "18ltr",
+    "brand": "Bucket",
+    "price_ugx": 10000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "441",
+    "name": "10ltr",
+    "brand": "Bucket",
+    "price_ugx": 7500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "442",
+    "name": "Big",
+    "brand": "Nutella",
+    "price_ugx": 35000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "443",
+    "name": "Small",
+    "brand": "Nutella",
+    "price_ugx": 20000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "444",
+    "name": "Facial",
+    "brand": "Fay Tissue",
+    "price_ugx": 4500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "445",
+    "name": "10kg",
+    "brand": "Sugar Kakira",
+    "price_ugx": 40000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "446",
+    "name": "Box",
+    "brand": "Dates",
+    "price_ugx": 100000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "447",
+    "name": "1kg",
+    "brand": "Dates",
+    "price_ugx": 12000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "448",
+    "name": "Popcorn",
+    "brand": "Daily Fresh",
+    "price_ugx": 5500,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "449",
+    "name": "Vanilla Flavour 24pcs",
+    "brand": "Jesa  Milk",
+    "price_ugx": 30000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "450",
+    "name": "Strawberry Flavour 24pcs",
+    "brand": "Jesa  Milk",
+    "price_ugx": 30000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "451",
+    "name": "12pcs",
+    "brand": "Jesa  Milk",
+    "price_ugx": 22000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "452",
+    "name": "12pcs",
+    "brand": "ClassicMilk",
+    "price_ugx": 22000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "453",
+    "name": "1kg",
+    "brand": "Yellow Beans",
+    "price_ugx": 4250,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "454",
+    "name": "25kg",
+    "brand": "Swt Yellow",
+    "price_ugx": 160000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "455",
+    "name": "1pkt",
+    "brand": "Supreme",
+    "price_ugx": 7000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "456",
+    "name": "10kg",
+    "brand": "Super rice no1",
+    "price_ugx": 50000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "457",
+    "name": "2kg",
+    "brand": "Azam",
+    "price_ugx": 7000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "458",
+    "name": "Dzn",
+    "brand": "Bi-Carbonate of Soda",
+    "price_ugx": 5000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "459",
+    "name": "1crtn(12pcs)",
+    "brand": "Drum",
+    "price_ugx": 220000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "460",
+    "name": "1pc",
+    "brand": "Air GEO Basket",
+    "price_ugx": 12000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "461",
+    "name": "1Crtn(5Dozens)",
+    "brand": "Groove Mug",
+    "price_ugx": 85000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "462",
+    "name": "1Crtn(5Dozens)",
+    "brand": "Homeware Mug",
+    "price_ugx": 85000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "463",
+    "name": "1Crtn(5Dozens)",
+    "brand": "Homeware Mug",
+    "price_ugx": 85000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "464",
+    "name": "1Crtn(5Dozens)",
+    "brand": "Soap Dish",
+    "price_ugx": 85000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "465",
+    "name": "1Crtn(60pcs)",
+    "brand": "Stripe Bucket NO.5",
+    "price_ugx": 165000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "466",
+    "name": "1Crtn(40pcs)",
+    "brand": "Stripe Bucket NO.20",
+    "price_ugx": 250000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "467",
+    "name": "1Crtn(40pcs)",
+    "brand": "Stripe Basin NO.10",
+    "price_ugx": 160000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "468",
+    "name": "1pc",
+    "brand": "Basin",
+    "price_ugx": 30000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "469",
+    "name": "1Crtn(5Dozens)",
+    "brand": "Basket",
+    "price_ugx": 12000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "470",
+    "name": "1Crtn(5Dozens)",
+    "brand": "Zen Mug",
+    "price_ugx": 90000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "471",
+    "name": "1Crtn(72pcs)",
+    "brand": "Basin Ndege",
+    "price_ugx": 260000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "472",
+    "name": "1Crtn(60pcs)",
+    "brand": "Funnel NO.4",
+    "price_ugx": 250000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "473",
+    "name": "1Crtn(60pcs)",
+    "brand": "Funnel NO.3",
+    "price_ugx": 100000,
+    "quote_only": false,
+    "quote_reason": ""
+  },
+  {
+    "id": "ketchup-unverified",
+    "name": "Ketchup (pack to confirm)",
+    "brand": "American Garden",
+    "price_ugx": null,
+    "quote_only": true,
+    "quote_reason": "Product identity, pack and price require confirmation"
+  }
+]
