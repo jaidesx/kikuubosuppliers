@@ -60,6 +60,20 @@ try {
     require_once $backendPath . '/config/database.php';
     require_once $backendPath . '/src/Services/OrderRequestValidator.php';
     require_once $backendPath . '/src/Services/OrderService.php';
+    require_once $backendPath . '/src/Services/RateLimiter.php';
+
+    $pdo = databaseConnection();
+
+    $clientIp = $_SERVER['REMOTE_ADDR'] ?? '';
+    $rateLimiter = new RateLimiter($pdo);
+    $rateLimit = $rateLimiter->consume($clientIp);
+
+    if (!$rateLimit['allowed']) {
+        header('Retry-After: ' . $rateLimit['retry_after']);
+        respond(429, [
+            'error' => 'Too many requests. Please try again later.'
+        ]);
+    }
 
     $catalogue = new ProductCatalogue(
         $backendPath . '/data/catalogue.json'
@@ -71,7 +85,7 @@ try {
 
     $order = $validator->validate($request);
 
-    $service = new OrderService(databaseConnection());
+    $service = new OrderService($pdo);
     $result = $service->create($order, strtolower($key));
 
     respond($result['replayed'] ? 200 : 201, $result);

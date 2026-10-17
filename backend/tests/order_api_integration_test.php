@@ -7,6 +7,9 @@ $baseUrl = getenv('KIKUUBO_TEST_API_URL')
     ?: 'http://127.0.0.1:8081/api/v1/orders/';
 
 $pdo = databaseConnection();
+if ($pdo->query('SELECT DATABASE()')->fetchColumn() !== 'kikuubo_dev') {
+    throw new RuntimeException('Development database required');
+}
 $passed = 0;
 
 function check(bool $condition, string $description): void
@@ -99,6 +102,7 @@ $order = [
 
 echo "\n=== Kikuubo Order API Integration Tests ===\n\n";
 
+try {
 $first = apiRequest($baseUrl, $order, $key);
 
 check($first['status'] === 201, 'New order returns HTTP 201');
@@ -195,3 +199,13 @@ check(
 );
 
 echo "\nAll $passed integration checks passed.\n";
+
+} finally {
+    $cleanup = $pdo->prepare('SELECT id FROM orders WHERE idempotency_key = ?');
+    $cleanup->execute([$key]);
+    $fixtureId = $cleanup->fetchColumn();
+    if ($fixtureId !== false) {
+        $pdo->prepare('DELETE FROM order_items WHERE order_id = ?')->execute([$fixtureId]);
+        $pdo->prepare('DELETE FROM orders WHERE id = ?')->execute([$fixtureId]);
+    }
+}

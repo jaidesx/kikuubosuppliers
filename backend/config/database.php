@@ -5,7 +5,7 @@ require_once __DIR__ . '/env.php';
 
 function databaseConnection(): PDO
 {
-    $envPath = dirname(__DIR__, 2) . '/.env';
+    $envPath = getenv('KIKUUBO_ENV_PATH') ?: dirname(__DIR__, 2) . '/.env';
 
     $required = [
         'KIKUUBO_DB_HOST',
