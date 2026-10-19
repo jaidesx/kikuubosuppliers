@@ -3,7 +3,7 @@
     "id": "1",
     "name": "Pringles",
     "brand": "Snacks",
-    "price_ugx": 9500,
+    "price_ugx": 14000,
     "quote_only": false,
     "quote_reason": ""
   },
@@ -51,17 +51,17 @@
     "id": "7",
     "name": "Nescafe",
     "brand": "Coffee",
-    "price_ugx": null,
-    "quote_only": true,
-    "quote_reason": "Product card and catalogue prices differ"
+    "price_ugx": 37000,
+    "quote_only": false,
+    "quote_reason": ""
   },
   {
     "id": "8",
     "name": "Sugar",
     "brand": "Kakira",
-    "price_ugx": null,
-    "quote_only": true,
-    "quote_reason": "Homepage and catalogue prices differ"
+    "price_ugx": 168000,
+    "quote_only": false,
+    "quote_reason": ""
   },
   {
     "id": "9",
@@ -97,11 +97,12 @@
   },
   {
     "id": "13",
-    "name": "Jik 3ltr",
+    "name": "Jik 2.5L",
     "brand": "Jik Bleach",
-    "price_ugx": 35000,
+    "price_ugx": 22000,
     "quote_only": false,
-    "quote_reason": ""
+    "quote_reason": "",
+    "package_size": "2.5 litres"
   },
   {
     "id": "14",
@@ -195,9 +196,9 @@
     "id": "25",
     "name": "Fortune Gold",
     "brand": "Oils",
-    "price_ugx": null,
-    "quote_only": true,
-    "quote_reason": "UGX 149 requires business approval"
+    "price_ugx": 35000,
+    "quote_only": false,
+    "quote_reason": ""
   },
   {
     "id": "26",
@@ -2307,7 +2308,7 @@
     "id": "289",
     "name": "Coconut Milk&Soap",
     "brand": "Geisha",
-    "price_ugx": 3500,
+    "price_ugx": 4000,
     "quote_only": false,
     "quote_reason": ""
   },
@@ -2315,7 +2316,7 @@
     "id": "290",
     "name": "Traditional Black Soap",
     "brand": "Geisha",
-    "price_ugx": 5000,
+    "price_ugx": 5500,
     "quote_only": false,
     "quote_reason": ""
   },
@@ -2323,7 +2324,7 @@
     "id": "291",
     "name": "Lemon&Honey Soap",
     "brand": "Geisha",
-    "price_ugx": 3500,
+    "price_ugx": 4000,
     "quote_only": false,
     "quote_reason": ""
   },
@@ -2331,7 +2332,7 @@
     "id": "292",
     "name": "Aloe&Honey Soap",
     "brand": "Geisha",
-    "price_ugx": 3500,
+    "price_ugx": 4000,
     "quote_only": false,
     "quote_reason": ""
   },
@@ -2339,7 +2340,7 @@
     "id": "293",
     "name": "Moringa Oil Soap",
     "brand": "Geisha",
-    "price_ugx": 5000,
+    "price_ugx": 5500,
     "quote_only": false,
     "quote_reason": ""
   },
@@ -2347,7 +2348,7 @@
     "id": "294",
     "name": "Rose & honey Soap",
     "brand": "Geisha",
-    "price_ugx": 3500,
+    "price_ugx": 4000,
     "quote_only": false,
     "quote_reason": ""
   },
@@ -2547,7 +2548,7 @@
     "id": "319",
     "name": "5kg",
     "brand": "Hillal",
-    "price_ugx": 45000,
+    "price_ugx": 48000,
     "quote_only": false,
     "quote_reason": ""
   },
@@ -2643,7 +2644,7 @@
     "id": "331",
     "name": "Black",
     "brand": "Elegant Air freshener",
-    "price_ugx": 4500,
+    "price_ugx": 6000,
     "quote_only": false,
     "quote_reason": ""
   },
@@ -2651,7 +2652,7 @@
     "id": "332",
     "name": "Jasmine",
     "brand": "Elegant Air freshener",
-    "price_ugx": 4500,
+    "price_ugx": 6000,
     "quote_only": false,
     "quote_reason": ""
   },
@@ -2659,7 +2660,7 @@
     "id": "333",
     "name": "Lavender",
     "brand": "Elegant Air freshener",
-    "price_ugx": 4500,
+    "price_ugx": 6000,
     "quote_only": false,
     "quote_reason": ""
   },
@@ -2667,7 +2668,7 @@
     "id": "334",
     "name": "Lemon",
     "brand": "Elegant Air freshener",
-    "price_ugx": 4500,
+    "price_ugx": 6000,
     "quote_only": false,
     "quote_reason": ""
   },
@@ -2675,7 +2676,7 @@
     "id": "335",
     "name": "Strawberry",
     "brand": "Elegant Air freshener",
-    "price_ugx": 4500,
+    "price_ugx": 6000,
     "quote_only": false,
     "quote_reason": ""
   },
@@ -2707,7 +2708,7 @@
     "id": "339",
     "name": "Oil 1ltr",
     "brand": "Bertin Olive",
-    "price_ugx": 25000,
+    "price_ugx": 28000,
     "quote_only": false,
     "quote_reason": ""
   },
@@ -2715,7 +2716,7 @@
     "id": "340",
     "name": "Oil 500ml",
     "brand": "Bertin Olive",
-    "price_ugx": 16000,
+    "price_ugx": 20000,
     "quote_only": false,
     "quote_reason": ""
   },
@@ -2723,7 +2724,7 @@
     "id": "341",
     "name": "Oil 250ml",
     "brand": "Bertin Olive",
-    "price_ugx": 10000,
+    "price_ugx": 12000,
     "quote_only": false,
     "quote_reason": ""
   },
@@ -2731,7 +2732,7 @@
     "id": "342",
     "name": "Ketchup 5ltr",
     "brand": "American Garden",
-    "price_ugx": 55000,
+    "price_ugx": 60000,
     "quote_only": false,
     "quote_reason": ""
   },
@@ -2771,7 +2772,7 @@
     "id": "347",
     "name": "10bars",
     "brand": "White Star",
-    "price_ugx": 57000,
+    "price_ugx": 60000,
     "quote_only": false,
     "quote_reason": ""
   },
@@ -2779,7 +2780,7 @@
     "id": "348",
     "name": "10bars",
     "brand": "Jamaa White",
-    "price_ugx": 55000,
+    "price_ugx": 60000,
     "quote_only": false,
     "quote_reason": ""
   },
@@ -2819,7 +2820,7 @@
     "id": "353",
     "name": "500g",
     "brand": "Daily Fresh Salt",
-    "price_ugx": 5500,
+    "price_ugx": 8000,
     "quote_only": false,
     "quote_reason": ""
   },
@@ -2843,7 +2844,7 @@
     "id": "356",
     "name": "Strawberry Syrup",
     "brand": "Gold Valley",
-    "price_ugx": 13500,
+    "price_ugx": 15000,
     "quote_only": false,
     "quote_reason": ""
   },
@@ -2851,7 +2852,7 @@
     "id": "357",
     "name": "Chocolate Syrup",
     "brand": "Gold Valley",
-    "price_ugx": 13500,
+    "price_ugx": 15000,
     "quote_only": false,
     "quote_reason": ""
   },
@@ -2883,7 +2884,7 @@
     "id": "361",
     "name": "Sweet Chili",
     "brand": "Tbai",
-    "price_ugx": 13500,
+    "price_ugx": 22000,
     "quote_only": false,
     "quote_reason": ""
   },
@@ -2923,9 +2924,9 @@
     "id": "366",
     "name": "Take away Sachet",
     "brand": "Kakira Sugar",
-    "price_ugx": null,
-    "quote_only": true,
-    "quote_reason": "Product card and catalogue prices differ"
+    "price_ugx": 6000,
+    "quote_only": false,
+    "quote_reason": ""
   },
   {
     "id": "367",
@@ -3227,7 +3228,7 @@
     "id": "404",
     "name": "Rice 5kg",
     "brand": "Red Cock",
-    "price_ugx": 55000,
+    "price_ugx": 60000,
     "quote_only": false,
     "quote_reason": ""
   },
@@ -3619,7 +3620,7 @@
     "id": "453",
     "name": "1kg",
     "brand": "Yellow Beans",
-    "price_ugx": 4250,
+    "price_ugx": 5800,
     "quote_only": false,
     "quote_reason": ""
   },
@@ -3838,5 +3839,225 @@
     "price_ugx": 12500,
     "quote_only": false,
     "quote_reason": ""
+  },
+  {
+    "id": "480",
+    "name": "Passion Fruit Fruit Purée",
+    "brand": "MONIN",
+    "price_ugx": 105000,
+    "quote_only": false,
+    "quote_reason": "",
+    "category": "Beverages",
+    "package_size": null,
+    "image": "image/Products/o.jpg"
+  },
+  {
+    "id": "481",
+    "name": "Strawberry Fruit Purée",
+    "brand": "MONIN",
+    "price_ugx": 105000,
+    "quote_only": false,
+    "quote_reason": "",
+    "category": "Beverages",
+    "package_size": null,
+    "image": "image/Products/o1.jpg"
+  },
+  {
+    "id": "482",
+    "name": "Blackcurrant Fruit Purée",
+    "brand": "MONIN",
+    "price_ugx": 105000,
+    "quote_only": false,
+    "quote_reason": "",
+    "category": "Beverages",
+    "package_size": null,
+    "image": "image/Products/o2.jpg"
+  },
+  {
+    "id": "483",
+    "name": "Peach Fruit Purée",
+    "brand": "MONIN",
+    "price_ugx": 105000,
+    "quote_only": false,
+    "quote_reason": "",
+    "category": "Beverages",
+    "package_size": null,
+    "image": "image/Products/o3.jpg"
+  },
+  {
+    "id": "484",
+    "name": "Raspberry Fruit Purée",
+    "brand": "MONIN",
+    "price_ugx": 105000,
+    "quote_only": false,
+    "quote_reason": "",
+    "category": "Beverages",
+    "package_size": null,
+    "image": "image/Products/o4.jpg"
+  },
+  {
+    "id": "485",
+    "name": "Kiwi Fruit Purée",
+    "brand": "MONIN",
+    "price_ugx": 105000,
+    "quote_only": false,
+    "quote_reason": "",
+    "category": "Beverages",
+    "package_size": null,
+    "image": "image/Products/o5.jpg"
+  },
+  {
+    "id": "486",
+    "name": "Coconut Fruit Purée",
+    "brand": "MONIN",
+    "price_ugx": 105000,
+    "quote_only": false,
+    "quote_reason": "",
+    "category": "Beverages",
+    "package_size": null,
+    "image": "image/Products/o6.jpg"
+  },
+  {
+    "id": "487",
+    "name": "Strawberry Syrup",
+    "brand": "MONIN",
+    "price_ugx": 75000,
+    "quote_only": false,
+    "quote_reason": "",
+    "category": "Beverages",
+    "package_size": null,
+    "image": "image/Products/o7.jpg"
+  },
+  {
+    "id": "488",
+    "name": "Grenadine Syrup",
+    "brand": "MONIN",
+    "price_ugx": 75000,
+    "quote_only": false,
+    "quote_reason": "",
+    "category": "Beverages",
+    "package_size": null,
+    "image": "image/Products/o8.jpg"
+  },
+  {
+    "id": "489",
+    "name": "Blue Curaçao Syrup · 1 litre",
+    "brand": "MONIN",
+    "price_ugx": 75000,
+    "quote_only": false,
+    "quote_reason": "",
+    "category": "Beverages",
+    "package_size": "1 litre",
+    "image": "image/Products/o9.jpg"
+  },
+  {
+    "id": "490",
+    "name": "Cloudy Lemonade Concentrate · 70 cl",
+    "brand": "MONIN",
+    "price_ugx": 75000,
+    "quote_only": false,
+    "quote_reason": "",
+    "category": "Beverages",
+    "package_size": "70 cl",
+    "image": "image/Products/o10.jpg"
+  },
+  {
+    "id": "491",
+    "name": "Lavender Syrup · 750 ml",
+    "brand": "MONIN",
+    "price_ugx": 75000,
+    "quote_only": false,
+    "quote_reason": "",
+    "category": "Beverages",
+    "package_size": "750 ml",
+    "image": "image/Products/o11.jpg"
+  },
+  {
+    "id": "492",
+    "name": "Green Mint Syrup · 750 ml",
+    "brand": "MONIN",
+    "price_ugx": 75000,
+    "quote_only": false,
+    "quote_reason": "",
+    "category": "Beverages",
+    "package_size": "750 ml",
+    "image": "image/Products/o12.jpg"
+  },
+  {
+    "id": "493",
+    "name": "Cranberry Syrup · 750 ml",
+    "brand": "MONIN",
+    "price_ugx": 75000,
+    "quote_only": false,
+    "quote_reason": "",
+    "category": "Beverages",
+    "package_size": "750 ml",
+    "image": "image/Products/o13.jpg"
+  },
+  {
+    "id": "494",
+    "name": "Coconut Syrup",
+    "brand": "MONIN",
+    "price_ugx": 75000,
+    "quote_only": false,
+    "quote_reason": "",
+    "category": "Beverages",
+    "package_size": null,
+    "image": "image/Products/o14.jpg"
+  },
+  {
+    "id": "495",
+    "name": "Watermelon Syrup",
+    "brand": "MONIN",
+    "price_ugx": 75000,
+    "quote_only": false,
+    "quote_reason": "",
+    "category": "Beverages",
+    "package_size": null,
+    "image": "image/Products/o15.jpg"
+  },
+  {
+    "id": "496",
+    "name": "Kiwi Syrup · 750 ml",
+    "brand": "MONIN",
+    "price_ugx": 75000,
+    "quote_only": false,
+    "quote_reason": "",
+    "category": "Beverages",
+    "package_size": "750 ml",
+    "image": "image/Products/o16.jpg"
+  },
+  {
+    "id": "497",
+    "name": "Blue Lagoon Syrup",
+    "brand": "MONIN",
+    "price_ugx": 75000,
+    "quote_only": false,
+    "quote_reason": "",
+    "category": "Beverages",
+    "package_size": null,
+    "image": "image/Products/o17.jpg"
+  },
+  {
+    "id": "498",
+    "name": "Passion Fruit Syrup",
+    "brand": "MONIN",
+    "price_ugx": 75000,
+    "quote_only": false,
+    "quote_reason": "",
+    "category": "Beverages",
+    "package_size": null,
+    "image": "image/Products/o18.jpg"
+  },
+  {
+    "id": "499",
+    "name": "Blueberry Fruit Purée",
+    "brand": "MONIN",
+    "price_ugx": 105000,
+    "quote_only": false,
+    "quote_reason": "",
+    "category": "Beverages",
+    "package_size": null,
+    "image": "image/Products/o19.jpg"
   }
 ]

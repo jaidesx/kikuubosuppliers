@@ -3,15 +3,9 @@ window.renderProductRating = function(review) {
   const row = document.createElement('div'); row.className = 'product-rating';
   if (!review || review.verified !== true || !Number.isFinite(review.average) ||
       review.average < 1 || review.average > 5 || !Number.isSafeInteger(review.count) || review.count < 1) {
-    row.classList.add('unrated');
-    const stars = document.createElement('span');
-    stars.className = 'rating-stars rating-stars-outline';
-    stars.setAttribute('aria-hidden', 'true');
-    stars.textContent = '☆☆☆☆☆';
-    const label = document.createElement('small');
-    label.textContent = 'Not yet rated';
-    row.setAttribute('aria-label', 'Not yet rated');
-    row.append(stars, label);
+    row.classList.add('decorative-stars');
+    row.setAttribute('aria-hidden', 'true');
+    row.textContent = '★★★★★';
     return row;
   }
   row.setAttribute('role', 'img');

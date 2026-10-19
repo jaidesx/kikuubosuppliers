@@ -1,5 +1,5 @@
 const CACHE_PREFIX = "kikuubo-suppliers";
-const STATIC_CACHE = `${CACHE_PREFIX}-static-ux-v2`;
+const STATIC_CACHE = `${CACHE_PREFIX}-static-monin-v3`;
 const OFFLINE_URL = "/offline.html";
 
 const PRECACHE_URLS = [

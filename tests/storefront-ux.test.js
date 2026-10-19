@@ -9,13 +9,15 @@ function setup(body='') {
 test('rating accepts only verified data, renders fractions and accessible counts',()=>{
  const w=setup();
  const unrated = w.renderProductRating({average:4.2,count:18});
-  expect(unrated.querySelector('.rating-stars-outline').textContent).toBe('☆☆☆☆☆');
-  expect(unrated.textContent).toBe('☆☆☆☆☆Not yet rated');
-  expect(unrated.getAttribute('aria-label')).toBe('Not yet rated');
+  expect(unrated.classList.contains('decorative-stars')).toBe(true);
+  expect(unrated.textContent).toBe('★★★★★');
+  expect(unrated.getAttribute('aria-hidden')).toBe('true');
+  expect(unrated.hasAttribute('aria-label')).toBe(false);
+  expect(unrated.querySelector('small')).toBeNull();
  const row=w.renderProductRating({verified:true,average:4.2,count:18});
  expect(row.getAttribute('aria-label')).toBe('4.2 out of 5 stars, 18 reviews');
  expect(row.querySelector('.rating-stars > span').style.width).toBe('84%');
- for(const average of [0,6,NaN]) expect(w.renderProductRating({verified:true,average,count:1}).textContent).toBe('☆☆☆☆☆Not yet rated');
+ for(const average of [0,6,NaN]) expect(w.renderProductRating({verified:true,average,count:1}).textContent).toBe('★★★★★');
  w.close();
 });
 test('wholesale message includes packaging, optional details, encoding and unverified payment',()=>{
