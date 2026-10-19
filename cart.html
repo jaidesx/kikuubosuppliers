@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en">
-  <head>
+<head>
       <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -24,155 +24,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preconnect" href="https://pro.fontawesome.com" />
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="modern-header.css?v=manual-momo-v3" />
+
+
     <link
       rel="stylesheet"
       href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
     />
-    <style>
-      #checkout-section {
-        display: none;
-        padding: 40px 80px;
-        background: #f0f4f7;
-        margin-top: 20px;
-        border-radius: 15px;
-        animation: fadeIn 0.5s ease;
-      }
 
-      .checkout-container {
-        display: flex;
-        justify-content: space-between;
-        gap: 40px;
-        flex-wrap: wrap;
-      }
-
-      .checkout-form {
-        flex: 1;
-        min-width: 0;
-        width: 100%;
-        background: #fff;
-        padding: 30px;
-        border-radius: 12px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-      }
-
-      .checkout-form h3 {
-        margin-bottom: 20px;
-        color: #088178;
-      }
-
-      .checkout-form input,
-      .checkout-form textarea {
-        width: 100%;
-        padding: 12px 15px;
-        margin-bottom: 15px;
-        border: 1px solid #e1e1e1;
-        border-radius: 8px;
-        font-size: 14px;
-      }
-
-      .payment-methods {
-        flex: 1;
-        min-width: 0;
-        width: 100%;
-        background: #fff;
-        padding: 30px;
-        border-radius: 12px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-      }
-
-      .payment-methods h3 {
-        margin-bottom: 20px;
-        color: #088178;
-      }
-
-      .payment-options {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 15px;
-        margin-bottom: 20px;
-      }
-
-      .payment-option {
-        border: 2px solid #f0f0f0;
-        border-radius: 10px;
-        padding: 15px;
-        text-align: center;
-        cursor: pointer;
-        transition: all 0.3s ease;
-      }
-
-      .payment-option img {
-        width: 60px;
-        height: 60px;
-        object-fit: contain;
-        margin-bottom: 10px;
-      }
-
-      .payment-option p {
-        font-weight: 600;
-        margin: 0;
-        font-size: 14px;
-        color: #222;
-      }
-
-      .payment-option.active {
-        border-color: #088178;
-        background: rgba(8, 129, 120, 0.05);
-      }
-
-      .order-summary {
-        margin-top: 20px;
-        padding-top: 20px;
-        border-top: 1px solid #eee;
-      }
-
-      .summary-row {
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 10px;
-      }
-
-      .summary-row.total {
-        font-weight: 700;
-        font-size: 18px;
-        color: #088178;
-        margin-top: 10px;
-      }
-
-      #confirm-checkout-btn {
-        width: 100%;
-        margin-top: 20px;
-      }
-
-
-
-
-
-      @media (max-width: 799px) {
-        #checkout-section {
-          padding: 20px;
-        }
-        .checkout-container {
-          flex-direction: column;
-        }
-      }
-      #checkout-section { overflow-wrap: anywhere; }
-      #order-handoff { margin-top: 24px; }
-      #order-handoff[hidden] { display: none; }
-      #order-message { width: 100%; max-width: 100%; box-sizing: border-box; }
-      #whatsapp-order-link { display: inline-block; padding: 14px; color: #066b64; text-decoration: underline; }
-      #checkout-error { color: #a01818; }
-      .summary-row { gap: 12px; flex-wrap: wrap; }
-      .payment-option { cursor: pointer; }
-      @media (max-width: 480px) {
-        #checkout-section { padding: 12px; }
-        .checkout-form, .payment-methods { padding: 16px; box-sizing: border-box; }
-        #cart table { min-width: 700px; }
-        .checkout-container { gap: 16px; }
-      }
-    </style>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18006730860"></script>
     <script>
@@ -182,68 +40,14 @@
 
       gtag('config', 'AW-18006730860');
     </script>
-  </head>
-
-  <body>
-      <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NRZW5WX8"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
-    <a class="skip-link" href="#main-content">Skip to main content</a>
-    <header id="header">
-      <a href="index.html">
-        <img src="image/logo.webp" class="logo" alt="Kikuubo Suppliers" />
-      </a>
-
-      <div>
-        <ul id="navbar">
-          <li>
-            <a href="index.html">HOME</a>
-          </li>
-          <li>
-            <a href="shop.html">SHOP</a>
-          </li>
-          <li>
-            <a href="product.html">PRODUCTS</a>
-          </li>
-          <li>
-            <a href="about.html">ABOUT</a>
-          </li>
-          <li>
-            <a href="contact.html">CONTACT</a>
-          </li>
-          <li id="lg-bag">
-            <a class="active" href="cart.html">
-              <i class="far fa-shopping-cart cart"></i><span class="cart-count">0</span>
-            </a>
-          </li>
-          <li><a href="#" id="close"><i class="far fa-times"></i></a></li>
-        </ul>
-      </div>
-      <div id="mobile">
-        <a href="cart.html">
-          <i class="far fa-shopping-cart cart"> </i><span class="cart-count">0</span>
-        </a>
-        <i id="bar" class="fas fa-outdent"> </i>
-      </div>
-    </header>
-
-    <main id="main-content">
-    <section id="page-header" class="about-header">
-      <h2>Your Cart</h2>
-
-      <p>Review your items and proceed to checkout.</p>
-    </section>
-
-    <section id="cart" class="section-p1">
-      <div
-        id="empty-cart-msg"
-        style="display: none; text-align: center; padding: 50px"
-      >
-        <i
-          class="fas fa-shopping-cart"
-          style="font-size: 60px; color: #ccc"
-        > </i>
+  <link rel="stylesheet" href="premium-storefront.css?v=ux-v2"><link rel="stylesheet" href="storefront-pages.css?v=ux-v2"><link rel="stylesheet" href="shopping-ux.css?v=ux-v2"></head>
+<body class="store-page"><a class="skip-link" href="#main-content">Skip to main content</a><div class="store-strip"><div class="container"><span><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Kikuubo, Kampala</span><span>Mon–Sat · 8am–6pm</span></div></div><header id="header"><div class="header-inner container">
+<a class="brand" href="index.html"><img src="image/logo.webp" class="logo" alt="Kikuubo Suppliers"><span><strong>Kikuubo <em>Suppliers</em></strong><small>TRUSTED RETAIL STORE</small></span></a>
+<div class="header-actions"><a class="icon-button whatsapp-contact" data-whatsapp="" href="https://wa.me/256756158466"><i class="fab fa-whatsapp" aria-hidden="true"></i> <span class="contact-label">WhatsApp</span></a><button type="button" class="icon-button" id="search-open" aria-label="Search products"><i class="fas fa-search" aria-hidden="true"></i></button><a class="icon-button basket" href="cart.html" aria-label="View cart"><i class="far fa-shopping-cart" aria-hidden="true"></i><span class="cart-count">0</span></a><div id="mobile"><button type="button" id="bar" class="icon-button" aria-label="Open navigation" aria-controls="navbar" aria-expanded="false"><i class="fas fa-bars" aria-hidden="true"></i></button></div></div>
+<nav aria-label="Main navigation"><ul id="navbar"><li><a href="index.html">Home</a></li><li><a href="shop.html">Shop</a></li><li><a href="product.html">Products</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li><li><button id="theme-toggle" class="icon-button" aria-label="Toggle dark mode"><i class="fas fa-moon" aria-hidden="true"></i></button></li><li><button id="close" class="icon-button" aria-label="Close navigation">×</button></li></ul></nav>
+</div></header><main id="main-content"><noscript><p class="container">JavaScript is needed to load your saved basket. You can also <a href="https://wa.me/256756158466">send your product list on WhatsApp</a>.</p></noscript><section class="page-intro container"><nav class="breadcrumbs" aria-label="Breadcrumb"><a href="index.html">Home</a><span aria-hidden="true">/</span><span>Your basket</span></nav><span class="eyebrow">Your basket</span><h1>Good choices.<br><span>Almost yours.</span></h1><p>Review your items, share your delivery details and confirm the final order with the supplier.</p></section><div class="checkout-progress container" aria-label="Ordering steps"><span class="current">01 · Your basket</span><span>02 · Delivery details</span><span>03 · Supplier confirmation</span></div><section id="cart" class="container">
+      <div id="empty-cart-msg" style="display: none; text-align: center; padding: 50px">
+        <i class="fas fa-shopping-cart" style="font-size: 60px; color: #ccc"> </i>
         <h3 style="color: #088178">Your cart is empty</h3>
         <p style="color: #888">Add items to see them here.</p>
         <a href="product.html" class="normal" style="display: inline-block; margin-top: 20px; text-decoration: none;">Continue Shopping</a>
@@ -252,63 +56,52 @@
       <table width="100%" id="cart-table" style="display: none">
         <thead>
           <tr>
-            <td>Remove</td>
-            <td>Image</td>
-            <td>Product</td>
-            <td>Price</td>
-            <td>Quantity</td>
-            <td>Subtotal</td>
+            <th scope="col">Remove</th>
+            <th scope="col">Image</th>
+            <th scope="col">Product</th>
+            <th scope="col">Price</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Subtotal</th>
           </tr>
         </thead>
         <tbody id="cart-items"></tbody>
       </table>
-    </section>
+    </section><section id="cart-add" class="container">
 
-    <section id="cart-add" class="section-p1">
-      <div id="coupon">
-        <h3>Apply Coupon</h3>
-        <div>
-          <input type="text" placeholder="Enter Your Coupon" />
-          <button class="normal">Apply</button>
-        </div>
-      </div>
 
       <div id="subtotal">
         <h3>Cart Totals</h3>
         <table>
-          <tr>
+          <tbody><tr>
             <td>Estimated items subtotal</td>
             <td id="cart-subtotal">UGX 0.00</td>
           </tr>
           <tr>
             <td>Shipping</td>
-            <td>At A Cost</td>
+            <td>Pending confirmation</td>
           </tr>
           <tr>
             <td><strong>Estimate excluding delivery</strong></td>
-            <td id="cart-total">UGX 0.00</td>
+            <td id="cart-total" role="status">UGX 0.00</td>
           </tr>
-        </table>
+        </tbody></table>
         <button class="normal" onclick="showCheckout()">Proceed to Checkout</button>
       </div>
-    </section>
-
-    <!-- Checkout Section -->
-    <section id="checkout-section" class="section-p1">
-      <form id="checkout-form" class="checkout-container" novalidate>
+    </section><section id="checkout-section" class="container">
+      <form id="checkout-form" class="checkout-container" novalidate="">
         <div class="checkout-form">
-          <h3>Delivery Details</h3>
-          <label for="cust-name">Full name</label><input type="text" id="cust-name" autocomplete="name" maxlength="100" required />
-          <label for="cust-phone">Ugandan mobile number (WhatsApp preferred)</label><input type="tel" id="cust-phone" autocomplete="tel" maxlength="24" required />
-          <label for="cust-location">Delivery location and directions</label><input type="text" id="cust-location" placeholder="e.g. Kampala, Najera" maxlength="300" required />
+          <h3>Where should we deliver?</h3>
+          <label for="cust-name">Full name</label><input type="text" id="cust-name" autocomplete="name" maxlength="100" required="">
+          <label for="cust-phone">Ugandan mobile number (WhatsApp preferred)</label><input type="tel" id="cust-phone" autocomplete="tel" maxlength="24" required="">
+          <label for="cust-location">Delivery location and directions</label><input type="text" id="cust-location" placeholder="e.g. Kampala, Najera" maxlength="300" required="">
           <label for="cust-notes">Additional notes (optional)</label><textarea id="cust-notes" maxlength="1000" rows="4"></textarea>
         </div>
 
         <div class="payment-methods">
           <h3>Preferred payment method</h3>
           <div class="payment-options">
-            <label class="payment-option active"><input type="radio" name="payment" value="mtn" checked onchange="selectPayment(this.value)" /> MTN MoMo</label>
-            <label class="payment-option"><input type="radio" name="payment" value="airtel" onchange="selectPayment(this.value)" /> Airtel Money</label>
+            <label class="payment-option active"><input type="radio" name="payment" value="mtn" checked="" onchange="selectPayment(this.value)"> MTN MoMo</label>
+            <label class="payment-option"><input type="radio" name="payment" value="airtel" onchange="selectPayment(this.value)"> Airtel Money</label>
           </div>
 
           <p id="payment-instructions" role="status"></p>
@@ -333,119 +126,35 @@
           <button type="button" class="normal" style="background: transparent; color: #888; border: 1px solid #ddd; margin-top: 10px;" onclick="hideCheckout()">Back to Cart</button>
         </div>
       </form>
-      <div id="order-handoff" hidden>
+      <div id="order-handoff" hidden="">
         <h3>Review your request</h3>
         <p id="handoff-help"></p>
         <label for="order-message">WhatsApp message</label>
-        <textarea id="order-message" rows="12" readonly></textarea>
+        <textarea id="order-message" rows="12" readonly=""></textarea>
         <button type="button" id="copy-order-btn" class="normal">Copy request</button>
         <a id="whatsapp-order-link" target="_blank" rel="noopener noreferrer">Open WhatsApp</a>
         <p id="copy-status" role="status"></p>
         <p>If WhatsApp is unavailable, call 0756158466. This website does not process payments.</p>
       </div>
-    </section>
-
-    <footer class="section-p1">
-      <div class="col">
-        <img class="logo" src="image/logo.webp" alt="Kikuubo Suppliers" />
-        <h4>Contact</h4>
-        <ul>
-          <li>
-            <i class="fal fa-map"> </i>
-            <p>Kikuubo, Kampala, Uganda</p>
-          </li>
-          <li>
-            <i class="fal fa-envelope"> </i>
-            <p>wholesalesuppliers63@gmail.com</p>
-          </li>
-          <li>
-            <i class="fal fa-phone-alt"> </i>
-            <p>+256 756 158 466</p>
-          </li>
-          <li>
-            <i class="fal fa-clock"> </i>
-            <p>Monday to Saturday: 8:00am to 18:00pm</p>
-          </li>
-        </ul>
-        <div class="follow">
-          <h4>Follow us</h4>
-          <div class="social-icons">
-            <a
-              href="https://www.facebook.com/Kikkuubo.Online.Business.Enterprise/"
-              class="social-btn facebook"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Facebook"
-            >
-              <i class="fab fa-facebook-f"></i>
-            </a>
-            <a
-              href="https://twitter.com"
-              class="social-btn twitter"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Twitter"
-            >
-              <i class="fab fa-twitter"></i>
-            </a>
-            <a
-              href="https://www.instagram.com/kikuubo.supplier.onlinedeli?igsh=MWM4cHgxN3AwM2JsMw==/"
-              class="social-btn instagram"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Instagram"
-            >
-              <i class="fab fa-instagram"></i>
-            </a>
-            <a
-              href="https://youtube.com"
-              class="social-btn youtube"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="YouTube"
-            >
-              <i class="fab fa-youtube"></i>
-            </a>
-          </div>
+    </section><section class="container basket-help"><h2>Need a hand with your order?</h2><p>For pack sizes, wholesale quantities or delivery questions, contact our team before paying.</p><a class="text-link" href="wholesale.html">Request a wholesale quotation →</a></section></main><footer class="site-footer"><div class="container footer-grid"><div class="footer-brand"><img src="image/logo.webp" alt="Kikuubo Suppliers" width="130"><h2>Kikuubo Suppliers Uganda</h2><p>Quality products for everyday needs.<br>Retail &amp; wholesale in Kikuubo, Kampala.</p><div class="social-links"><a href="https://www.facebook.com/Kikkuubo.Online.Business.Enterprise/" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a><a href="https://www.instagram.com/kikuubo.supplier.onlinedeli" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a><a class="" data-whatsapp="" href="https://wa.me/256756158466"><i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp</a></div></div><div><h3>Shop &amp; support</h3><a href="product.html">All products</a><a href="index.html#product1">Featured products</a><a href="index.html#product2">New arrivals</a><a href="cart.html">Your cart</a><a href="wholesale.html">Wholesale enquiry</a><a href="about.html">About us</a><a href="contact.html">Delivery &amp; order enquiries</a></div><div><h3>Contact direct</h3><a class="footer-contact" href="tel:+256756158466"><small>PHONE / WHATSAPP</small>+256 756 158 466</a><a class="footer-contact" href="mailto:wholesalesuppliers63@gmail.com"><small>EMAIL</small>wholesalesuppliers63@gmail.com</a><p>Mon–Sat: 8:00am–6:00pm<br>Kikuubo, Kampala, Uganda</p></div></div><div class="container copyright">© 2026 Kikuubo Suppliers. All rights reserved.</div></footer><div id="command-palette" role="dialog" aria-modal="true" aria-label="Search products">
+      <div class="palette-card">
+        <button type="button" class="search-close icon-button" aria-label="Close search">×</button><div class="palette-search">
+          <i class="fas fa-search"></i>
+          <input type="text" id="palette-input" aria-label="Search products" placeholder="Type to search products..." autocomplete="off">
+        </div>
+        <div class="palette-results" id="palette-results">
+          <!-- Results will be injected here -->
+        </div>
+        <div class="palette-footer">
+          <span><kbd>Enter</kbd> to select</span>
+          <span><kbd>↑↓</kbd> to navigate</span>
+          <span><kbd>Esc</kbd> to close</span>
         </div>
       </div>
-      <div class="col">
-        <h4>About</h4>
-        <a href="about.html">About us</a>
-        <a href="contact.html">Delivery Information</a>
-        <a href="contact.html">Privacy Policy</a>
-        <a href="contact.html">Terms & conditions</a>
-        <a href="contact.html">Contact us</a>
-      </div>
-      <div class="col">
-        <h4>My Account</h4>
-        <a href="contact.html">Account</a>
-        <a href="contact.html">Sign In</a>
-        <a href="cart.html">View Cart</a>
-        <a href="cart.html">My Wishlist</a>
-        <a href="contact.html">Track My order</a>
-        <a href="contact.html">Help</a>
-      </div>
-      <div class="col install">
-        <h4>Install App</h4>
-        <p>From App Store or Google Play</p>
-        <div class="row">
-          <img src="image/pay/app.webp" alt="" />
-          <img src="image/pay/play.webp" alt="" />
-        </div>
-        <p>Secure Payment Gateways</p>
-        <img src="image/pay/pay.webp" alt="" /><div style="display: flex; gap: 10px; margin-top: 10px;"><img src="image/Products/Mtn.webp" alt="MTN MoMo" style="height: 30px; border-radius: 4px;" /><img src="image/Products/airtel.webp" alt="Airtel Money" style="height: 30px; border-radius: 4px;" /></div>
-      </div>
-
-      <div class="copyright">
-        <p>Copyright © 2026 <img src="image/icon.webp" style="width: 16px; height: 16px; vertical-align: middle; padding-bottom: 2px;" alt=""> Kikuubo Suppliers. All Rights Reserved.</p>
-      </div>
-    </footer>
-    </main>
-    <script src="products_array.js?v=manual-momo-v3"></script>
-    <script src="ordering.js?v=manual-momo-v3"></script>
-    <script src="cart.js?v=manual-momo-v3"></script>
-    <script src="script.js?v=manual-momo-v3"></script>
-    <script src="checkout.js?v=order-api-v1"></script>
-  </body>
-</html>
+    </div><script src="products_array.js?v=ux-v2"></script>
+<script src="ordering.js?v=ux-v2"></script>
+<script src="script.js?v=ux-v2"></script>
+<script src="cart.js?v=ux-v2"></script>
+<script src="storefront.js?v=ux-v2"></script>
+<script src="checkout.js?v=ux-v2"></script>
+<script src="storefront-ux.js?v=ux-v2"></script></body></html>

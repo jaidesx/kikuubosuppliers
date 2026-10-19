@@ -8,7 +8,7 @@ function script(file) {
 }
 async function setup(page = 'cart.html', url = 'http://localhost/cart.html', saved) {
   // Never fetch external scripts, submit forms or open WhatsApp in tests.
-  dom = new JSDOM(read(page).replace(/<script\b[\s\S]*?<\/script>/gi, ''), { url, runScripts: 'dangerously' });
+  dom = new JSDOM(read(page).replace(/<script\b(?![^>]*type=["']application\/ld\+json["'])[^>]*>[\s\S]*?<\/script>/gi, ''), { url, runScripts: 'dangerously' });
   win = dom.window;
   win.IntersectionObserver = class { observe() {} };
   win.HTMLElement.prototype.scrollIntoView = () => {};
@@ -43,7 +43,7 @@ function fill(details = customer) {
 
 test('uses catalogue identity and price instead of incoming card values', async () => {
   await setup(); win.addToCart({ id: 1, name: 'Fake', price: 1, quantity: 2 });
-  expect(win.getCartItems()[0].name).toBe('Pringles'); expect(win.getCartTotal()).toBe(19000);
+  expect(win.getCartItems()[0].name).toBe('Pringles'); expect(win.getCartTotal()).toBe(28000);
 });
 test.each([0, -1, 1.2, '2x', '1e2', Infinity, 10000, ''])('rejects invalid quantity %p without altering the basket', async quantity => {
   await setup(); win.addToCart({id: 1});
@@ -53,15 +53,16 @@ test.each([0, -1, 1.2, '2x', '1e2', Infinity, 10000, ''])('rejects invalid quant
 test('rejects unknown product IDs', async () => {
   await setup(); expect(win.addToCart({id: 99999, price: 100})).toBe(false); expect(win.getCartItems()).toHaveLength(0);
 });
-test('conflicting prices remain unchanged in source and are quotation-only in orders', async () => {
+test('approved prices are orderable while unresolved products remain quotation-only', async () => {
   await setup();
   expect(win.eval('products.find(p => p.id === 8).price')).toBe(168000);
   Object.keys(win.quotationReasons).forEach(id => expect(win.getOrderProduct(id).quoteOnly).toBe(true));
   win.addToCart({id: 8}); win.addToCart({id: 1});
   const request = win.buildOrderRequest(win.getCartItems(), customer, 'mtn');
-  expect(request.message).toContain('Quotation required');
-  expect(request.message).toContain('Priced items subtotal (excludes quotation items): UGX 9,500');
-  expect(request.message).not.toContain('168,000');
+  expect(win.getOrderProduct(8).quoteOnly).toBe(false);
+  expect(request.message).toContain('UGX 168,000');
+  expect(request.message).toContain('Estimated items subtotal: UGX 182,000');
+  expect(request.message).not.toContain('Quotation required');
 });
 test('encodes the complete message once and preserves special characters', async () => {
   await setup(); win.addToCart({id:1,quantity:2});
@@ -70,7 +71,7 @@ test('encodes the complete message once and preserves special characters', async
   expect(url.pathname).toBe('/256756158466'); expect([...url.searchParams.keys()]).toEqual(['text']);
   expect(url.searchParams.get('text')).toBe(request.message);
   expect(request.message).toContain(customer.notes); expect(request.message).toContain('Airtel Money');
-  expect(request.message).toContain('[1] Snacks Pringles | Qty: 2 | Unit: UGX 9,500 | Line: UGX 19,000');
+  expect(request.message).toContain('[1] Snacks Pringles | Qty: 2 | Unit: UGX 14,000 | Line: UGX 28,000');
 });
 test.each([
   {name:'   '}, {phone:'123'}, {phone:'0756158466&paid=true'}, {location:'  '}, {notes:'a'.repeat(1001)}
@@ -123,6 +124,54 @@ test('a changed stored price requires confirmation rather than silently repricin
   await setup('cart.html','http://localhost/cart.html',[{id:1,name:'Pringles',image:'image/Products/f1.webp',price:1,quantity:2}]);
   expect(win.getCartItems()[0].quoteOnly).toBe(true); expect(win.getCartTotal()).toBe(0);
 });
+
+test('restores approved Kakira Sugar price from an old quotation cart', async () => {
+  await setup('cart.html', 'http://localhost/cart.html');
+  const product = win.getOrderProduct(8);
+  const saved = [{
+    id: 8, name: product.name, brand: product.brand, image: product.image,
+    price: null, quoteOnly: true, quantity: 2,
+    quoteReason: 'Homepage and catalogue prices differ',
+    reviewReason: 'Homepage and catalogue prices differ'
+  }];
+  win.localStorage.setItem('kikuuboCart', JSON.stringify(saved));
+  win.loadCart();
+  expect(win.getCartItems()[0].quoteOnly).toBe(false);
+  expect(win.getCartItems()[0].price).toBe(168000);
+  expect(win.getCartTotal()).toBe(336000);
+});
+
+test('keeps an unexpected saved price mismatch under review', async () => {
+  await setup('cart.html', 'http://localhost/cart.html');
+  const product = win.getOrderProduct(8);
+  win.localStorage.setItem('kikuuboCart', JSON.stringify([{
+    id: 8, name: product.name, image: product.image,
+    price: 1000, quantity: 1
+  }]));
+  win.loadCart();
+  expect(win.getCartItems()[0].quoteOnly).toBe(true);
+  expect(win.getCartTotal()).toBe(0);
+});
+
+test('does not restore a legacy quotation when product identity differs', async () => {
+  await setup('cart.html', 'http://localhost/cart.html', [{
+    id: 8, name: 'Different Product', price: null,
+    quoteOnly: true, quantity: 1,
+    reviewReason: 'Homepage and catalogue prices differ'
+  }]);
+  expect(win.getCartItems()[0].quoteOnly).toBe(true);
+  expect(win.getCartTotal()).toBe(0);
+});
+
+test('genuinely quotation-only catalogue products remain protected', async () => {
+  await setup();
+  for (const id of Object.keys(win.quotationReasons)) {
+    const product = win.getOrderProduct(id);
+    expect(product.quoteOnly).toBe(true);
+    expect(product.price).toBeNull();
+  }
+});
+
 test('unsafe saved names render as text and never create elements', async () => {
   await setup('cart.html','http://localhost/cart.html',[{id:'<img src=x onerror=alert(1)>',name:'<img src=x onerror=alert(1)>',quantity:1}]);
   expect(win.document.querySelector('#cart-items img')).toBeNull();
@@ -146,13 +195,13 @@ test('copy failure selects the request for manual copy', async () => {
   await setup(); win.addToCart({id:1}); fill(); await win.submitOrder(); await win.copyOrderRequest();
   expect(win.document.getElementById('copy-status').textContent).toContain('Select and copy');
 });
-test('homepage anchors and dynamically added featured cards add exactly once using catalogue data', async () => {
+test('homepage cart controls and dynamically added featured cards add exactly once using catalogue data', async () => {
   await setup('index.html','http://localhost/index.html');
-  const card=win.document.querySelector('.pro'); card.querySelector('a').click();
-  expect(win.getCartItemCount()).toBe(1); expect(win.getCartTotal()).toBe(9500);
+  const card=win.document.querySelector('.pro'); card.querySelector('.cart').click();
+  expect(win.getCartItemCount()).toBe(1); expect(win.getCartTotal()).toBe(14000);
   const dynamic=card.cloneNode(true); win.document.body.appendChild(dynamic); dynamic.querySelector('.cart').click();
   expect(win.getCartItemCount()).toBe(2);
-  const ketchup=win.document.querySelector('[data-product-id="ketchup-unverified"]'); ketchup.querySelector('a').click();
+  const ketchup=win.document.querySelector('[data-product-id="ketchup-unverified"]'); ketchup.querySelector('.cart').click();
   expect(win.getCartItems().find(p=>p.id==='ketchup-unverified').quoteOnly).toBe(true);
 });
 test('every conflicted listing displays quotation wording after initialization', async () => {
@@ -164,8 +213,7 @@ test('every conflicted listing displays quotation wording after initialization',
 test('direct product URL adds the displayed product rather than stored selection', async () => {
   await setup('sproduct.html','http://localhost/sproduct.html?id=2');
   win.localStorage.setItem('selectedProductId','1'); script('script.js');
-  const source=read('sproduct.html').match(/<script>\s*let displayedProduct[\s\S]*?<\/script>/)[0];
-  const el=win.document.createElement('script'); el.textContent=source.replace(/^<script>|<\/script>$/g,'');win.document.head.appendChild(el);
+  script('product-detail.js');
   win.document.dispatchEvent(new win.Event('DOMContentLoaded'));
   win.document.getElementById('add-to-cart-btn').click(); expect(win.getCartItems()[0].id).toBe(2);
 });

@@ -1,22 +1,13 @@
 const CACHE_PREFIX = "kikuubo-suppliers";
-const STATIC_CACHE = `${CACHE_PREFIX}-static-v3-manual-momo`;
+const STATIC_CACHE = `${CACHE_PREFIX}-static-ux-v2`;
 const OFFLINE_URL = "/offline.html";
 
 const PRECACHE_URLS = [
-  OFFLINE_URL,
-  "/manifest.json",
-  "/style.css",
-  "/modern-header.css?v=manual-momo-v3",
-  "/script.js?v=manual-momo-v3",
-  "/cart.js?v=manual-momo-v3",
-  "/products_array.js?v=manual-momo-v3",
-  "/ordering.js?v=manual-momo-v3",
-  "/checkout.js?v=manual-momo-v3",
-  "/image/logo.webp",
-  "/image/logo.png",
-  "/image/icon.png",
-  "/image/app-icon-192.png",
-  "/image/app-icon-512.png"
+  OFFLINE_URL, "/shopping-ux.css?v=ux-v2", "/storefront-ux.js?v=ux-v2", "/wholesale.js?v=ux-v2", "/manifest.json", "/premium-storefront.css?v=ux-v2",
+  "/storefront-pages.css?v=ux-v2", "/script.js?v=ux-v2",
+  "/cart.js?v=ux-v2", "/products_array.js?v=ux-v2", "/ordering.js?v=ux-v2",
+  "/storefront.js?v=ux-v2", "/product-detail.js?v=ux-v2", "/homepage.js?v=ux-v2",
+  "/image/logo.webp", "/image/icon.png", "/image/app-icon-192.png", "/image/app-icon-512.png"
 ];
 
 const SENSITIVE_PATHS = [

@@ -224,11 +224,11 @@ describe("Products – description field", () => {
 // Spot-check known products
 // ---------------------------------------------------------------------------
 describe("Products – spot-checks for known entries", () => {
-  test("product id=1 is Pringles at UGX 9500", () => {
+  test("product id=1 is Pringles at UGX 14000", () => {
     const p = products.find((p) => p.id === 1);
     expect(p).toBeDefined();
     expect(p.name).toBe("Pringles");
-    expect(p.price).toBe(9500);
+    expect(p.price).toBe(14000);
     expect(p.category).toBe("Biscuits, Chocolate, Lollipops & Snacks");
   });
 
@@ -245,7 +245,9 @@ describe("Products – spot-checks for known entries", () => {
   test("product id=13 is Jik 3ltr at UGX 35000", () => {
     const p = products.find((p) => p.id === 13);
     expect(p).toBeDefined();
-    expect(p.name).toBe("Jik 3ltr");
+    expect(p.name).toBe("Jik 2.5L");
+    expect(p.price).toBe(22000);
+    expect(p.packageSize).toBe("2.5 litres");
     expect(p.category).toBe("Cleaning & Household");
   });
 

@@ -209,13 +209,13 @@ describe("viewProduct", () => {
 
   test("redirects to sproduct.html", () => {
     win.viewProduct(1);
-    expect(win.location.href).toBe("sproduct.html");
+    expect(win.location.href).toMatch(/^sproduct\.html\?id=\d+$/);
   });
 
   test("works with any numeric product id", () => {
     win.viewProduct(123);
     expect(win.localStorage.getItem("selectedProductId")).toBe("123");
-    expect(win.location.href).toBe("sproduct.html");
+    expect(win.location.href).toMatch(/^sproduct\.html\?id=\d+$/);
   });
 });
 
@@ -413,7 +413,7 @@ describe("Command Palette – arrow-key navigation", () => {
     // Press Enter
     input.dispatchEvent(new win.KeyboardEvent("keydown", { key: "Enter", bubbles: true }));
 
-    expect(win.location.href).toBe("sproduct.html");
+    expect(win.location.href).toMatch(/^sproduct\.html\?id=\d+$/);
   });
 });
 

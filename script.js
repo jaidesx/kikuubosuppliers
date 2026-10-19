@@ -266,7 +266,8 @@ if (installUi.dismissButton) {
 const themeToggle = document.getElementById("theme-toggle");
 const body = document.body;
 
-const currentTheme = localStorage.getItem("theme") || "light";
+let currentTheme = "light";
+try { currentTheme = localStorage.getItem("theme") || "light"; } catch {}
 body.setAttribute("data-theme", currentTheme);
 
 updateThemeIcon();
@@ -277,7 +278,7 @@ if (themeToggle) {
     const newTheme = currentTheme === "light" ? "dark" : "light";
 
     body.setAttribute("data-theme", newTheme);
-    localStorage.setItem("theme", newTheme);
+    try { localStorage.setItem("theme", newTheme); } catch {}
     updateThemeIcon();
   });
 }
@@ -357,7 +358,9 @@ document.addEventListener("DOMContentLoaded", () => {
  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener("click", function (e) {
       e.preventDefault();
-      const target = document.querySelector(this.getAttribute("href"));
+      const href = this.getAttribute("href");
+      if (!href || href === "#") return;
+      const target = document.getElementById(href.slice(1));
       if (target) {
         target.scrollIntoView({
           behavior: "smooth",
@@ -437,14 +440,14 @@ function renderResults(items, title) {
     ${items
       .map(
         (item, index) => `
-      <div class="palette-item ${index === selectedIndex ? "selected" : ""}" onclick="viewProduct(${item.id})">
+      <a class="palette-item ${index === selectedIndex ? "selected" : ""}" href="sproduct.html?id=${item.id}">
         <img src="${item.image}" alt="${item.name}">
         <div class="palette-item-info">
           <div class="palette-item-name">${item.name}</div>
           <div class="palette-item-category">${item.category}</div>
         </div>
         <div class="palette-item-price">${typeof getOrderProduct === "function" && getOrderProduct(item.id)?.quoteOnly ? "Price on quotation" : "UGX " + item.price.toLocaleString()}</div>
-      </div>
+      </a>
     `
       )
       .join("")}
@@ -551,6 +554,6 @@ function getProductById(id) {
 }
 
 function viewProduct(productId) {
-  localStorage.setItem("selectedProductId", productId);
-  window.location.href = "sproduct.html";
+  try { localStorage.setItem("selectedProductId", productId); } catch {}
+  window.location.href = "sproduct.html?id=" + encodeURIComponent(productId);
 }

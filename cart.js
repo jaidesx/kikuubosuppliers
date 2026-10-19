@@ -22,11 +22,26 @@ function saveCart() {
 function reconcileCartItem(item) {
   if (!item || typeof item !== 'object' || item.id == null) return null;
   const product = typeof getOrderProduct === 'function' ? getOrderProduct(item.id) : null;
+  // Explicit owner-approved correction: reprice only the known Jik legacy identity.
+  const legacyJikNames = ['Jik 3ltr', 'Jik Big', 'Jik Bleach', 'Jik Bleach Jik 3ltr', 'Jik 2.5L'];
+  if (product && product.id === 13 && legacyJikNames.includes(item.name) &&
+      (!item.image || String(item.image).split('/').pop().match(/^n5\.(webp|jpg|png)$/))) {
+    return { ...product, quantity: item.quantity };
+  }
   const sameImage = !item.image || !product || String(item.image).split('/').pop() === product.image.split('/').pop();
   const changedIdentity = product && (!sameImage || (item.name && item.name !== product.name));
   const changedPrice = product && !product.quoteOnly && Number(item.price) !== product.price;
-  const reason = item.reviewReason || (!product ? 'Saved product is no longer in the catalogue' :
-    changedIdentity ? 'Saved product identity requires confirmation' : changedPrice ? 'Saved price requires confirmation' : '');
+  const resolvedLegacyQuote = product && !product.quoteOnly &&
+    item.quoteOnly === true &&
+    item.price == null &&
+    !changedIdentity &&
+    (item.reviewReason === 'Homepage and catalogue prices differ' ||
+     item.quoteReason === 'Homepage and catalogue prices differ');
+
+  const reason = !product ? 'Saved product is no longer in the catalogue' :
+    changedIdentity ? 'Saved product identity requires confirmation' :
+    resolvedLegacyQuote ? '' :
+    item.reviewReason || (changedPrice ? 'Saved price requires confirmation' : '');
   if (reason) {
     return { id: String(item.id).slice(0,100), name: String(item.name || 'Saved product').slice(0,200),
       brand: String(item.brand || '').slice(0,100), image: sameImage && product ? product.image : '',
@@ -118,12 +133,26 @@ function updateCartDisplay() {
     if (/^image\/[\w/.-]+$/.test(item.image || '')) {
       const img = document.createElement('img'); img.src = item.image; img.alt = item.name; imageCell.appendChild(img);
     }
-    const name = cell(); name.className = 'cart-product-name'; name.textContent = [item.brand, item.name].filter(Boolean).join(' ');
+    const name = cell(); name.className = 'cart-product-name'; name.textContent = productLabel(item);
     if (item.quoteOnly) { const note = document.createElement('small'); note.textContent = ' — ' + item.quoteReason; name.appendChild(note); }
     cell().textContent = item.quoteOnly ? 'Quotation required' : formatCurrency(item.price);
     const input = document.createElement('input'); input.type = 'number'; input.min = '1'; input.max = '9999'; input.step = '1';
     input.value = validOrderQuantity(item.quantity) ? item.quantity : ''; input.setAttribute('aria-label', 'Quantity for ' + item.name);
-    input.addEventListener('change', () => updateQuantity(item.id, input.value)); cell().appendChild(input);
+    input.inputMode = 'numeric';
+    const controls = document.createElement('div'); controls.className = 'quantity-controls';
+    const stepButton = (text, delta) => {
+      const button = document.createElement('button'); button.type = 'button'; button.textContent = text;
+      button.setAttribute('aria-label', (delta < 0 ? 'Decrease' : 'Increase') + ' quantity for ' + item.name);
+      button.disabled = !validOrderQuantity(item.quantity) || Number(item.quantity) + delta < 1 || Number(item.quantity) + delta > 9999;
+      button.addEventListener('click', () => {
+        if (updateQuantity(item.id, Number(item.quantity) + delta)) {
+          const updated = [...tbody.rows].find(row => row.dataset.id === String(item.id));
+          updated?.querySelectorAll('.quantity-controls button')[delta < 0 ? 0 : 1]?.focus();
+        }
+      }); return button;
+    };
+    input.addEventListener('change', () => updateQuantity(item.id, input.value));
+    controls.append(stepButton('−', -1), input, stepButton('+', 1)); cell().appendChild(controls);
     cell().textContent = item.quoteOnly ? 'Quotation required' : validOrderQuantity(item.quantity) ? formatCurrency(item.price * item.quantity) : 'Check quantity';
     tbody.appendChild(row);
   });
@@ -142,7 +171,7 @@ document.addEventListener('click', function(event) {
   event.preventDefault(); event.stopPropagation();
   const card = button.closest('.pro');
   const match = (card.getAttribute('onclick') || '').match(/viewProduct\(['"]?([\w-]+)['"]?\)/);
-  addToCart({ id: card.dataset.productId || (match && match[1]) });
+  addToCartWithFeedback(button.closest('button') || button, { id: card.dataset.productId || (match && match[1]) });
 }, true);
 document.addEventListener('DOMContentLoaded', function() { loadCart(); updateCartDisplay(); updateCartCount(); });
 window.addToCart = addToCart;
@@ -150,3 +179,18 @@ window.removeFromCart = removeFromCart;
 window.updateQuantity = updateQuantity;
 window.clearCart = function() { cart = []; cartChanged(); };
 window.getCartItems = getCartItems;
+
+// Gate the originating control, leaving deliberate quantity edits unrestricted.
+const addingControls = new WeakSet();
+function addToCartWithFeedback(button, input) {
+  if (addingControls.has(button)) return false;
+  addingControls.add(button);
+  if (!addToCart(input)) { addingControls.delete(button); return false; }
+  const original = button.innerHTML;
+  button.textContent = '✓ Added!'; button.setAttribute('aria-disabled', 'true');
+  document.querySelectorAll('.cart-count').forEach(el => {
+    el.classList.remove('cart-pulse'); void el.offsetWidth; el.classList.add('cart-pulse');
+  });
+  setTimeout(() => { button.innerHTML = original; addingControls.delete(button); button.removeAttribute('aria-disabled'); }, 900);
+  return true;
+}
