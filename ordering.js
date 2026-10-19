@@ -1,3 +1,8 @@
+window.productLabel = function(product) {
+  const brand = product.brand || '', name = product.name || '';
+  return (name.toLowerCase().includes(brand.toLowerCase()) || name.toLowerCase().startsWith(brand.toLowerCase().split(' ')[0] + ' ')) ? name : [brand, name].filter(Boolean).join(' ');
+};
+
 // Public payment details confirmed by the business owner. This is not payment verification.
 window.orderingConfig = Object.freeze({
   whatsapp: "256756158466",
@@ -11,17 +16,12 @@ window.orderingConfig = Object.freeze({
 
 // Do not change these prices until the business resolves the source conflicts.
 window.quotationReasons = Object.freeze({
-  3: "Homepage and catalogue prices differ",
-  7: "Product card and catalogue prices differ",
-  8: "Homepage and catalogue prices differ",
   15: "Size and price range require confirmation",
   19: "Size and price range require confirmation",
-  25: "UGX 149 requires business approval",
   67: "Product card and catalogue prices differ",
   90: "Displayed price notation requires confirmation",
   100: "Displayed price notation requires confirmation",
   108: "UGX 149 requires business approval",
-  366: "Product card and catalogue prices differ",
   394: "Unit / dozen pricing requires confirmation",
   429: "Legacy homepage identity conflicts with this catalogue ID"
 });
@@ -74,7 +74,7 @@ window.buildOrderRequest = function(items, customer, paymentMethod) {
     const lineTotal = item.quoteOnly ? 0 : item.price * item.quantity;
     subtotal += lineTotal;
     if (!Number.isSafeInteger(subtotal)) throw new Error("The order total is too large. Please contact the supplier.");
-    const label = [item.brand, item.name].filter(Boolean).join(" ");
+    const label = window.productLabel(item) + (item.packageSize ? ` (Pack: ${item.packageSize})` : '');
     return `- [${item.id}] ${label} | Qty: ${item.quantity} | ` +
       (item.quoteOnly ? `Quotation required (${item.quoteReason || "supplier review"})` :
         `Unit: UGX ${item.price.toLocaleString("en-UG")} | Line: UGX ${lineTotal.toLocaleString("en-UG")}`);
@@ -100,3 +100,26 @@ document.addEventListener("DOMContentLoaded", function() {
     if (price) price.textContent = product.quoteOnly ? "Price on quotation" : "UGX " + product.price.toLocaleString("en-UG");
   });
 });
+
+// A quotation request never implies an agreed wholesale price or a payment.
+window.buildWholesaleRequest = function(details) {
+  const clean = (value, max) => {
+    const text = String(value || '').trim();
+    if (text.length > max) throw new Error('Please shorten the enquiry to fit the field limits.');
+    return text;
+  };
+  const product = clean(details.product, 200), packaging = clean(details.packaging, 200);
+  if (product.length < 2) throw new Error('Enter the product you would like quoted.');
+  if (!validOrderQuantity(details.quantity)) throw new Error('Enter a whole quantity from 1 to 9,999.');
+  const name = clean(details.name, 100), contact = clean(details.contact, 150);
+  const location = clean(details.location, 300), notes = clean(details.notes, 1000);
+  const message = ['WHOLESALE QUOTATION REQUEST — KIKUUBO SUPPLIERS', '',
+    `Product: ${product}`, `Requested variant / packaging: ${packaging || 'Please confirm available packs'}`,
+    `Requested quantity: ${Number(details.quantity)} (of the requested pack; please confirm)`,
+    `Customer: ${name || 'Not supplied'}`, `Contact: ${contact || 'Reply on WhatsApp'}`,
+    `Delivery location: ${location || 'To be confirmed'}`, `Additional instructions: ${notes || 'None'}`, '',
+    'Please confirm packaging, availability, unit price, line subtotal and final quotation total.',
+    'Delivery fees: pending confirmation.', 'Payment status: not verified. No payment is confirmed by this request.'
+  ].join('\n');
+  return { message, url: `https://wa.me/${orderingConfig.whatsapp}?text=${encodeURIComponent(message)}` };
+};
