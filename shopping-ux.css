@@ -45,3 +45,5 @@ button:active,.button:active { transform:scale(.98); }
  .pro:hover,.pro:hover .product-image img,button:active,.button:active { transform:none; }
 }
 .rating-stars-outline { color:#E5A33B; }
+
+.product-rating.decorative-stars { color:#E5A33B; font-size:15px; letter-spacing:1px; }

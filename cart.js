@@ -29,6 +29,14 @@ function reconcileCartItem(item) {
     return { ...product, quantity: item.quantity };
   }
   const sameImage = !item.image || !product || String(item.image).split('/').pop() === product.image.split('/').pop();
+  // Owner-approved MONIN correction, restricted to known identities and prices.
+  const moninPureeIds = [480, 481, 482, 483, 484, 485, 486, 499];
+  if (product && moninPureeIds.includes(product.id) && sameImage &&
+      [product.name, product.name.replace('Fruit Purée', 'Fruit Preparation'),
+       'MONIN ' + product.name, 'MONIN ' + product.name.replace('Fruit Purée', 'Fruit Preparation')].includes(item.name) &&
+      [75000, 105000].includes(Number(item.price))) {
+    return { ...product, quantity: item.quantity };
+  }
   const changedIdentity = product && (!sameImage || (item.name && item.name !== product.name));
   const changedPrice = product && !product.quoteOnly && Number(item.price) !== product.price;
   const resolvedLegacyQuote = product && !product.quoteOnly &&

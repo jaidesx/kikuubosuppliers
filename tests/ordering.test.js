@@ -440,3 +440,23 @@ test('concurrent submit calls do not create multiple API requests', async () => 
   expect(await first).toBe(true);
   expect(win.fetch).toHaveBeenCalledTimes(1);
 });
+
+test('all eight MONIN purées reprice saved carts and WhatsApp summaries from the catalogue', async () => {
+  const ids = [480, 481, 482, 483, 484, 485, 486, 499];
+  await setup('cart.html', 'http://localhost/cart.html', ids.map(id => {
+    const product = new Function(read('products_array.js') + '; return products;')().find(p => p.id === id);
+    return {...product, name:product.name.replace('Fruit Purée', 'Fruit Preparation'), price:75000, quantity:2};
+  }));
+  const items = win.getCartItems();
+  expect(items).toHaveLength(8);
+  items.forEach(item => {
+    expect(item.price).toBe(105000);
+    expect(win.productLabel(item)).toMatch(/^MONIN .+ Fruit Purée$/);
+  });
+  expect(win.getCartTotal()).toBe(1680000);
+  expect(win.document.getElementById('cart-total').textContent).toContain('1,680,000');
+  const request = win.buildOrderRequest(items, customer, 'mtn');
+  expect(request.message).toContain('1,680,000');
+  expect(request.message).not.toContain('75,000');
+  expect(decodeURIComponent(request.url.split('?text=')[1])).toBe(request.message);
+});
