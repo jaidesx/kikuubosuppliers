@@ -17,12 +17,27 @@ function displayProduct(product) {
     const image=document.createElement('img');image.src=/\.(?:jpe?g|png|webp)$/i.test(name)?'image/Products/'+name:'image/Products/'+name+'.webp';image.alt=product.name+' view '+(index+1);
     const button=document.createElement('button');button.type='button';button.setAttribute('aria-label','Show '+image.alt);button.append(image);button.addEventListener('click',()=>{main.src=image.src;});gallery.append(button);
   });
-  document.getElementById('product-jsonld').textContent=JSON.stringify({
-    '@context':'https://schema.org','@type':'Product',name:product.brand+' '+product.name,
-    image:'https://kikuubosuppliersug.com/'+product.image,description:product.description,
-    brand:{'@type':'Brand',name:product.brand},
-    ...(product.quoteOnly?{}:{offers:{'@type':'Offer',priceCurrency:'UGX',price:product.price}})
-  });
+  const jsonld=document.getElementById('product-jsonld');
+  if (product.quoteOnly) {
+    jsonld.textContent='';
+  } else {
+    const url=new URL('sproduct.html?id='+encodeURIComponent(product.id),
+      'https://kikuubosuppliersug.com/').href;
+    jsonld.textContent=JSON.stringify({
+      '@context':'https://schema.org','@type':'Product',
+      name:product.brand+' '+product.name,
+      image:new URL(product.image,'https://kikuubosuppliersug.com/').href,
+      description:product.description,
+      brand:{'@type':'Brand',name:product.brand},
+      url,
+      offers:{
+        '@type':'Offer',
+        url,
+        priceCurrency:'UGX',
+        price:product.price
+      }
+    });
+  }
 }
 function loadFeaturedProducts() {
   const list=products.filter(p=>p.id!==displayedProduct?.id && p.category===displayedProduct?.category).slice(0,4);

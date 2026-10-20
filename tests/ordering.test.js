@@ -460,3 +460,41 @@ test('all eight MONIN purées reprice saved carts and WhatsApp summaries from th
   expect(request.message).not.toContain('75,000');
   expect(decodeURIComponent(request.url.split('?text=')[1])).toBe(request.message);
 });
+
+describe('Google Product structured data', () => {
+  async function openProduct(id) {
+    await setup('sproduct.html', 'http://localhost/sproduct.html?id=' + encodeURIComponent(id));
+    script('script.js');
+    script('product-detail.js');
+    win.document.dispatchEvent(new win.Event('DOMContentLoaded'));
+    return win.document.getElementById('product-jsonld').textContent.trim();
+  }
+
+  test.each([15, 19, 67, 90, 100, 108, 394, 429, 'ketchup-unverified'])(
+    'does not publish incomplete Product JSON-LD for quote-only product %s',
+    async id => {
+      const json = await openProduct(id);
+      expect(win.getOrderProduct(id).quoteOnly).toBe(true);
+      expect(json).toBe('');
+    }
+  );
+
+  test('publishes a valid UGX offer for an approved product', async () => {
+    const json = await openProduct(1);
+    const data = JSON.parse(json);
+
+    expect(data['@type']).toBe('Product');
+    expect(data.offers['@type']).toBe('Offer');
+    expect(data.offers.priceCurrency).toBe('UGX');
+    expect(data.offers.price).toBe(14000);
+    expect(data.url).toBe('https://kikuubosuppliersug.com/sproduct.html?id=1');
+    expect(data.offers.url).toBe(data.url);
+    expect(data.image).toMatch(/^https:\/\/kikuubosuppliersug\.com\//);
+    expect(data).not.toHaveProperty('aggregateRating');
+    expect(data).not.toHaveProperty('review');
+  });
+
+  test('does not publish Product JSON-LD for an unknown product', async () => {
+    expect(await openProduct(99999)).toBe('');
+  });
+});
